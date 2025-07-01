@@ -22,11 +22,11 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-yellow text-yellow-foreground hover:bg-yellow/90">
                 <ShoppingCart className="mr-2 h-5 w-5" />
-                Shop Now
+                Get your Quote today
               </Button>
               <Button size="lg" variant="outline" className="border-white text-black bg-white hover:bg-white/90">
                 <Calculator className="mr-2 h-5 w-5" />
-                Calculate Needs
+                View our Products
               </Button>
             </div>
             
@@ -52,21 +52,21 @@ const Hero = () => {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-gray-800">Quick Product Access</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-primary p-6 rounded-lg text-center hover:bg-primary/90 transition-colors cursor-pointer">
-                    <div className="text-4xl mb-2">🏔️</div>
-                    <div className="text-lg font-semibold text-primary-foreground">Sand & Gravel</div>
+                  <div className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-yellow-100 to-orange-200 min-h-[120px] flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Sand & Gravel</div>
                   </div>
-                  <div className="bg-primary p-6 rounded-lg text-center hover:bg-primary/90 transition-colors cursor-pointer">
-                    <div className="text-4xl mb-2">🏗️</div>
-                    <div className="text-lg font-semibold text-primary-foreground">Cement</div>
+                  <div className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-gray-300 to-gray-500 min-h-[120px] flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Cement</div>
                   </div>
-                  <div className="bg-primary p-6 rounded-lg text-center hover:bg-primary/90 transition-colors cursor-pointer">
-                    <div className="text-4xl mb-2">🔩</div>
-                    <div className="text-lg font-semibold text-primary-foreground">Iron Rods</div>
+                  <div className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-blue-600 to-gray-700 min-h-[120px] flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Iron Rods</div>
                   </div>
-                  <div className="bg-primary p-6 rounded-lg text-center hover:bg-primary/90 transition-colors cursor-pointer">
-                    <div className="text-4xl mb-2">🧱</div>
-                    <div className="text-lg font-semibold text-primary-foreground">Pavement Blocks</div>
+                  <div className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-red-400 to-gray-600 min-h-[120px] flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Pavement Blocks</div>
                   </div>
                 </div>
               </div>
