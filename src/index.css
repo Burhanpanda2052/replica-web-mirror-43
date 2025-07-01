@@ -16,11 +16,11 @@
     --popover-foreground: 222.2 84% 4.9%;
 
     /* Brand Colors */
-    --primary: 195 100% 20%; /* Dark teal/blue */
-    --primary-foreground: 0 0% 100%;
+    --primary: 41 38% 69%; /* #D8C99B */
+    --primary-foreground: 39 100% 27%; /* #273E47 */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 200 26% 21%; /* #273E47 */
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -44,8 +44,8 @@
     --purple: 262 83% 58%;
     --purple-foreground: 0 0% 100%;
 
-    --yellow: 48 96% 53%;
-    --yellow-foreground: 222.2 84% 4.9%;
+    --yellow: 32 67% 53%; /* #D8973C */
+    --yellow-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;

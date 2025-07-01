@@ -1,38 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Phone, MapPin } from "lucide-react";
+import { Menu, Phone, MapPin, Search } from "lucide-react";
 
 const Header = () => {
   return (
-    <header className="bg-primary text-primary-foreground">
-      {/* Top bar */}
-      <div className="container mx-auto px-4 py-2 text-sm">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Phone className="h-4 w-4" />
-              <span>+255 123 456 789</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <MapPin className="h-4 w-4" />
-              <span>Stone Town, Zanzibar</span>
-            </div>
-          </div>
-          <div className="hidden md:flex space-x-4">
-            <span>Mon - Sat: 8:00 AM - 6:00 PM</span>
-          </div>
-        </div>
-      </div>
-      
+    <header className="bg-secondary text-secondary-foreground">
       {/* Main header */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-3">
             <div className="bg-yellow rounded-lg p-2">
-              <div className="text-yellow-foreground font-bold text-xl">EDEM</div>
+              <div className="text-yellow-foreground font-bold text-xl">🔨</div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold">EDEM GROUP</h1>
-              <p className="text-sm opacity-90">Construction Materials</p>
+              <h1 className="text-2xl font-bold">Zanzibar Hardware</h1>
             </div>
           </div>
           
@@ -45,8 +25,16 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center space-x-4">
-            <Button variant="secondary" className="bg-yellow text-yellow-foreground hover:bg-yellow/90">
-              Get Quote
+            <div className="relative hidden md:flex">
+              <input 
+                type="text" 
+                placeholder="Search products..." 
+                className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 pr-10 text-secondary-foreground placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-yellow"
+              />
+              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/60" />
+            </div>
+            <Button className="bg-yellow text-yellow-foreground hover:bg-yellow/90 font-semibold">
+              Request Quote
             </Button>
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />
