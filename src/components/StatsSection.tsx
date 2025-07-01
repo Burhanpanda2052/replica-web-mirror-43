@@ -1,0 +1,72 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Building, Users, Award, Calendar } from "lucide-react";
+
+const StatsSection = () => {
+  return (
+    <section className="py-16 bg-primary text-primary-foreground">
+      <div className="container mx-auto px-4">
+        <div className="text-center space-y-4 mb-12">
+          <h2 className="text-4xl font-bold">Building Zanzibar's Future Since 2015</h2>
+          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+            Nearly a decade of excellence in construction materials supply and services across the island.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card className="bg-white/10 border-white/20 text-center">
+            <CardContent className="p-6 space-y-4">
+              <Building className="h-12 w-12 mx-auto text-yellow" />
+              <div className="space-y-2">
+                <div className="text-4xl font-bold">500+</div>
+                <div className="text-sm opacity-90">Projects Completed</div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-white/10 border-white/20 text-center">
+            <CardContent className="p-6 space-y-4">
+              <Users className="h-12 w-12 mx-auto text-yellow" />
+              <div className="space-y-2">
+                <div className="text-4xl font-bold">1000+</div>
+                <div className="text-sm opacity-90">Satisfied Customers</div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-white/10 border-white/20 text-center">
+            <CardContent className="p-6 space-y-4">
+              <Award className="h-12 w-12 mx-auto text-yellow" />
+              <div className="space-y-2">
+                <div className="text-4xl font-bold">50+</div>
+                <div className="text-sm opacity-90">Product Lines</div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <Card className="bg-white/10 border-white/20 text-center">
+            <CardContent className="p-6 space-y-4">
+              <Calendar className="h-12 w-12 mx-auto text-yellow" />
+              <div className="space-y-2">
+                <div className="text-4xl font-bold">9</div>
+                <div className="text-sm opacity-90">Years Experience</div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        
+        <div className="text-center mt-12">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-semibold mb-4">Our Commitment to Excellence</h3>
+            <p className="text-lg opacity-90 leading-relaxed">
+              From humble beginnings in 2015, EDEM Group has grown to become Zanzibar's most trusted construction materials supplier. 
+              We've built our reputation on quality products, reliable service, and unwavering commitment to our customers' success. 
+              Every project we support contributes to building a stronger, more beautiful Zanzibar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default StatsSection;
