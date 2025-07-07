@@ -95,7 +95,7 @@ const ContactSection = () => {
                     <Navigation className="mr-2 h-4 w-4" />
                     Get Directions
                   </Button>
-                  <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-primary">
+                  <Button className="w-full bg-white/10 text-white border border-white/20 hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105">
                     <Phone className="mr-2 h-4 w-4" />
                     Call Now
                   </Button>
