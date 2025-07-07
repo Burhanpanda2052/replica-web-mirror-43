@@ -117,7 +117,7 @@ const ContactSection = () => {
             </Card>
             
             <div className="grid grid-cols-2 gap-4">
-              <Card className="text-center bg-orange text-orange-foreground">
+              <Card className="text-center bg-gradient-to-br from-orange-400 to-orange-600 text-white">
                 <CardContent className="p-4">
                   <div className="text-2xl font-bold">15min</div>
                   <div className="text-sm opacity-90">From Airport</div>

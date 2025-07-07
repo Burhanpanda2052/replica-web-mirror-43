@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
@@ -5,7 +6,7 @@ import { LucideIcon } from "lucide-react";
 interface ServiceCardProps {
   title: string;
   description: string;
-  color: "orange" | "blue" | "red" | "green" | "purple" | "yellow";
+  color: "orange" | "blue" | "red" | "green" | "purple" | "yellow" | "gray" | "slate" | "amber" | "brick" | "zinc" | "steel";
   icon: LucideIcon;
   features?: string[];
   price?: string;
@@ -18,7 +19,14 @@ const ServiceCard = ({ title, description, color, icon: Icon, features, price }:
     red: "bg-red text-red-foreground",
     green: "bg-green text-green-foreground",
     purple: "bg-purple text-purple-foreground",
-    yellow: "bg-yellow text-yellow-foreground"
+    yellow: "bg-yellow text-yellow-foreground",
+    // New material-appropriate colors
+    gray: "bg-gradient-to-br from-gray-400 to-gray-600 text-white",
+    slate: "bg-gradient-to-br from-slate-500 to-slate-700 text-white",
+    amber: "bg-gradient-to-br from-amber-200 to-orange-300 text-gray-800",
+    brick: "bg-gradient-to-br from-red-400 to-red-600 text-white",
+    zinc: "bg-gradient-to-br from-zinc-400 to-zinc-600 text-white",
+    steel: "bg-gradient-to-br from-gray-600 to-gray-800 text-white"
   };
 
   return (

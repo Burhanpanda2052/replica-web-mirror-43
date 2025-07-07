@@ -1,3 +1,4 @@
+
 import ServiceCard from "./ServiceCard";
 import { Hammer, Truck, Shield, Wrench, Home, Cog } from "lucide-react";
 
@@ -6,7 +7,7 @@ const ProductsSection = () => {
     {
       title: "Premium Cement",
       description: "High-grade Portland cement for superior strength and durability in all construction projects.",
-      color: "orange" as const,
+      color: "gray" as const,
       icon: Hammer,
       features: ["42.5N & 52.5N grades", "ISO certified quality", "Bulk & bag options"],
       price: "$15/bag"
@@ -14,7 +15,7 @@ const ProductsSection = () => {
     {
       title: "Steel & Rebar",
       description: "Quality reinforcement steel bars and structural steel for robust construction foundations.",
-      color: "blue" as const,
+      color: "slate" as const,
       icon: Shield,
       features: ["Various grades available", "Cut to size service", "Corrosion resistant"],
       price: "$650/ton"
@@ -22,7 +23,7 @@ const ProductsSection = () => {
     {
       title: "Aggregates",
       description: "Premium sand, gravel, and crushed stone for concrete mixing and construction applications.",
-      color: "red" as const,
+      color: "amber" as const,
       icon: Truck,
       features: ["Washed & graded", "Multiple sizes", "Delivery included"],
       price: "$25/m³"
@@ -30,7 +31,7 @@ const ProductsSection = () => {
     {
       title: "Building Blocks",
       description: "Durable concrete blocks and bricks for residential and commercial construction projects.",
-      color: "green" as const,
+      color: "brick" as const,
       icon: Home,
       features: ["Standard & custom sizes", "Hollow & solid options", "Weather resistant"],
       price: "$0.50/block"
@@ -38,7 +39,7 @@ const ProductsSection = () => {
     {
       title: "Roofing Materials",
       description: "Complete roofing solutions including tiles, sheets, and waterproofing materials.",
-      color: "purple" as const,
+      color: "zinc" as const,
       icon: Shield,
       features: ["Metal & clay tiles", "Waterproof membranes", "Installation support"],
       price: "$12/m²"
@@ -46,7 +47,7 @@ const ProductsSection = () => {
     {
       title: "Hardware & Tools",
       description: "Professional construction tools, fasteners, and hardware for all your building needs.",
-      color: "yellow" as const,
+      color: "steel" as const,
       icon: Wrench,
       features: ["Power & hand tools", "Fasteners & fixtures", "Safety equipment"],
       price: "$5+"

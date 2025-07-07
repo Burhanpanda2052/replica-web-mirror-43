@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,20 +29,20 @@
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
-    /* Service Card Colors */
-    --orange: 25 95% 53%;
+    /* Service Card Colors - Updated with material-appropriate neutral tones */
+    --orange: 21 88% 53%; /* #ED7721 */
     --orange-foreground: 0 0% 100%;
     
-    --blue: 217 91% 60%;
+    --blue: 210 40% 50%; /* Blue-gray for logistics */
     --blue-foreground: 0 0% 100%;
     
-    --red: 0 84% 60%;
+    --red: 0 60% 50%; /* Muted red for bricks */
     --red-foreground: 0 0% 100%;
     
-    --green: 142 76% 36%;
+    --green: 120 30% 40%; /* Muted green for tools/work */
     --green-foreground: 0 0% 100%;
     
-    --purple: 262 83% 58%;
+    --purple: 250 30% 50%; /* Muted purple for planning */
     --purple-foreground: 0 0% 100%;
 
     --yellow: 32 67% 53%; /* #D8973C */

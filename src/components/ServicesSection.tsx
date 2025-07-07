@@ -1,3 +1,4 @@
+
 import ServiceCard from "./ServiceCard";
 import { Calculator, Truck, Users, Wrench, ClipboardList, MapPin } from "lucide-react";
 
@@ -6,42 +7,42 @@ const ServicesSection = () => {
     {
       title: "Material Estimation",
       description: "Professional quantity surveying and material estimation services for accurate project planning.",
-      color: "orange" as const,
+      color: "orange" as const, // Keep the updated orange color
       icon: Calculator,
       features: ["Detailed quantity takeoffs", "Cost optimization", "Material specifications"],
     },
     {
       title: "Island-wide Delivery",
       description: "Reliable delivery services covering all areas of Zanzibar with our modern fleet.",
-      color: "blue" as const,
+      color: "blue" as const, // Updated blue-gray for logistics
       icon: Truck,
       features: ["Same-day delivery", "Scheduled deliveries", "GPS tracking"],
     },
     {
       title: "Technical Consultation",
       description: "Expert advice on material selection, construction techniques, and project optimization.",
-      color: "red" as const,
+      color: "slate" as const, // Professional gray
       icon: Users,
       features: ["Site visits", "Material recommendations", "Problem solving"],
     },
     {
       title: "Installation Support",
       description: "Professional installation services and on-site technical support for complex materials.",
-      color: "green" as const,
+      color: "green" as const, // Updated muted green for tools/work
       icon: Wrench,
       features: ["Skilled technicians", "Quality assurance", "Warranty support"],
     },
     {
       title: "Project Management",
       description: "End-to-end project management services for large-scale construction projects.",
-      color: "purple" as const,
+      color: "purple" as const, // Updated muted purple for planning
       icon: ClipboardList,
       features: ["Timeline management", "Quality control", "Progress reporting"],
     },
     {
       title: "Site Surveys",
       description: "Comprehensive site assessment and surveying services for optimal project planning.",
-      color: "yellow" as const,
+      color: "amber" as const, // Earth tones for surveying
       icon: MapPin,
       features: ["Topographical surveys", "Soil analysis", "Feasibility studies"],
     }
