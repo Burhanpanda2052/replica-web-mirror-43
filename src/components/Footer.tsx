@@ -9,11 +9,11 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="bg-yellow rounded-lg p-2">
-                <div className="text-yellow-foreground font-bold text-lg">EDEM</div>
+                <div className="text-yellow-foreground font-bold text-lg">🔨</div>
               </div>
               <div>
-                <h3 className="text-xl font-bold">EDEM GROUP</h3>
-                <p className="text-sm opacity-90">Construction Materials</p>
+                <h3 className="text-xl font-bold">TOTAL BUILDERS</h3>
+                <p className="text-sm opacity-90">Construction & Material Supply</p>
               </div>
             </div>
             <p className="text-sm opacity-90 leading-relaxed">
@@ -27,7 +27,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Quick Links */}
+          {/* Quick Links, Products, Contact Info sections */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2 text-sm">
@@ -40,7 +40,6 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Products */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Our Products</h4>
             <ul className="space-y-2 text-sm">
@@ -53,7 +52,6 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Contact Info */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Contact Info</h4>
             <div className="space-y-3 text-sm">
@@ -67,7 +65,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 opacity-70" />
-                <span className="opacity-90">info@edemgroup.co.tz</span>
+                <span className="opacity-90">info@totalbuilders.co.tz</span>
               </div>
             </div>
             <div className="bg-white/10 p-3 rounded-lg">
@@ -84,7 +82,7 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm opacity-90">
-              © 2024 EDEM Group. All rights reserved.
+              © 2024 TOTAL BUILDERS. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Privacy Policy</a>

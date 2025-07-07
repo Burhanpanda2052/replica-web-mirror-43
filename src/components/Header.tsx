@@ -12,7 +12,8 @@ const Header = () => {
               <div className="text-yellow-foreground font-bold text-xl">🔨</div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold">Zanzibar Hardware</h1>
+              <h1 className="text-2xl font-bold">TOTAL BUILDERS</h1>
+              <p className="text-sm opacity-80">Construction & Material Supply</p>
             </div>
           </div>
           
