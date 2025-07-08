@@ -1,4 +1,3 @@
-
 import ServiceCard from "./ServiceCard";
 import { Hammer, Truck, Shield, Wrench, Home, Cog } from "lucide-react";
 
@@ -10,7 +9,7 @@ const ProductsSection = () => {
       color: "gray" as const,
       icon: Hammer,
       features: ["42.5N & 52.5N grades", "ISO certified quality", "Bulk & bag options"],
-      price: "34,500 TZS/bag"
+      price: "20,000 TZS/bag"
     },
     {
       title: "Steel & Rebar",
