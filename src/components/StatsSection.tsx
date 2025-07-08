@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Building, Users, Award, Calendar } from "lucide-react";
 
@@ -58,7 +59,7 @@ const StatsSection = () => {
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-semibold mb-4">Our Commitment to Excellence</h3>
             <p className="text-lg opacity-90 leading-relaxed">
-              From humble beginnings in 2015, EDEM Group has grown to become Zanzibar's most trusted construction materials supplier. 
+              From humble beginnings in 2015, Total Builders has grown to become Zanzibar's most trusted construction materials supplier. 
               We've built our reputation on quality products, reliable service, and unwavering commitment to our customers' success. 
               Every project we support contributes to building a stronger, more beautiful Zanzibar.
             </p>

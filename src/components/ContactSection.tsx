@@ -55,9 +55,9 @@ const ContactSection = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Email Addresses</h3>
                     <p className="text-muted-foreground">
-                      General: info@edemgroup.co.tz<br />
-                      Sales: sales@edemgroup.co.tz<br />
-                      Support: support@edemgroup.co.tz
+                      General: info@totalbuilders.co.tz<br />
+                      Sales: sales@totalbuilders.co.tz<br />
+                      Support: support@totalbuilders.co.tz
                     </p>
                   </div>
                 </div>

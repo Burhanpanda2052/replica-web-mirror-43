@@ -10,7 +10,7 @@ const ProductsSection = () => {
       color: "gray" as const,
       icon: Hammer,
       features: ["42.5N & 52.5N grades", "ISO certified quality", "Bulk & bag options"],
-      price: "$15/bag"
+      price: "34,500 TZS/bag"
     },
     {
       title: "Steel & Rebar",
@@ -18,7 +18,7 @@ const ProductsSection = () => {
       color: "slate" as const,
       icon: Shield,
       features: ["Various grades available", "Cut to size service", "Corrosion resistant"],
-      price: "$650/ton"
+      price: "1,495,000 TZS/ton"
     },
     {
       title: "Aggregates",
@@ -26,7 +26,7 @@ const ProductsSection = () => {
       color: "amber" as const,
       icon: Truck,
       features: ["Washed & graded", "Multiple sizes", "Delivery included"],
-      price: "$25/m³"
+      price: "57,500 TZS/m³"
     },
     {
       title: "Building Blocks",
@@ -34,7 +34,7 @@ const ProductsSection = () => {
       color: "brick" as const,
       icon: Home,
       features: ["Standard & custom sizes", "Hollow & solid options", "Weather resistant"],
-      price: "$0.50/block"
+      price: "1,150 TZS/block"
     },
     {
       title: "Roofing Materials",
@@ -42,7 +42,7 @@ const ProductsSection = () => {
       color: "zinc" as const,
       icon: Shield,
       features: ["Metal & clay tiles", "Waterproof membranes", "Installation support"],
-      price: "$12/m²"
+      price: "27,600 TZS/m²"
     },
     {
       title: "Hardware & Tools",
@@ -50,7 +50,7 @@ const ProductsSection = () => {
       color: "steel" as const,
       icon: Wrench,
       features: ["Power & hand tools", "Fasteners & fixtures", "Safety equipment"],
-      price: "$5+"
+      price: "11,500+ TZS"
     }
   ];
 

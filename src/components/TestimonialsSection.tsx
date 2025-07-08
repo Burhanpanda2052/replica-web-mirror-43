@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 
@@ -6,7 +7,7 @@ const TestimonialsSection = () => {
     {
       name: "Ahmed Hassan",
       role: "Hotel Owner",
-      content: "EDEM Group provided exceptional service for our hotel renovation. Quality materials and timely delivery made all the difference.",
+      content: "Total Builders provided exceptional service for our hotel renovation. Quality materials and timely delivery made all the difference.",
       rating: 5,
       project: "Luxury Resort Renovation"
     },
@@ -20,7 +21,7 @@ const TestimonialsSection = () => {
     {
       name: "John Morrison",
       role: "Construction Manager",
-      content: "Outstanding customer service and product quality. EDEM Group has been our go-to supplier for 3 years running.",
+      content: "Outstanding customer service and product quality. Total Builders has been our go-to supplier for 3 years running.",
       rating: 5,
       project: "Commercial Development"
     },
@@ -41,7 +42,7 @@ const TestimonialsSection = () => {
     {
       name: "Hassan Omar",
       role: "Contractor",
-      content: "Fast delivery and consistent quality. EDEM Group makes our job easier with their reliable service.",
+      content: "Fast delivery and consistent quality. Total Builders makes our job easier with their reliable service.",
       rating: 5,
       project: "Various Construction Projects"
     }

@@ -1,3 +1,4 @@
+
 import { MapPin, Clock, Truck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -6,9 +7,9 @@ const DeliverySection = () => {
     { area: "Stone Town", time: "Same Day", available: true },
     { area: "Nungwi", time: "Next Day", available: true },
     { area: "Kendwa", time: "Next Day", available: true },
-    { area: "Matemwe", time: "2-3 Days", available: true },
+    { area: "Matemwe", time: "Next Day", available: true },
     { area: "Paje", time: "Next Day", available: true },
-    { area: "Jambiani", time: "2-3 Days", available: true },
+    { area: "Jambiani", time: "Next Day", available: true },
   ];
 
   return (
@@ -45,7 +46,7 @@ const DeliverySection = () => {
               <div className="flex items-start space-x-3">
                 <Truck className="h-6 w-6 text-yellow mt-1" />
                 <div>
-                  <h4 className="font-semibold text-foreground">Free Delivery on Orders Over $500</h4>
+                  <h4 className="font-semibold text-foreground">Free Delivery on Orders Over 1,150,000 TZS</h4>
                   <p className="text-sm text-muted-foreground mt-1">
                     Enjoy complimentary delivery service for large orders across all delivery zones.
                   </p>

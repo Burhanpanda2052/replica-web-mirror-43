@@ -1,9 +1,8 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* EDEM GROUP Construction Materials Design System */
+/* Total Builders Construction Materials Design System */
 
 @layer base {
   :root {

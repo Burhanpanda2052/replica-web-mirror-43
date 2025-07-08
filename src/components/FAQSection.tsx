@@ -1,3 +1,4 @@
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
@@ -9,7 +10,7 @@ const FAQSection = () => {
     },
     {
       question: "Do you deliver across all of Zanzibar?",
-      answer: "Yes, we provide island-wide delivery services covering all major areas of Zanzibar. Delivery times vary by location: same-day for Stone Town, next-day for most coastal areas, and 2-3 days for remote locations. Free delivery is available for orders over $500."
+      answer: "Yes, we provide island-wide delivery services covering all major areas of Zanzibar. Delivery times vary by location: same-day for Stone Town, next-day for most coastal areas, and 2-3 days for remote locations. Free delivery is available for orders over 1,150,000 TZS."
     },
     {
       question: "How do I get a quote for my project?",
