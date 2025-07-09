@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calculator, Weight, Square, Building, Box } from "lucide-react";
-import TonnageCalculator from "./calculators/TonnageCalculator";
+import EnhancedTonnageCalculator from "./calculators/EnhancedTonnageCalculator";
 import SquareMetersCalculator from "./calculators/SquareMetersCalculator";
 import BlocksCalculator from "./calculators/BlocksCalculator";
 import CubicMetersCalculator from "./calculators/CubicMetersCalculator";
@@ -14,8 +14,8 @@ const CalculatorSection = () => {
   const calculatorTypes = [
     {
       id: "tonnage",
-      title: "Steel & Rebar Calculator",
-      description: "Calculate tonnage needed for your structural requirements",
+      title: "Enhanced Steel Calculator",
+      description: "Calculate tonnage with real-time pricing and waste factors",
       icon: Weight,
       color: "text-slate-600",
     },
@@ -45,7 +45,7 @@ const CalculatorSection = () => {
   const renderCalculator = () => {
     switch (activeCalculator) {
       case "tonnage":
-        return <TonnageCalculator />;
+        return <EnhancedTonnageCalculator />;
       case "square-meters":
         return <SquareMetersCalculator />;
       case "blocks":
@@ -63,10 +63,10 @@ const CalculatorSection = () => {
         <div className="text-center space-y-4 mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Calculator className="h-8 w-8 text-primary" />
-            <h2 className="text-4xl font-bold text-foreground">Material Calculators</h2>
+            <h2 className="text-4xl font-bold text-foreground">Enhanced Material Calculators</h2>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Use our professional calculators to estimate the exact amount of materials you need for your construction project.
+            Use our professional calculators with real-time pricing, waste factors, and accurate material estimates.
           </p>
         </div>
 
