@@ -7,7 +7,7 @@ const ContactSection = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-4xl font-bold text-foreground">Visit Our Store & Contact Us</h2>
+          <h2 className="text-4xl font-bold text-foreground">Visit Our Office & Contact Us</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Find us in the heart of Stone Town or get in touch through any of our contact channels.
           </p>
@@ -21,7 +21,7 @@ const ContactSection = () => {
                 <div className="flex items-start space-x-4">
                   <MapPin className="h-6 w-6 text-primary mt-1" />
                   <div>
-                    <h3 className="font-semibold text-foreground mb-2">Store Location</h3>
+                    <h3 className="font-semibold text-foreground mb-2">Office Location</h3>
                     <p className="text-muted-foreground">
                       Malawi Road, Stone Town<br />
                       Zanzibar, Tanzania<br />

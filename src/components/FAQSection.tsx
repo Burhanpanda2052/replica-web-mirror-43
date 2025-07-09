@@ -1,4 +1,5 @@
 
+
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
@@ -14,7 +15,7 @@ const FAQSection = () => {
     },
     {
       question: "How do I get a quote for my project?",
-      answer: "You can request a quote by filling out our online form, calling us directly, or visiting our store. Provide project details including type, location, materials needed, and timeline. We'll respond with a detailed quote within 24 hours."
+      answer: "You can request a quote by filling out our online form, calling us directly, or visiting our office. Provide project details including type, location, materials needed, and timeline. We'll respond with a detailed quote within 24 hours."
     },
     {
       question: "Do you offer technical consultation services?",
@@ -67,3 +68,4 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
+

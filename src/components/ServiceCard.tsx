@@ -1,4 +1,5 @@
 
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
@@ -16,10 +17,10 @@ const ServiceCard = ({ title, description, color, icon: Icon, features, price }:
   const colorClasses = {
     orange: "bg-orange text-orange-foreground",
     blue: "bg-blue text-blue-foreground", 
-    red: "bg-red text-red-foreground",
+    red: "bg-gradient-to-br from-red-400 to-red-600 text-white", // Updated to gradient
     green: "bg-green text-green-foreground",
     purple: "bg-purple text-purple-foreground",
-    yellow: "bg-yellow text-yellow-foreground",
+    yellow: "bg-gradient-to-br from-yellow-400 to-yellow-600 text-white", // Updated to gradient
     // New material-appropriate colors
     gray: "bg-gradient-to-br from-gray-400 to-gray-600 text-white",
     slate: "bg-gradient-to-br from-slate-500 to-slate-700 text-white",
@@ -70,3 +71,4 @@ const ServiceCard = ({ title, description, color, icon: Icon, features, price }:
 };
 
 export default ServiceCard;
+

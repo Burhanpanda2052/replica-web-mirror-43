@@ -1,6 +1,7 @@
 
+
 import ServiceCard from "./ServiceCard";
-import { Hammer, Truck, Shield, Wrench, Home, Cog } from "lucide-react";
+import { Hammer, Truck, Zap, Wrench, Square, Home } from "lucide-react";
 
 const ProductsSection = () => {
   const products = [
@@ -16,7 +17,7 @@ const ProductsSection = () => {
       title: "Steel & Rebar",
       description: "Quality reinforcement steel bars and structural steel for robust construction foundations.",
       color: "slate" as const,
-      icon: Shield,
+      icon: Zap, // Changed from Shield to Zap to represent steel strength
       features: ["Various grades available", "Cut to size service", "Corrosion resistant"],
       price: "1,495,000 TZS/ton"
     },
@@ -24,7 +25,7 @@ const ProductsSection = () => {
       title: "Aggregates",
       description: "Premium sand, gravel, and crushed stone for concrete mixing and construction applications.",
       color: "yellow" as const, // Changed from amber to yellow to match Sand & Gravel
-      icon: Truck,
+      icon: Truck, // Keep Truck as it represents delivery/transport of aggregates
       features: ["Washed & graded", "Multiple sizes", "Delivery included"],
       price: "57,500 TZS/m³"
     },
@@ -32,7 +33,7 @@ const ProductsSection = () => {
       title: "Building Blocks",
       description: "Durable concrete blocks and bricks for residential and commercial construction projects.",
       color: "red" as const, // Changed from brick to red to match Pavement Blocks
-      icon: Home,
+      icon: Square, // Changed from Home to Square to represent blocks
       features: ["Standard & custom sizes", "Hollow & solid options", "Weather resistant"],
       price: "1,150 TZS/block"
     },
@@ -40,7 +41,7 @@ const ProductsSection = () => {
       title: "Roofing Materials",
       description: "Complete roofing solutions including tiles, sheets, and waterproofing materials.",
       color: "zinc" as const,
-      icon: Shield,
+      icon: Home, // Changed from Shield to Home to represent roofing
       features: ["Metal & clay tiles", "Waterproof membranes", "Installation support"],
       price: "27,600 TZS/m²"
     },
@@ -75,3 +76,4 @@ const ProductsSection = () => {
 };
 
 export default ProductsSection;
+
