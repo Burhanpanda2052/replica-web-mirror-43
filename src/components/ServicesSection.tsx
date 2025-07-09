@@ -42,7 +42,7 @@ const ServicesSection = () => {
     {
       title: "Site Surveys",
       description: "Comprehensive site assessment and surveying services for optimal project planning.",
-      color: "amber" as const, // Earth tones for surveying
+      color: "yellow" as const, // Changed from amber to yellow to match Sand & Gravel/Aggregates
       icon: MapPin,
       features: ["Topographical surveys", "Soil analysis", "Feasibility studies"],
     }

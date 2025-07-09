@@ -1,3 +1,4 @@
+
 import ServiceCard from "./ServiceCard";
 import { Hammer, Truck, Shield, Wrench, Home, Cog } from "lucide-react";
 
@@ -22,7 +23,7 @@ const ProductsSection = () => {
     {
       title: "Aggregates",
       description: "Premium sand, gravel, and crushed stone for concrete mixing and construction applications.",
-      color: "amber" as const,
+      color: "yellow" as const, // Changed from amber to yellow to match Sand & Gravel
       icon: Truck,
       features: ["Washed & graded", "Multiple sizes", "Delivery included"],
       price: "57,500 TZS/m³"
@@ -30,7 +31,7 @@ const ProductsSection = () => {
     {
       title: "Building Blocks",
       description: "Durable concrete blocks and bricks for residential and commercial construction projects.",
-      color: "brick" as const,
+      color: "red" as const, // Changed from brick to red to match Pavement Blocks
       icon: Home,
       features: ["Standard & custom sizes", "Hollow & solid options", "Weather resistant"],
       price: "1,150 TZS/block"
