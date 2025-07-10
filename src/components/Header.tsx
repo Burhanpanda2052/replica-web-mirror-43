@@ -1,5 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, MapPin, Search } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -18,9 +20,8 @@ const Header = () => {
           </div>
           
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#home" className="hover:text-yellow transition-colors">Home</a>
-            <a href="#products" className="hover:text-yellow transition-colors">Products</a>
-            <a href="#services" className="hover:text-yellow transition-colors">Services</a>
+            <Link to="/" className="hover:text-yellow transition-colors">Home</Link>
+            <Link to="/products-services" className="hover:text-yellow transition-colors">Products & Services</Link>
             <a href="#about" className="hover:text-yellow transition-colors">About</a>
             <a href="#contact" className="hover:text-yellow transition-colors">Contact</a>
           </nav>
