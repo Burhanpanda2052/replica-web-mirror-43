@@ -1,79 +1,164 @@
 
-
-import ServiceCard from "./ServiceCard";
-import { Hammer, Truck, Zap, Wrench, Square, Home } from "lucide-react";
+import { useState, useMemo } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import ProductCard from "./ProductCard";
+import ProductDetailsModal from "./ProductDetailsModal";
+import { products, productCategories, getProductsByCategory, searchProducts, Product } from "@/data/products";
+import { Search, Filter, Grid, List } from "lucide-react";
 
 const ProductsSection = () => {
-  const products = [
-    {
-      title: "Premium Cement",
-      description: "High-grade Portland cement for superior strength and durability in all construction projects.",
-      color: "gray" as const,
-      icon: Hammer,
-      features: ["42.5N & 52.5N grades", "ISO certified quality", "Bulk & bag options"],
-      price: "20,000 TZS/bag"
-    },
-    {
-      title: "Steel & Rebar",
-      description: "Quality reinforcement steel bars and structural steel for robust construction foundations.",
-      color: "slate" as const,
-      icon: Zap, // Changed from Shield to Zap to represent steel strength
-      features: ["Various grades available", "Cut to size service", "Corrosion resistant"],
-      price: "1,495,000 TZS/ton"
-    },
-    {
-      title: "Aggregates",
-      description: "Premium sand, gravel, and crushed stone for concrete mixing and construction applications.",
-      color: "yellow" as const, // Changed from amber to yellow to match Sand & Gravel
-      icon: Truck, // Keep Truck as it represents delivery/transport of aggregates
-      features: ["Washed & graded", "Multiple sizes", "Delivery included"],
-      price: "57,500 TZS/m³"
-    },
-    {
-      title: "Building Blocks",
-      description: "Durable concrete blocks and bricks for residential and commercial construction projects.",
-      color: "red" as const, // Changed from brick to red to match Pavement Blocks
-      icon: Square, // Changed from Home to Square to represent blocks
-      features: ["Standard & custom sizes", "Hollow & solid options", "Weather resistant"],
-      price: "1,150 TZS/block"
-    },
-    {
-      title: "Roofing Materials",
-      description: "Complete roofing solutions including tiles, sheets, and waterproofing materials.",
-      color: "zinc" as const,
-      icon: Home, // Changed from Shield to Home to represent roofing
-      features: ["Metal & clay tiles", "Waterproof membranes", "Installation support"],
-      price: "27,600 TZS/m²"
-    },
-    {
-      title: "Hardware & Tools",
-      description: "Professional construction tools, fasteners, and hardware for all your building needs.",
-      color: "steel" as const,
-      icon: Wrench,
-      features: ["Power & hand tools", "Fasteners & fixtures", "Safety equipment"],
-      price: "11,500+ TZS"
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+
+  // Filter and search products
+  const filteredProducts = useMemo(() => {
+    let result = getProductsByCategory(selectedCategory);
+    
+    if (searchQuery.trim()) {
+      result = searchProducts(searchQuery).filter(product => 
+        selectedCategory === "all" || product.category === getProductsByCategory(selectedCategory)[0]?.category
+      );
     }
-  ];
+    
+    return result;
+  }, [selectedCategory, searchQuery]);
+
+  const handleViewDetails = (productId: string) => {
+    const product = products.find(p => p.id === productId);
+    if (product) {
+      setSelectedProduct(product);
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleQuickQuote = (productId: string) => {
+    // Integration with Quote Configurator would go here
+    console.log(`Quick quote requested for product: ${productId}`);
+    // You could dispatch an action or navigate to quote section
+  };
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
+        {/* Hero Section */}
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-4xl font-bold text-foreground">Premium Construction Materials</h2>
+          <h2 className="text-4xl font-bold text-foreground">Our Products & Services</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover our comprehensive range of high-quality construction materials, sourced from trusted suppliers and delivered across Zanzibar.
+            Professional construction materials and equipment delivered across Zanzibar. 
+            Quality guaranteed, competitive pricing, reliable service.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, index) => (
-            <ServiceCard key={index} {...product} />
+
+        {/* Search and Filter Controls */}
+        <div className="mb-8 space-y-4">
+          {/* Search Bar */}
+          <div className="flex flex-col md:flex-row gap-4 items-center">
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Search products..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <Button
+                variant={viewMode === "grid" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setViewMode("grid")}
+              >
+                <Grid className="h-4 w-4 mr-1" />
+                Grid
+              </Button>
+              <Button
+                variant={viewMode === "list" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setViewMode("list")}
+              >
+                <List className="h-4 w-4 mr-1" />
+                List
+              </Button>
+            </div>
+          </div>
+
+          {/* Category Filter */}
+          <div className="flex flex-wrap gap-2 justify-center">
+            {productCategories.map((category) => (
+              <Button
+                key={category.id}
+                variant={selectedCategory === category.id ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedCategory(category.id)}
+                className="relative"
+              >
+                {category.name}
+                <Badge variant="secondary" className="ml-2 text-xs">
+                  {category.count}
+                </Badge>
+              </Button>
+            ))}
+          </div>
+        </div>
+
+        {/* Results Summary */}
+        <div className="flex justify-between items-center mb-6">
+          <p className="text-muted-foreground">
+            Showing {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''}
+            {searchQuery && ` for "${searchQuery}"`}
+          </p>
+        </div>
+
+        {/* Products Grid */}
+        <div className={
+          viewMode === "grid" 
+            ? "grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            : "space-y-4"
+        }>
+          {filteredProducts.map((product) => (
+            <ProductCard
+              key={product.id}
+              {...product}
+              onViewDetails={handleViewDetails}
+              onQuickQuote={handleQuickQuote}
+            />
           ))}
         </div>
+
+        {/* No Results Message */}
+        {filteredProducts.length === 0 && (
+          <div className="text-center py-12">
+            <div className="text-muted-foreground mb-4">
+              <Filter className="h-12 w-12 mx-auto mb-2" />
+              <p>No products found matching your criteria.</p>
+              <p className="text-sm">Try adjusting your search or filter options.</p>
+            </div>
+            <Button variant="outline" onClick={() => {
+              setSearchQuery("");
+              setSelectedCategory("all");
+            }}>
+              Clear Filters
+            </Button>
+          </div>
+        )}
+
+        {/* Product Details Modal */}
+        <ProductDetailsModal
+          product={selectedProduct}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onQuickQuote={handleQuickQuote}
+        />
       </div>
     </section>
   );
 };
 
 export default ProductsSection;
-
