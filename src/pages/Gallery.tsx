@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Search, X, ChevronLeft, ChevronRight, Filter } from "lucide-react";
+import { Search, X, ChevronLeft, ChevronRight, Filter, ImageOff } from "lucide-react";
 
 interface GalleryImage {
   id: string;
@@ -22,6 +22,8 @@ const Gallery = () => {
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number>(0);
+  const [imageErrors, setImageErrors] = useState<Set<string>>(new Set());
+  const [imageLoading, setImageLoading] = useState<Set<string>>(new Set());
 
   const galleryImages: GalleryImage[] = [
     {
@@ -104,6 +106,29 @@ const Gallery = () => {
                          image.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
+
+  const handleImageError = (imageId: string) => {
+    console.log(`Failed to load image: ${imageId}`);
+    setImageErrors(prev => new Set(prev).add(imageId));
+    setImageLoading(prev => {
+      const newSet = new Set(prev);
+      newSet.delete(imageId);
+      return newSet;
+    });
+  };
+
+  const handleImageLoad = (imageId: string) => {
+    console.log(`Successfully loaded image: ${imageId}`);
+    setImageLoading(prev => {
+      const newSet = new Set(prev);
+      newSet.delete(imageId);
+      return newSet;
+    });
+  };
+
+  const handleImageLoadStart = (imageId: string) => {
+    setImageLoading(prev => new Set(prev).add(imageId));
+  };
 
   const openLightbox = (image: GalleryImage) => {
     const index = filteredImages.findIndex(img => img.id === image.id);
@@ -198,13 +223,35 @@ const Gallery = () => {
                 onClick={() => openLightbox(image)}
               >
                 <CardContent className="p-0">
-                  <div className="relative overflow-hidden rounded-t-lg">
-                    <img
-                      src={image.src}
-                      alt={image.title}
-                      className="w-full h-64 object-cover transition-transform duration-300 hover:scale-110"
-                      loading="lazy"
-                    />
+                  <div className="relative overflow-hidden rounded-t-lg h-64">
+                    {imageErrors.has(image.id) ? (
+                      <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                        <div className="text-center text-gray-500">
+                          <ImageOff className="h-12 w-12 mx-auto mb-2" />
+                          <p className="text-sm">Image not available</p>
+                          <p className="text-xs opacity-70 mt-1">
+                            {image.src.split('/').pop()}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        {imageLoading.has(image.id) && (
+                          <div className="absolute inset-0 bg-gray-200 flex items-center justify-center z-10">
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                          </div>
+                        )}
+                        <img
+                          src={image.src}
+                          alt={image.title}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                          loading="lazy"
+                          onLoad={() => handleImageLoad(image.id)}
+                          onError={() => handleImageError(image.id)}
+                          onLoadStart={() => handleImageLoadStart(image.id)}
+                        />
+                      </>
+                    )}
                     <div className="absolute top-3 right-3">
                       <Badge variant="secondary" className="bg-black/70 text-white">
                         {image.category}
@@ -280,11 +327,24 @@ const Gallery = () => {
             )}
 
             <div className="bg-white rounded-lg overflow-hidden">
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.title}
-                className="w-full max-h-[70vh] object-contain"
-              />
+              {imageErrors.has(selectedImage.id) ? (
+                <div className="w-full h-96 bg-gray-200 flex items-center justify-center">
+                  <div className="text-center text-gray-500">
+                    <ImageOff className="h-16 w-16 mx-auto mb-4" />
+                    <p className="text-lg">Image not available</p>
+                    <p className="text-sm opacity-70 mt-2">
+                      {selectedImage.src.split('/').pop()}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.title}
+                  className="w-full max-h-[70vh] object-contain"
+                  onError={() => handleImageError(selectedImage.id)}
+                />
+              )}
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <h2 className="text-2xl font-bold">{selectedImage.title}</h2>
