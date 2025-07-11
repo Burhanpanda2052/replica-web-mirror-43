@@ -22,6 +22,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link to="/" className="hover:text-yellow transition-colors">Home</Link>
             <Link to="/products-services" className="hover:text-yellow transition-colors">Products & Services</Link>
+            <Link to="/gallery" className="hover:text-yellow transition-colors">Gallery</Link>
             <a href="#about" className="hover:text-yellow transition-colors">About</a>
             <a href="#contact" className="hover:text-yellow transition-colors">Contact</a>
           </nav>

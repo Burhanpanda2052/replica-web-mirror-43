@@ -63,7 +63,7 @@ const CalculatorSection = () => {
         <div className="text-center space-y-4 mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Calculator className="h-8 w-8 text-primary" />
-            <h2 className="text-4xl font-bold text-foreground">Enhanced Material Calculators</h2>
+            <h2 className="text-4xl font-bold text-foreground">Material Calculators</h2>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Use our professional calculators with real-time pricing, waste factors, and accurate material estimates.

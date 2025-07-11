@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -95,7 +94,7 @@ const QuoteConfigurator = () => {
         <div className="text-center space-y-4 mb-12">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Calculator className="h-8 w-8 text-primary" />
-            <h2 className="text-4xl font-bold text-foreground">Live Quote Configurator</h2>
+            <h2 className="text-4xl font-bold text-foreground">Live Quote Generator</h2>
           </div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Build your custom quote in real-time with dynamic pricing and instant calculations.
