@@ -42,6 +42,7 @@ export const products: Product[] = [
       "Impact resistant ABS shell",
       "Available in multiple colors"
     ],
+    image: "/lovable-uploads/8d2522bb-acd3-41ca-a0e4-6dfb83d0e13b.png",
     inStock: true,
     icon: HardHat,
     technicalSpecs: {
@@ -70,6 +71,7 @@ export const products: Product[] = [
       "Breathable polyester fabric",
       "Multiple pocket design"
     ],
+    image: "/lovable-uploads/8d2522bb-acd3-41ca-a0e4-6dfb83d0e13b.png",
     inStock: true,
     icon: Shield,
     technicalSpecs: {
@@ -92,6 +94,7 @@ export const products: Product[] = [
       "Adjustable elastic strap",
       "Side ventilation system"
     ],
+    image: "/lovable-uploads/8d2522bb-acd3-41ca-a0e4-6dfb83d0e13b.png",
     inStock: true,
     icon: Shield
   },
@@ -110,6 +113,7 @@ export const products: Product[] = [
       "LED work light",
       "2-speed gearbox"
     ],
+    image: "/lovable-uploads/cce695f5-5076-41c9-9898-de24b0d0e071.png",
     inStock: true,
     icon: Hammer,
     technicalSpecs: {
@@ -132,6 +136,7 @@ export const products: Product[] = [
       "Side handle included",
       "Protective guard"
     ],
+    image: "/lovable-uploads/cce695f5-5076-41c9-9898-de24b0d0e071.png",
     inStock: true,
     icon: Settings
   },
@@ -148,6 +153,7 @@ export const products: Product[] = [
       "Overload protection",
       "Portable design"
     ],
+    image: "/lovable-uploads/15c3f008-047f-4005-a11d-8f194db66dd8.png",
     inStock: true,
     icon: Zap
   },
@@ -166,6 +172,7 @@ export const products: Product[] = [
       "Low alkali content",
       "Fast setting time"
     ],
+    image: "/lovable-uploads/453707ca-24de-4f44-a596-17fcb63b38c0.png",
     inStock: true,
     icon: Package
   },
@@ -182,6 +189,7 @@ export const products: Product[] = [
       "6m standard length",
       "Ribbed surface"
     ],
+    image: "/lovable-uploads/0eb9f44d-9d4c-404e-8419-58f2b233f99e.png",
     inStock: true,
     icon: Activity
   },
@@ -198,6 +206,7 @@ export const products: Product[] = [
       "Standard size 200x200x400mm",
       "Compressive strength 7 MPa"
     ],
+    image: "/lovable-uploads/0eb9f44d-9d4c-404e-8419-58f2b233f99e.png",
     inStock: true,
     icon: Square
   },
@@ -214,6 +223,7 @@ export const products: Product[] = [
       "3m standard length",
       "Corrugated profile"
     ],
+    image: "/lovable-uploads/0e304325-f9f3-4d30-a763-126666017f29.png",
     inStock: true,
     icon: Home
   },
@@ -232,6 +242,7 @@ export const products: Product[] = [
       "PVC insulation",
       "Rated voltage 450/750V"
     ],
+    image: "/lovable-uploads/f3fe01a7-7a32-4147-8517-2747054b616a.png",
     inStock: true,
     icon: Zap
   },
@@ -248,6 +259,7 @@ export const products: Product[] = [
       "Din rail mounting",
       "Breaking capacity 6kA"
     ],
+    image: "/lovable-uploads/f3fe01a7-7a32-4147-8517-2747054b616a.png",
     inStock: true,
     icon: Cog
   }
