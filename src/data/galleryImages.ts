@@ -45,13 +45,6 @@ export const galleryImages: GalleryImage[] = [
     description: "Ongoing construction project with material delivery and site development"
   },
   {
-    id: "7",
-    src: "/lovable-uploads/15e4c423-2dd7-45c8-921e-73ddfebc6101.png",
-    title: "Cement & Material Delivery",
-    category: "Construction Materials",
-    description: "Bulk cement and construction material storage and delivery operations"
-  },
-  {
     id: "8",
     src: "/lovable-uploads/d2f0c3ea-5ad2-451f-9264-988d0e00eea5.png",
     title: "Material Processing Conveyor",
