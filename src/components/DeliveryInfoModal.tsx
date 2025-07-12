@@ -37,11 +37,11 @@ const DeliveryInfoModal = ({ isOpen, onClose, productName }: DeliveryInfoModalPr
               <Badge variant="secondary">Stone Town</Badge>
               <Badge variant="secondary">Ng'ambo</Badge>
               <Badge variant="secondary">Michenzani</Badge>
-              <Badge variant="secondary">Mlandege</Badge>
-              <Badge variant="secondary">Kilimahewa</Badge>
               <Badge variant="secondary">Magomeni</Badge>
-              <Badge variant="secondary">Kilifi</Badge>
               <Badge variant="secondary">Kinyasini</Badge>
+              <Badge variant="secondary">Fumba</Badge>
+              <Badge variant="secondary">Matemwe</Badge>
+              <Badge variant="secondary">Paje</Badge>
             </div>
             <p className="text-sm text-muted-foreground mt-2">
               We deliver across all major areas in Zanzibar. Contact us for areas not listed above.
