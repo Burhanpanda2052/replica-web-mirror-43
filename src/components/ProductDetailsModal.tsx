@@ -1,23 +1,23 @@
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Product } from "@/data/products";
 import { ShoppingCart, Calculator, Truck, X } from "lucide-react";
-
 interface ProductDetailsModalProps {
   product: Product | null;
   isOpen: boolean;
   onClose: () => void;
   onQuickQuote?: (productId: string) => void;
 }
-
-const ProductDetailsModal = ({ product, isOpen, onClose, onQuickQuote }: ProductDetailsModalProps) => {
+const ProductDetailsModal = ({
+  product,
+  isOpen,
+  onClose,
+  onQuickQuote
+}: ProductDetailsModalProps) => {
   if (!product) return null;
-
-  return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+  return <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center justify-between">
@@ -32,24 +32,14 @@ const ProductDetailsModal = ({ product, isOpen, onClose, onQuickQuote }: Product
           {/* Product Image */}
           <div className="space-y-4">
             <div className="aspect-square bg-muted rounded-lg overflow-hidden">
-              {product.image ? (
-                <img
-                  src={product.image}
-                  alt={`${product.name} - Total Builders`}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-muted to-muted/60 flex items-center justify-center">
+              {product.image ? <img src={product.image} alt={`${product.name} - Total Builders`} className="w-full h-full object-cover" /> : <div className="w-full h-full bg-gradient-to-br from-muted to-muted/60 flex items-center justify-center">
                   <product.icon className="h-16 w-16 text-muted-foreground" />
-                </div>
-              )}
+                </div>}
             </div>
             
             {/* Stock Status */}
             <div className="flex justify-center">
-              <Badge variant={product.inStock ? "default" : "secondary"} className="text-sm">
-                {product.inStock ? "✓ In Stock - Ready for Delivery" : "⏳ Available on Order"}
-              </Badge>
+              
             </div>
           </div>
 
@@ -73,38 +63,29 @@ const ProductDetailsModal = ({ product, isOpen, onClose, onQuickQuote }: Product
             <div>
               <h3 className="font-semibold mb-3">Key Features</h3>
               <div className="grid gap-2">
-                {product.specifications.map((spec, index) => (
-                  <div key={index} className="flex items-center text-sm">
+                {product.specifications.map((spec, index) => <div key={index} className="flex items-center text-sm">
                     <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
                     {spec}
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
             {/* Technical Specifications */}
-            {product.technicalSpecs && (
-              <div>
+            {product.technicalSpecs && <div>
                 <h3 className="font-semibold mb-3">Technical Specifications</h3>
                 <div className="space-y-2">
-                  {Object.entries(product.technicalSpecs).map(([key, value]) => (
-                    <div key={key} className="flex justify-between text-sm">
+                  {Object.entries(product.technicalSpecs).map(([key, value]) => <div key={key} className="flex justify-between text-sm">
                       <span className="text-muted-foreground">{key}:</span>
                       <span className="font-medium">{value}</span>
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
-              </div>
-            )}
+              </div>}
 
             <Separator />
 
             {/* Action Buttons */}
             <div className="flex gap-3">
-              <Button 
-                className="flex-1"
-                onClick={() => onQuickQuote?.(product.id)}
-              >
+              <Button className="flex-1" onClick={() => onQuickQuote?.(product.id)}>
                 <ShoppingCart className="h-4 w-4 mr-2" />
                 Get Quote
               </Button>
@@ -120,8 +101,6 @@ const ProductDetailsModal = ({ product, isOpen, onClose, onQuickQuote }: Product
           </div>
         </div>
       </DialogContent>
-    </Dialog>
-  );
+    </Dialog>;
 };
-
 export default ProductDetailsModal;
