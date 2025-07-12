@@ -70,7 +70,7 @@ export const products: Product[] = [
       "Breathable polyester fabric",
       "Multiple pocket design"
     ],
-    image: "/lovable-uploads/f08c09e8-6c47-4ac4-86b4-6dfad229742a.png",
+    image: "/lovable-uploads/588e7549-4de8-470e-a627-bae882ebd07f.png",
     inStock: true,
     icon: Shield,
     technicalSpecs: {
@@ -109,7 +109,7 @@ export const products: Product[] = [
       "Waterproof leather upper",
       "Electrical hazard protection"
     ],
-    image: "/lovable-uploads/ff263936-aadb-4a30-9579-76420606f039.png",
+    image: "/lovable-uploads/aea9b827-8a0d-41d3-b6ca-aedb588a041c.png",
     inStock: true,
     icon: Shield,
     technicalSpecs: {
@@ -132,7 +132,7 @@ export const products: Product[] = [
       "Adjustable head straps",
       "Comfortable face seal"
     ],
-    image: "/lovable-uploads/74c1c890-420f-40b9-bf53-090915c7df8b.png",
+    image: "/lovable-uploads/6677dc9d-45d2-41a2-98f1-759e7e46e0f3.png",
     inStock: true,
     icon: Shield,
     technicalSpecs: {
@@ -211,7 +211,7 @@ export const products: Product[] = [
       "Heavy-duty steel construction",
       "Mobile design with wheels"
     ],
-    image: "/lovable-uploads/6f4b58d6-8cb0-4c86-bca8-acfc8e3e0b8b.png",
+    image: "/lovable-uploads/686e6e48-3ea6-4aec-a6fb-cee0cffa7d52.png",
     inStock: true,
     icon: Settings,
     technicalSpecs: {
@@ -234,7 +234,7 @@ export const products: Product[] = [
       "Wheeled for portability",
       "Tipping mechanism"
     ],
-    image: "/lovable-uploads/9d22ea82-16d6-4c73-8561-a08d18002654.png",
+    image: "/lovable-uploads/686e6e48-3ea6-4aec-a6fb-cee0cffa7d52.png",
     inStock: true,
     icon: RotateCcw,
     technicalSpecs: {
@@ -257,7 +257,7 @@ export const products: Product[] = [
       "4m flexible shaft",
       "Electric motor driven"
     ],
-    image: "/lovable-uploads/33082ea0-e775-4cd8-84d9-f3a2d798154c.png",
+    image: "/lovable-uploads/0b160646-0527-44a4-9baa-05109e4a451c.png",
     inStock: true,
     icon: Activity,
     technicalSpecs: {
@@ -280,7 +280,7 @@ export const products: Product[] = [
       "Lightweight design",
       "Ergonomic handles"
     ],
-    image: "/lovable-uploads/00f54661-7cc2-47a9-83e5-72e19924d7db.png",
+    image: "/lovable-uploads/befd5ec3-16ef-4c81-8fde-480dee6f7658.png",
     inStock: true,
     icon: Hammer,
     technicalSpecs: {
@@ -303,7 +303,7 @@ export const products: Product[] = [
       "Powerful gasoline engine",
       "Heavy-duty steel plate"
     ],
-    image: "/lovable-uploads/dbc440b4-f0b3-4b67-83b2-cb9a4b8012b4.png",
+    image: "/lovable-uploads/e8918445-dc15-4113-8c08-add18239f10b.png",
     inStock: true,
     icon: Settings,
     technicalSpecs: {
@@ -328,7 +328,7 @@ export const products: Product[] = [
       "Low alkali content",
       "Fast setting time"
     ],
-    image: "/lovable-uploads/c39f726a-8261-4708-af74-208617c4bba1.png",
+    image: "/lovable-uploads/7225a49c-caf9-4080-87a5-4acdd036c95f.png",
     inStock: true,
     icon: Package
   },
@@ -415,7 +415,7 @@ export const products: Product[] = [
       "Low clay content",
       "Suitable for concrete mixing"
     ],
-    image: "/lovable-uploads/f3b46e29-b613-4ca7-8044-6498a3178909.png",
+    image: "/lovable-uploads/198ba982-702a-411b-b16a-4aecff2cfd97.png",
     inStock: true,
     icon: Package,
     technicalSpecs: {
@@ -438,7 +438,7 @@ export const products: Product[] = [
       "Angular shaped particles",
       "High strength properties"
     ],
-    image: "/lovable-uploads/e63a7837-8264-4954-8dfa-0500f1128466.png",
+    image: "/lovable-uploads/b05a4916-ae60-4abe-9e95-091684a4d180.png",
     inStock: true,
     icon: Package,
     technicalSpecs: {
