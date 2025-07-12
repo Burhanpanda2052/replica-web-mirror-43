@@ -41,7 +41,6 @@ export const products: Product[] = [
       "Impact resistant ABS shell",
       "Available in multiple colors"
     ],
-    image: "/images/safety-helmet.jpg",
     inStock: true,
     icon: HardHat,
     technicalSpecs: {
@@ -93,7 +92,6 @@ export const products: Product[] = [
       "Adjustable elastic strap",
       "Side ventilation system"
     ],
-    image: "/images/safety-helmet.jpg",
     inStock: true,
     icon: Shield
   },
@@ -135,7 +133,6 @@ export const products: Product[] = [
       "LED work light",
       "2-speed gearbox"
     ],
-    image: "/images/cordless-drill.jpg",
     inStock: true,
     icon: Hammer,
     technicalSpecs: {
@@ -158,7 +155,6 @@ export const products: Product[] = [
       "Side handle included",
       "Protective guard"
     ],
-    image: "/images/angle-grinder.jpg",
     inStock: true,
     icon: Settings
   },
@@ -175,7 +171,6 @@ export const products: Product[] = [
       "Overload protection",
       "Portable design"
     ],
-    image: "/images/welding-work.jpg",
     inStock: true,
     icon: Zap
   },
@@ -303,7 +298,6 @@ export const products: Product[] = [
       "6m standard length",
       "Ribbed surface"
     ],
-    image: "/images/construction-materials.jpg",
     inStock: true,
     icon: Activity
   },
@@ -320,7 +314,6 @@ export const products: Product[] = [
       "Standard size 200x200x400mm",
       "Compressive strength 7 MPa"
     ],
-    image: "/images/concrete-blocks.jpg",
     inStock: true,
     icon: Square
   },
@@ -337,7 +330,6 @@ export const products: Product[] = [
       "3m standard length",
       "Corrugated profile"
     ],
-    image: "/images/roofing-materials.jpg",
     inStock: true,
     icon: Home
   },
@@ -425,7 +417,6 @@ export const products: Product[] = [
       "PVC insulation",
       "Rated voltage 450/750V"
     ],
-    image: "/images/electrical-cables.jpg",
     inStock: true,
     icon: Zap
   },
@@ -442,7 +433,6 @@ export const products: Product[] = [
       "Din rail mounting",
       "Breaking capacity 6kA"
     ],
-    image: "/images/circuit-breaker.jpg",
     inStock: true,
     icon: Cog
   }
