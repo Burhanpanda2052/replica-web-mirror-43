@@ -1,9 +1,28 @@
 
 import { Button } from "@/components/ui/button";
-import { Menu, Phone, MapPin, Search } from "lucide-react";
+import { Menu, Phone, MapPin, Search, User } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { User as SupabaseUser } from "@supabase/supabase-js";
 
 const Header = () => {
+  const [user, setUser] = useState<SupabaseUser | null>(null);
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
   const handleQuoteClick = () => {
     const quoteSection = document.getElementById('quote');
     if (quoteSection) {
@@ -49,6 +68,19 @@ const Header = () => {
             >
               Request Quote
             </Button>
+            {user ? (
+              <Link to="/admin">
+                <Button variant="outline" size="icon">
+                  <User className="h-4 w-4" />
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/auth">
+                <Button variant="outline">
+                  Sign In
+                </Button>
+              </Link>
+            )}
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />
             </Button>
