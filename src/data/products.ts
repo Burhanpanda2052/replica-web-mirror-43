@@ -910,6 +910,60 @@ export const products: Product[] = [
     image: "/lovable-uploads/4e3aea04-5021-4c67-9a8a-ec6d2d15cd3e.png",
     inStock: true,
     icon: Square
+  },
+  {
+    id: "work-coveralls-navy",
+    name: "Work Coveralls Navy Blue",
+    description: "Durable navy blue work coveralls for construction and industrial use",
+    category: "Safety Equipment",
+    price: "35,000 TZS",
+    unit: "per piece",
+    specifications: [
+      "100% cotton fabric",
+      "Multiple pockets for tools",
+      "Reinforced knee areas",
+      "Machine washable",
+      "Available in multiple sizes"
+    ],
+    image: "/lovable-uploads/e8c8022f-6ad6-4945-8819-24e0926edfe4.png",
+    inStock: true,
+    icon: HardHat
+  },
+  {
+    id: "yellow-safety-helmet",
+    name: "Yellow Safety Helmet",
+    description: "Professional yellow safety helmet with adjustable suspension system",
+    category: "Safety Equipment", 
+    price: "15,000 TZS",
+    unit: "per piece",
+    specifications: [
+      "Impact resistant ABS shell",
+      "4-point suspension system",
+      "Adjustable headband",
+      "Meets international safety standards",
+      "Yellow high-visibility color"
+    ],
+    image: "/lovable-uploads/f86266fa-c538-42f4-9eff-49179ffa4621.png",
+    inStock: true,
+    icon: HardHat
+  },
+  {
+    id: "dump-truck-blue",
+    name: "Dump Truck - Blue",
+    description: "Heavy-duty dump truck for construction material transportation and site logistics",
+    category: "Tools & Equipment",
+    price: "48,500,000 TZS",
+    unit: "per unit",
+    specifications: [
+      "6x4 drive configuration",
+      "15 cubic meter capacity",
+      "Hydraulic lifting system",
+      "Heavy-duty chassis",
+      "Professional driver cab"
+    ],
+    image: "/lovable-uploads/d38e0e00-0889-4b6e-8659-72dca5e1eb54.png",
+    inStock: true,
+    icon: Truck
   }
 ];
 
