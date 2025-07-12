@@ -124,11 +124,7 @@ const DeliveryInfoModal = ({ isOpen, onClose, productName }: DeliveryInfoModalPr
             <div className="space-y-2">
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <span className="text-sm">+255 123 456 789</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span className="text-sm">+255 987 654 321</span>
+                <span className="text-sm">+255 769 391 802</span>
               </div>
             </div>
             <p className="text-xs text-muted-foreground mt-2">
