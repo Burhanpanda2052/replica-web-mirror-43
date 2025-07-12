@@ -1,7 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, ShoppingCart, Calculator, Truck, Shield, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleQuoteClick = () => {
+    const quoteSection = document.getElementById('quote');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleProductsClick = () => {
+    navigate('/products-services');
+  };
+
   return (
     <section className="bg-secondary text-secondary-foreground py-20">
       <div className="container mx-auto px-4">
@@ -20,11 +34,20 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-yellow text-yellow-foreground hover:bg-yellow/90">
+              <Button 
+                size="lg" 
+                className="bg-yellow text-yellow-foreground hover:bg-yellow/90"
+                onClick={handleQuoteClick}
+              >
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Get your Quote today
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-black bg-white hover:bg-white/90">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-white text-black bg-white hover:bg-white/90"
+                onClick={handleProductsClick}
+              >
                 <Calculator className="mr-2 h-5 w-5" />
                 View our Products
               </Button>
@@ -52,19 +75,31 @@ const Hero = () => {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-gray-800">Quick Product Access</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-yellow-100 to-orange-200 min-h-[120px] flex items-center justify-center">
+                  <div 
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-yellow-100 to-orange-200 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    onClick={handleProductsClick}
+                  >
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Sand & Gravel</div>
                   </div>
-                  <div className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-gray-300 to-gray-500 min-h-[120px] flex items-center justify-center">
+                  <div 
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-gray-300 to-gray-500 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    onClick={handleProductsClick}
+                  >
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Cement</div>
                   </div>
-                  <div className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-blue-600 to-gray-700 min-h-[120px] flex items-center justify-center">
+                  <div 
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-blue-600 to-gray-700 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    onClick={handleProductsClick}
+                  >
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Iron Rods</div>
                   </div>
-                  <div className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-red-400 to-gray-600 min-h-[120px] flex items-center justify-center">
+                  <div 
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-red-400 to-gray-600 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    onClick={handleProductsClick}
+                  >
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Pavement Blocks</div>
                   </div>
