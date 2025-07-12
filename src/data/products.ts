@@ -1,4 +1,3 @@
-
 import { 
   HardHat, Shield, Hammer, Wrench, Zap, Truck, Square, 
   Home, Settings, Package, Activity, Car, Cog, Drill, RotateCcw
