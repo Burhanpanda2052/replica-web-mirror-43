@@ -4,6 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Product } from "@/data/products";
 import { ShoppingCart, Calculator, Truck, X } from "lucide-react";
+import { useState } from "react";
+import CalculatorModal from "./CalculatorModal";
+import DeliveryInfoModal from "./DeliveryInfoModal";
 interface ProductDetailsModalProps {
   product: Product | null;
   isOpen: boolean;
@@ -16,6 +19,9 @@ const ProductDetailsModal = ({
   onClose,
   onQuickQuote
 }: ProductDetailsModalProps) => {
+  const [showCalculator, setShowCalculator] = useState(false);
+  const [showDeliveryInfo, setShowDeliveryInfo] = useState(false);
+
   if (!product) return null;
   return <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
@@ -89,17 +95,31 @@ const ProductDetailsModal = ({
                 <ShoppingCart className="h-4 w-4 mr-2" />
                 Get Quote
               </Button>
-              <Button variant="outline" className="flex-1">
+              <Button variant="outline" className="flex-1" onClick={() => setShowCalculator(true)}>
                 <Calculator className="h-4 w-4 mr-2" />
                 Calculate
               </Button>
-              <Button variant="outline" className="flex-1">
+              <Button variant="outline" className="flex-1" onClick={() => setShowDeliveryInfo(true)}>
                 <Truck className="h-4 w-4 mr-2" />
                 Delivery Info
               </Button>
             </div>
           </div>
         </div>
+
+        {/* Calculator Modal */}
+        <CalculatorModal 
+          isOpen={showCalculator} 
+          onClose={() => setShowCalculator(false)}
+          productName={product.name}
+        />
+
+        {/* Delivery Info Modal */}
+        <DeliveryInfoModal 
+          isOpen={showDeliveryInfo} 
+          onClose={() => setShowDeliveryInfo(false)}
+          productName={product.name}
+        />
       </DialogContent>
     </Dialog>;
 };
