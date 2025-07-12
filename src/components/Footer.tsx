@@ -42,12 +42,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Our Products</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Cement & Concrete</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Steel & Rebar</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Aggregates</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Building Blocks</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Roofing Materials</a></li>
-              <li><a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Hardware & Tools</a></li>
+              <li><Link to="/products-services" className="opacity-90 hover:opacity-100 hover:text-yellow">Cement & Concrete</Link></li>
+              <li><Link to="/products-services" className="opacity-90 hover:opacity-100 hover:text-yellow">Steel & Rebar</Link></li>
+              <li><Link to="/products-services" className="opacity-90 hover:opacity-100 hover:text-yellow">Aggregates</Link></li>
+              <li><Link to="/products-services" className="opacity-90 hover:opacity-100 hover:text-yellow">Building Blocks</Link></li>
+              <li><Link to="/products-services" className="opacity-90 hover:opacity-100 hover:text-yellow">Roofing Materials</Link></li>
+              <li><Link to="/products-services" className="opacity-90 hover:opacity-100 hover:text-yellow">Hardware & Tools</Link></li>
             </ul>
           </div>
           
