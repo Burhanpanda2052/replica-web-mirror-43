@@ -21,43 +21,15 @@ export interface Product {
 }
 
 export const productCategories = [
-  { id: "all", name: "All Products", count: 54 },
-  { id: "safety", name: "Safety Equipment", count: 13 },
-  { id: "tools", name: "Tools & Equipment", count: 19 },
-  { id: "materials", name: "Building Materials", count: 18 },
-  { id: "electrical", name: "Electrical Supplies", count: 4 }
+  { id: "all", name: "All Products", count: 46 },
+  { id: "safety", name: "Safety Equipment", count: 5 },
+  { id: "tools", name: "Tools & Equipment", count: 11 },
+  { id: "materials", name: "Building Materials", count: 25 },
+  { id: "electrical", name: "Electrical Supplies", count: 5 }
 ];
 
 export const products: Product[] = [
   // Safety Equipment
-  {
-    id: "safety-helmet-white",
-    name: "Safety Helmet - White",
-    description: "High-impact ABS safety helmet with adjustable suspension system for construction workers.",
-    category: "Safety Equipment",
-    price: "15,000 TZS",
-    unit: "per piece",
-    specifications: [
-      "EN 397 certified protection",
-      "Adjustable 6-point suspension",
-      "Impact resistant ABS shell",
-      "Available in multiple colors"
-    ],
-    inStock: true,
-    icon: HardHat,
-    technicalSpecs: {
-      "Material": "ABS Plastic",
-      "Weight": "350g",
-      "Size": "Adjustable 52-62cm",
-      "Standard": "EN 397"
-    },
-    features: [
-      "Shock absorbing suspension",
-      "Sweat-resistant headband",
-      "Chin strap compatible",
-      "Ventilation slots"
-    ]
-  },
   {
     id: "safety-vest-reflective",
     name: "Reflective Safety Vest",
@@ -80,22 +52,6 @@ export const products: Product[] = [
       "Sizes": "S, M, L, XL, XXL",
       "Standard": "ISO 20471"
     }
-  },
-  {
-    id: "safety-goggles",
-    name: "Safety Goggles",
-    description: "Clear polycarbonate safety goggles with anti-fog coating for eye protection during construction work.",
-    category: "Safety Equipment",
-    price: "12,000 TZS",
-    unit: "per piece",
-    specifications: [
-      "Polycarbonate lens material",
-      "Anti-fog coating",
-      "Adjustable elastic strap",
-      "Side ventilation system"
-    ],
-    inStock: true,
-    icon: Shield
   },
   {
     id: "safety-boots-steel-toe",
@@ -143,62 +99,44 @@ export const products: Product[] = [
       "Standard": "EN 149"
     }
   },
-  
-  // Tools & Equipment
   {
-    id: "drill-cordless-18v",
-    name: "18V Cordless Drill",
-    description: "Professional cordless drill with lithium-ion battery, suitable for drilling and driving applications.",
-    category: "Tools & Equipment",
-    price: "185,000 TZS",
-    unit: "per set",
-    specifications: [
-      "18V Li-ion battery",
-      "13mm keyless chuck",
-      "LED work light",
-      "2-speed gearbox"
-    ],
-    inStock: true,
-    icon: Hammer,
-    technicalSpecs: {
-      "Voltage": "18V",
-      "Chuck Size": "13mm",
-      "Torque": "50 Nm",
-      "Battery": "2.0Ah Li-ion"
-    }
-  },
-  {
-    id: "angle-grinder-9inch",
-    name: "9\" Angle Grinder",
-    description: "Heavy-duty angle grinder for cutting and grinding applications in construction and metalwork.",
-    category: "Tools & Equipment",
-    price: "145,000 TZS",
+    id: "work-coveralls-navy",
+    name: "Work Coveralls Navy Blue",
+    description: "Durable navy blue work coveralls for construction and industrial use",
+    category: "Safety Equipment",
+    price: "35,000 TZS",
     unit: "per piece",
     specifications: [
-      "2200W powerful motor",
-      "9-inch disc capacity",
-      "Side handle included",
-      "Protective guard"
+      "100% cotton fabric",
+      "Multiple pockets for tools",
+      "Reinforced knee areas",
+      "Machine washable",
+      "Available in multiple sizes"
     ],
+    image: "/lovable-uploads/e8c8022f-6ad6-4945-8819-24e0926edfe4.png",
     inStock: true,
-    icon: Settings
+    icon: HardHat
   },
   {
-    id: "welding-machine-200a",
-    name: "Welding Machine 200A",
-    description: "Inverter welding machine suitable for electrode welding with digital display and overload protection.",
-    category: "Tools & Equipment",
-    price: "485,000 TZS",
-    unit: "per unit",
+    id: "yellow-safety-helmet",
+    name: "Yellow Safety Helmet",
+    description: "Professional yellow safety helmet with adjustable suspension system",
+    category: "Safety Equipment", 
+    price: "15,000 TZS",
+    unit: "per piece",
     specifications: [
-      "200A maximum output",
-      "Digital display",
-      "Overload protection",
-      "Portable design"
+      "Impact resistant ABS shell",
+      "4-point suspension system",
+      "Adjustable headband",
+      "Meets international safety standards",
+      "Yellow high-visibility color"
     ],
+    image: "/lovable-uploads/f86266fa-c538-42f4-9eff-49179ffa4621.png",
     inStock: true,
-    icon: Zap
+    icon: HardHat
   },
+  
+  // Tools & Equipment
   {
     id: "pan-mixer-diesel",
     name: "Pan Mixer with Diesel Engine",
@@ -314,6 +252,58 @@ export const products: Product[] = [
       "Weight": "75 kg"
     }
   },
+  {
+    id: "wheelbarrow-construction",
+    name: "Construction Wheelbarrow",
+    description: "Heavy-duty wheelbarrow for transporting materials around construction sites.",
+    category: "Tools & Equipment", 
+    price: "85,000 TZS",
+    unit: "per piece",
+    specifications: [
+      "100L capacity tray",
+      "Pneumatic tire wheel",
+      "Steel frame construction",
+      "Ergonomic handles"
+    ],
+    image: "/lovable-uploads/838ee4fe-0acf-4824-bb96-72e3bbef6b22.png",
+    inStock: true,
+    icon: Truck
+  },
+  {
+    id: "construction-shovel",
+    name: "Construction Shovel",
+    description: "Heavy-duty construction shovel with steel blade for digging and material handling.",
+    category: "Tools & Equipment",
+    price: "18,500 TZS", 
+    unit: "per piece",
+    specifications: [
+      "Steel blade construction",
+      "Ergonomic wooden handle",
+      "Reinforced connection",
+      "Pointed blade design"
+    ],
+    image: "/lovable-uploads/a31b2b3e-b60a-4bcf-8c8e-b4cf5a08065e.png",
+    inStock: true,
+    icon: Hammer
+  },
+  {
+    id: "dump-truck-blue",
+    name: "Dump Truck - Blue",
+    description: "Heavy-duty dump truck for construction material transportation and site logistics",
+    category: "Tools & Equipment",
+    price: "48,500,000 TZS",
+    unit: "per unit",
+    specifications: [
+      "6x4 drive configuration",
+      "15 cubic meter capacity",
+      "Hydraulic lifting system",
+      "Heavy-duty chassis",
+      "Professional driver cab"
+    ],
+    image: "/lovable-uploads/d38e0e00-0889-4b6e-8659-72dca5e1eb54.png",
+    inStock: true,
+    icon: Truck
+  },
   
   // Building Materials
   {
@@ -402,22 +392,6 @@ export const products: Product[] = [
     icon: Square
   },
   {
-    id: "roofing-sheets-iron",
-    name: "Iron Roofing Sheets",
-    description: "Galvanized corrugated iron sheets for roofing applications with rust-resistant coating.",
-    category: "Building Materials",
-    price: "27,600 TZS",
-    unit: "per m²",
-    specifications: [
-      "0.5mm thickness",
-      "Galvanized coating",
-      "3m standard length",
-      "Corrugated profile"
-    ],
-    inStock: true,
-    icon: Home
-  },
-  {
     id: "steel-drywall-profiles",
     name: "Steel Drywall Profiles",
     description: "Galvanized steel profiles for drywall framing systems, ideal for interior wall construction.",
@@ -458,40 +432,6 @@ export const products: Product[] = [
     icon: Square
   },
   {
-    id: "wheelbarrow-construction",
-    name: "Construction Wheelbarrow",
-    description: "Heavy-duty wheelbarrow for transporting materials around construction sites.",
-    category: "Tools & Equipment", 
-    price: "85,000 TZS",
-    unit: "per piece",
-    specifications: [
-      "100L capacity tray",
-      "Pneumatic tire wheel",
-      "Steel frame construction",
-      "Ergonomic handles"
-    ],
-    image: "/lovable-uploads/838ee4fe-0acf-4824-bb96-72e3bbef6b22.png",
-    inStock: true,
-    icon: Truck
-  },
-  {
-    id: "construction-shovel",
-    name: "Construction Shovel",
-    description: "Heavy-duty construction shovel with steel blade for digging and material handling.",
-    category: "Tools & Equipment",
-    price: "18,500 TZS", 
-    unit: "per piece",
-    specifications: [
-      "Steel blade construction",
-      "Ergonomic wooden handle",
-      "Reinforced connection",
-      "Pointed blade design"
-    ],
-    image: "/lovable-uploads/a31b2b3e-b60a-4bcf-8c8e-b4cf5a08065e.png",
-    inStock: true,
-    icon: Hammer
-  },
-  {
     id: "binding-wire",
     name: "Binding Wire",
     description: "Galvanized binding wire for reinforcement bar tying and construction applications.",
@@ -499,9 +439,9 @@ export const products: Product[] = [
     price: "85,000 TZS",
     unit: "per coil",
     specifications: [
-      "Galvanized coating",
       "1.6mm wire diameter",
       "25kg coil weight",
+      "Galvanized coating",
       "High tensile strength"
     ],
     image: "/lovable-uploads/fd7160c5-928d-4f98-ac4f-4a12c5ceb8b1.png",
@@ -511,15 +451,15 @@ export const products: Product[] = [
   {
     id: "metal-cutting-disc",
     name: "Metal Cutting Disc",
-    description: "High-quality abrasive cutting disc for metal cutting applications with angle grinders.",
+    description: "Professional metal cutting disc for angle grinders, suitable for steel and metal cutting applications.",
     category: "Tools & Equipment",
-    price: "4,500 TZS",
-    unit: "per piece", 
+    price: "3,500 TZS",
+    unit: "per piece",
     specifications: [
-      "230mm diameter",
-      "Metal cutting grade",
-      "Reinforced construction",
-      "High cutting speed"
+      "115mm diameter",
+      "1mm thickness",
+      "22.23mm bore",
+      "Aluminum oxide abrasive"
     ],
     image: "/lovable-uploads/d4144f83-30c6-4954-8de8-521de8d27a67.png",
     inStock: true,
@@ -528,49 +468,49 @@ export const products: Product[] = [
   {
     id: "marine-plywood",
     name: "Marine Plywood",
-    description: "Waterproof marine grade plywood suitable for construction and marine applications.",
+    description: "High-quality marine-grade plywood suitable for construction and marine applications.",
     category: "Building Materials",
     price: "45,000 TZS",
     unit: "per sheet",
     specifications: [
       "18mm thickness",
-      "Waterproof adhesive",
       "1220x2440mm size",
-      "Smooth surface finish"
+      "Waterproof phenolic glue",
+      "Hardwood construction"
     ],
     image: "/lovable-uploads/3fe13db2-cf16-43ce-a335-d8287c1760ba.png",
     inStock: true,
-    icon: Package
+    icon: Square
   },
   {
     id: "construction-timber",
     name: "Construction Timber",
-    description: "Treated construction timber suitable for framing and structural applications.",
+    description: "Premium construction timber for structural framing and general building applications.",
     category: "Building Materials",
-    price: "850,000 TZS",
-    unit: "per cubic meter",
+    price: "25,000 TZS",
+    unit: "per piece",
     specifications: [
-      "Pressure treated",
-      "Various sizes available", 
+      "50x100mm section",
+      "3m standard length",
       "Kiln dried",
-      "Structural grade"
+      "Grade A timber"
     ],
     image: "/lovable-uploads/c6e4d049-0860-4ce6-afd4-3d594f6ec007.png",
     inStock: true,
-    icon: Package
+    icon: Square
   },
   {
-    id: "square-timber",
+    id: "square-timber-beams",
     name: "Square Timber Beams",
-    description: "Square section timber beams for construction framing and structural support.",
+    description: "Square section timber beams for structural construction and framing applications.",
     category: "Building Materials", 
-    price: "95,000 TZS",
-    unit: "per cubic meter",
+    price: "35,000 TZS",
+    unit: "per piece",
     specifications: [
       "100x100mm square section",
-      "Treated hardwood",
       "4m standard length",
-      "Planed finish"
+      "Treated hardwood",
+      "Structural grade"
     ],
     image: "/lovable-uploads/f645c6a8-35d5-423c-89a7-ef24348c5a6d.png",
     inStock: true,
@@ -581,246 +521,100 @@ export const products: Product[] = [
     name: "Construction Nails",
     description: "Galvanized construction nails for general building and carpentry applications.",
     category: "Building Materials",
-    price: "8,500 TZS",
+    price: "12,500 TZS",
     unit: "per kg",
     specifications: [
+      "4-inch length",
       "Galvanized coating",
-      "75mm length",
       "Round wire nails",
-      "High carbon steel"
+      "Bulk packaging"
     ],
     image: "/lovable-uploads/c68ad5be-5ec0-4c62-9bac-6247f257d9db.png",
     inStock: true,
     icon: Hammer
   },
-  {
-    id: "construction-sand",
-    name: "Construction Sand",
-    description: "Fine aggregate sand for concrete mixing, plastering, and general construction applications.",
-    category: "Building Materials",
-    price: "45,000 TZS",
-    unit: "per cubic meter",
-    specifications: [
-      "Fine aggregate grade",
-      "Washed and screened",
-      "Low clay content",
-      "Suitable for concrete mixing"
-    ],
-    image: "/lovable-uploads/198ba982-702a-411b-b16a-4aecff2cfd97.png",
-    inStock: true,
-    icon: Package,
-    technicalSpecs: {
-      "Grade": "Fine Aggregate",
-      "Size": "0-5mm",
-      "Moisture": "<5%",
-      "Clay Content": "<3%"
-    }
-  },
-  {
-    id: "crushed-stone-aggregate",
-    name: "Crushed Stone Aggregate",
-    description: "Coarse aggregate crushed stone for concrete production and road construction applications.",
-    category: "Building Materials",
-    price: "55,000 TZS",
-    unit: "per cubic meter",
-    specifications: [
-      "Coarse aggregate grade",
-      "20mm nominal size",
-      "Angular shaped particles",
-      "High strength properties"
-    ],
-    image: "/lovable-uploads/b05a4916-ae60-4abe-9e95-091684a4d180.png",
-    inStock: true,
-    icon: Package,
-    technicalSpecs: {
-      "Grade": "Coarse Aggregate",
-      "Size": "20mm nominal",
-      "Shape": "Angular",
-      "Strength": "High crushing value"
-    }
-  },
-  
+
   // Electrical Supplies
   {
-    id: "electrical-cable-2.5mm",
-    name: "Electrical Cable 2.5mm²",
-    description: "PVC insulated copper electrical cable suitable for domestic and commercial electrical installations.",
+    id: "electrical-socket-outlet",
+    name: "Double Socket Outlet",
+    description: "Professional double socket outlet for electrical installations.",
     category: "Electrical Supplies",
     price: "8,500 TZS",
-    unit: "per meter",
-    specifications: [
-      "2.5mm² cross-section",
-      "Copper conductor",
-      "PVC insulation",
-      "Rated voltage 450/750V"
-    ],
-    inStock: true,
-    icon: Zap
-  },
-  {
-    id: "circuit-breaker-20a",
-    name: "Circuit Breaker 20A",
-    description: "Single pole MCB circuit breaker for electrical protection in residential and commercial applications.",
-    category: "Electrical Supplies",
-    price: "15,500 TZS",
     unit: "per piece",
     specifications: [
-      "20A current rating",
-      "Single pole design",
-      "Din rail mounting",
-      "Breaking capacity 6kA"
-    ],
-    inStock: true,
-    icon: Cog
-  },
-  {
-    id: "sandpaper-sheets",
-    name: "Sandpaper Assorted Grits",
-    description: "Professional grade sandpaper sheets for surface preparation and finishing",
-    category: "Tools & Equipment",
-    price: "8,000 - 25,000 TZS",
-    unit: "per pack",
-    specifications: [
-      "Multiple grit sizes (60, 120, 240, 400)",
-      "High-quality abrasive material",
-      "Suitable for wood, metal, and plastic",
-      "Tear-resistant backing"
-    ],
-    image: "/lovable-uploads/53ac14b9-35b0-423c-a843-e328388937c3.png",
-    inStock: true,
-    icon: FileText
-  },
-  {
-    id: "wire-mesh",
-    name: "Welded Wire Mesh",
-    description: "Heavy-duty welded wire mesh for concrete reinforcement and construction",
-    category: "Building Materials",
-    price: "45,000 - 120,000 TZS",
-    unit: "per sheet",
-    specifications: [
-      "Galvanized steel construction",
-      "Standard sizes: 2x1m, 3x2m",
-      "6mm wire thickness",
-      "200mm x 200mm apertures"
-    ],
-    image: "/lovable-uploads/7f751d59-9b5a-4007-91f2-b3e86fb1a8cf.png",
-    inStock: true,
-    icon: Grid3X3
-  },
-  {
-    id: "diesel-concrete-mixer",
-    name: "Diesel Concrete Mixer",
-    description: "Heavy-duty diesel-powered concrete mixer for large construction projects",
-    category: "Tools & Equipment",
-    price: "2,800,000 - 4,500,000 TZS",
-    unit: "per unit",
-    specifications: [
-      "500L mixing capacity",
-      "Diesel engine powered",
-      "Hydraulic tipping mechanism",
-      "Suitable for continuous operation"
-    ],
-    image: "/lovable-uploads/79910aee-f660-4536-a684-e8530cd56da1.png",
-    inStock: true,
-    icon: Truck
-  },
-  {
-    id: "plastic-sheeting",
-    name: "Heavy Duty Plastic Sheeting",
-    description: "Waterproof plastic membrane for construction and protection applications",
-    category: "Building Materials",
-    price: "35,000 - 85,000 TZS",
-    unit: "per 25m roll",
-    specifications: [
-      "200 micron thickness",
-      "UV resistant material",
-      "4m width standard",
-      "Waterproof and tear-resistant"
-    ],
-    image: "/lovable-uploads/12d6aafb-da39-4a6d-9bee-243ba1eed7ba.png",
-    inStock: true,
-    icon: Shield
-  },
-  {
-    id: "electrical-socket",
-    name: "Double Socket Outlet",
-    description: "British standard double socket outlet for residential and commercial use",
-    category: "Electrical Supplies",
-    price: "12,000 - 18,000 TZS",
-    unit: "per unit",
-    specifications: [
-      "13A rated capacity",
-      "With earth connection",
-      "White finish",
-      "BS 1363 compliant"
+      "13A rating",
+      "Double socket design",
+      "BS standard",
+      "White finish"
     ],
     image: "/lovable-uploads/b7a00b2d-8885-465c-895d-96f2a2fcef57.png",
     inStock: true,
     icon: Zap
   },
   {
-    id: "junction-box",
+    id: "electrical-junction-box",
     name: "Electrical Junction Box",
-    description: "4-way electrical junction box for cable connections and distribution",
+    description: "Weather-resistant electrical junction box for outdoor and indoor wiring applications.",
     category: "Electrical Supplies",
-    price: "8,000 - 15,000 TZS",
-    unit: "per unit",
+    price: "15,000 TZS",
+    unit: "per piece",
     specifications: [
-      "4-way connection points",
-      "IP65 weatherproof rating",
-      "Screw terminal connections",
-      "Impact resistant housing"
+      "IP65 weather rating",
+      "Multiple cable entries",
+      "Terminal block included",
+      "Flame retardant material"
     ],
     image: "/lovable-uploads/49dfd48f-d334-4b8e-88f8-6943f3860f5e.png",
     inStock: true,
-    icon: Box
+    icon: Zap
   },
   {
-    id: "pvc-conduit",
+    id: "pvc-electrical-conduit",
     name: "PVC Electrical Conduit",
-    description: "White PVC conduit pipes for electrical cable protection and routing",
+    description: "PVC electrical conduit pipe for cable protection and routing in building installations.",
     category: "Electrical Supplies",
-    price: "15,000 - 45,000 TZS",
-    unit: "per 3m length",
+    price: "4,500 TZS",
+    unit: "per meter",
     specifications: [
-      "20mm and 25mm diameters",
-      "UV resistant PVC material",
-      "3 meter standard lengths",
-      "Easy to cut and install"
+      "20mm diameter",
+      "Heavy duty PVC",
+      "3m standard length",
+      "Flame retardant"
     ],
     image: "/lovable-uploads/845cc3f4-9f86-47da-9d5a-dbe2f35fe20e.png",
     inStock: true,
-    icon: Cylinder
+    icon: Zap
   },
   {
     id: "house-wiring-cable",
     name: "House Wiring Cable",
-    description: "Twin and earth electrical cable for domestic house wiring applications",
+    description: "Standard house wiring cable for domestic electrical installations.",
     category: "Electrical Supplies",
-    price: "35,000 - 125,000 TZS",
-    unit: "per 100m roll",
+    price: "8,500 TZS",
+    unit: "per meter",
     specifications: [
-      "2.5mm² and 4mm² available",
-      "Live, neutral and earth conductors",
-      "PVC insulation and sheath",
-      "BS 6004 standard compliant"
+      "2.5mm² conductor",
+      "PVC insulation",
+      "Single core",
+      "Red/Black/Earth colors"
     ],
     image: "/lovable-uploads/85aba7b4-9e8d-495d-8586-902446318105.png",
     inStock: true,
     icon: Zap
   },
   {
-    id: "electrical-cable-3core",
+    id: "3-core-electrical-cable",
     name: "3-Core Electrical Cable",
-    description: "Flexible 3-core electrical cable for appliance and equipment connections",
+    description: "3-core electrical cable for power distribution and electrical installations.",
     category: "Electrical Supplies",
-    price: "28,000 - 95,000 TZS",
-    unit: "per 100m roll",
+    price: "12,500 TZS",
+    unit: "per meter",
     specifications: [
-      "3-core conductor design",
-      "Flexible PVC construction",
-      "Color coded wires",
-      "Suitable for appliances"
+      "4.0mm² conductor",
+      "3-core configuration",
+      "PVC insulation",
+      "Armored construction"
     ],
     image: "/lovable-uploads/cb5f22bc-a159-4a86-b167-611de46a8faf.png",
     inStock: true,
@@ -829,49 +623,117 @@ export const products: Product[] = [
   {
     id: "drywall-screws",
     name: "Drywall Screws",
-    description: "Professional grade drywall screws for plasterboard installation",
-    category: "Hardware",
-    price: "12,000 - 35,000 TZS",
-    unit: "per box (500-1000pcs)",
+    description: "Professional drywall screws for plasterboard and drywall installation.",
+    category: "Building Materials",
+    price: "5,500 TZS",
+    unit: "per box",
     specifications: [
-      "25mm, 32mm, 38mm lengths",
-      "Phillips head drive",
-      "Black phosphate coating",
-      "Sharp point for easy penetration"
+      "25mm length",
+      "Fine thread",
+      "Bugle head design",
+      "Phosphate coating"
     ],
     image: "/lovable-uploads/2bb08acf-0c87-4f3c-8738-7595a9952545.png",
     inStock: true,
     icon: Bolt
   },
   {
+    id: "sandpaper-assorted",
+    name: "Sandpaper Assorted Grits",
+    description: "Assorted grit sandpaper pack for surface preparation and finishing work.",
+    category: "Tools & Equipment",
+    price: "8,500 TZS",
+    unit: "per pack",
+    specifications: [
+      "Assorted grit sizes",
+      "230x280mm sheets",
+      "Aluminum oxide abrasive",
+      "Multi-pack variety"
+    ],
+    image: "/lovable-uploads/53ac14b9-35b0-423c-a843-e328388937c3.png",
+    inStock: true,
+    icon: Settings
+  },
+  {
+    id: "welded-wire-mesh",
+    name: "Welded Wire Mesh",
+    description: "Galvanized welded wire mesh for concrete reinforcement and construction applications.",
+    category: "Building Materials",
+    price: "25,000 TZS",
+    unit: "per m²",
+    specifications: [
+      "6mm wire diameter",
+      "150x150mm mesh size",
+      "Galvanized coating",
+      "2x3m standard sheets"
+    ],
+    image: "/lovable-uploads/7f751d59-9b5a-4007-91f2-b3e86fb1a8cf.png",
+    inStock: true,
+    icon: Grid3X3
+  },
+  {
+    id: "diesel-concrete-mixer",
+    name: "Diesel Concrete Mixer",
+    description: "Powerful diesel-powered concrete mixer for large construction projects.",
+    category: "Tools & Equipment",
+    price: "3,500,000 TZS",
+    unit: "per unit",
+    specifications: [
+      "Diesel engine powered",
+      "350L mixing capacity",
+      "Heavy-duty construction",
+      "Portable design"
+    ],
+    image: "/lovable-uploads/79910aee-f660-4536-a684-e8530cd56da1.png",
+    inStock: true,
+    icon: RotateCcw
+  },
+  {
+    id: "plastic-sheeting-heavy-duty",
+    name: "Heavy Duty Plastic Sheeting",
+    description: "Heavy-duty plastic sheeting for moisture barriers and construction protection.",
+    category: "Building Materials",
+    price: "15,000 TZS",
+    unit: "per roll",
+    specifications: [
+      "1000 gauge thickness",
+      "4m width x 25m length",
+      "UV stabilized",
+      "Black color"
+    ],
+    image: "/lovable-uploads/12d6aafb-da39-4a6d-9bee-243ba1eed7ba.png",
+    inStock: true,
+    icon: Package
+  },
+  {
     id: "galvanized-nails",
     name: "Galvanized Construction Nails",
-    description: "High-quality galvanized steel nails for various construction and carpentry applications.",
+    description: "Premium galvanized construction nails for outdoor and indoor building applications.",
     category: "Building Materials",
-    price: "8,500 TZS",
+    price: "15,000 TZS",
     unit: "per kg",
     specifications: [
-      "Galvanized coating",
-      "Various sizes available",
-      "Corrosion resistant",
-      "Round head design"
+      "3-inch length",
+      "Hot-dip galvanized",
+      "Round head design",
+      "High carbon steel"
     ],
     image: "/lovable-uploads/274bb2c8-e22d-4d09-a1aa-b7e16693ec9d.png",
     inStock: true,
-    icon: Bolt
+    icon: Hammer
   },
   {
-    id: "concrete-blocks-hollow",
+    id: "hollow-concrete-blocks",
     name: "Hollow Concrete Blocks",
-    description: "Standard hollow concrete masonry blocks for efficient wall construction with thermal insulation properties.",
+    description: "Standard hollow concrete blocks for construction and masonry work.",
     category: "Building Materials",
-    price: "1,250 TZS",
+    price: "1,200 TZS",
     unit: "per block",
     specifications: [
+      "8-inch thickness",
       "Hollow core design",
-      "Standard dimensions",
-      "Thermal insulation",
-      "Load bearing capacity"
+      "390x190x190mm size",
+      "Grade A concrete"
     ],
     image: "/lovable-uploads/651a1f31-cc8c-4836-b991-05485f822891.png",
     inStock: true,
@@ -880,15 +742,15 @@ export const products: Product[] = [
   {
     id: "insulation-panels",
     name: "Insulation Panels",
-    description: "High-performance thermal insulation panels for building envelope applications.",
+    description: "Thermal insulation panels for energy-efficient construction and building applications.",
     category: "Building Materials",
     price: "35,000 TZS",
     unit: "per m²",
     specifications: [
-      "Thermal insulation core",
-      "Moisture resistant",
-      "Easy installation",
-      "Fire retardant properties"
+      "50mm thickness",
+      "Polyurethane core",
+      "Metal facing",
+      "Fire resistant"
     ],
     image: "/lovable-uploads/dd4b23c6-8f35-4c8d-9f70-c118254ef022.png",
     inStock: true,
@@ -910,60 +772,6 @@ export const products: Product[] = [
     image: "/lovable-uploads/4e3aea04-5021-4c67-9a8a-ec6d2d15cd3e.png",
     inStock: true,
     icon: Square
-  },
-  {
-    id: "work-coveralls-navy",
-    name: "Work Coveralls Navy Blue",
-    description: "Durable navy blue work coveralls for construction and industrial use",
-    category: "Safety Equipment",
-    price: "35,000 TZS",
-    unit: "per piece",
-    specifications: [
-      "100% cotton fabric",
-      "Multiple pockets for tools",
-      "Reinforced knee areas",
-      "Machine washable",
-      "Available in multiple sizes"
-    ],
-    image: "/lovable-uploads/e8c8022f-6ad6-4945-8819-24e0926edfe4.png",
-    inStock: true,
-    icon: HardHat
-  },
-  {
-    id: "yellow-safety-helmet",
-    name: "Yellow Safety Helmet",
-    description: "Professional yellow safety helmet with adjustable suspension system",
-    category: "Safety Equipment", 
-    price: "15,000 TZS",
-    unit: "per piece",
-    specifications: [
-      "Impact resistant ABS shell",
-      "4-point suspension system",
-      "Adjustable headband",
-      "Meets international safety standards",
-      "Yellow high-visibility color"
-    ],
-    image: "/lovable-uploads/f86266fa-c538-42f4-9eff-49179ffa4621.png",
-    inStock: true,
-    icon: HardHat
-  },
-  {
-    id: "dump-truck-blue",
-    name: "Dump Truck - Blue",
-    description: "Heavy-duty dump truck for construction material transportation and site logistics",
-    category: "Tools & Equipment",
-    price: "48,500,000 TZS",
-    unit: "per unit",
-    specifications: [
-      "6x4 drive configuration",
-      "15 cubic meter capacity",
-      "Hydraulic lifting system",
-      "Heavy-duty chassis",
-      "Professional driver cab"
-    ],
-    image: "/lovable-uploads/d38e0e00-0889-4b6e-8659-72dca5e1eb54.png",
-    inStock: true,
-    icon: Truck
   }
 ];
 
