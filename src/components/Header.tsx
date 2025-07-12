@@ -4,6 +4,13 @@ import { Menu, Phone, MapPin, Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const handleQuoteClick = () => {
+    const quoteSection = document.getElementById('quote');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="bg-secondary text-secondary-foreground">
       {/* Main header */}
@@ -36,7 +43,10 @@ const Header = () => {
               />
               <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/60" />
             </div>
-            <Button className="bg-yellow text-yellow-foreground hover:bg-yellow/90 font-semibold">
+            <Button 
+              className="bg-yellow text-yellow-foreground hover:bg-yellow/90 font-semibold"
+              onClick={handleQuoteClick}
+            >
               Request Quote
             </Button>
             <Button variant="ghost" size="icon" className="lg:hidden">
