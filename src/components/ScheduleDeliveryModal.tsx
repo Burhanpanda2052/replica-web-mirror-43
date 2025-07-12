@@ -25,11 +25,6 @@ const ScheduleDeliveryModal = ({ isOpen, onClose, productName, productId }: Sche
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const deliveryAreas = [
-    "Stone Town", "Ng'ambo", "Michenzani", "Magomeni", 
-    "Kinyasini", "Fumba", "Matemwe", "Paje"
-  ];
-
   const timeSlots = [
     "8:00 AM - 10:00 AM",
     "10:00 AM - 12:00 PM", 
@@ -135,16 +130,12 @@ const ScheduleDeliveryModal = ({ isOpen, onClose, productName, productId }: Sche
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="delivery_area">Delivery Area *</Label>
-                <Select name="delivery_area" required>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select area" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {deliveryAreas.map((area) => (
-                      <SelectItem key={area} value={area}>{area}</SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                <Input 
+                  id="delivery_area" 
+                  name="delivery_area" 
+                  placeholder="Enter your delivery area (e.g., Stone Town, Ng'ambo, Michenzani...)" 
+                  required 
+                />
               </div>
 
               <div>
