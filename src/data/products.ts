@@ -393,6 +393,7 @@ export const products: Product[] = [
       "Corrosion resistant",
       "Easy installation system"
     ],
+    image: "/lovable-uploads/111b930b-46ec-4786-8664-a05955cd4c80.png",
     inStock: true,
     icon: Square,
     technicalSpecs: {
@@ -401,6 +402,159 @@ export const products: Product[] = [
       "Profiles": "C-stud, U-track",
       "Length": "3m standard"
     }
+  },
+  {
+    id: "gypsum-drywall-boards",
+    name: "Gypsum Drywall Boards",
+    description: "Standard gypsum plasterboard sheets for interior wall and ceiling construction.",
+    category: "Building Materials",
+    price: "12,500 TZS",
+    unit: "per sheet",
+    specifications: [
+      "12.5mm thickness",
+      "Standard 1200x2400mm size",
+      "Fire resistant properties",
+      "Smooth finish surface"
+    ],
+    image: "/lovable-uploads/10e2766f-0ce2-45ea-a95f-145326af96b3.png",
+    inStock: true,
+    icon: Square
+  },
+  {
+    id: "wheelbarrow-construction",
+    name: "Construction Wheelbarrow",
+    description: "Heavy-duty wheelbarrow for transporting materials around construction sites.",
+    category: "Tools & Equipment", 
+    price: "85,000 TZS",
+    unit: "per piece",
+    specifications: [
+      "100L capacity tray",
+      "Pneumatic tire wheel",
+      "Steel frame construction",
+      "Ergonomic handles"
+    ],
+    image: "/lovable-uploads/838ee4fe-0acf-4824-bb96-72e3bbef6b22.png",
+    inStock: true,
+    icon: Truck
+  },
+  {
+    id: "construction-shovel",
+    name: "Construction Shovel",
+    description: "Heavy-duty construction shovel with steel blade for digging and material handling.",
+    category: "Tools & Equipment",
+    price: "18,500 TZS", 
+    unit: "per piece",
+    specifications: [
+      "Steel blade construction",
+      "Ergonomic wooden handle",
+      "Reinforced connection",
+      "Pointed blade design"
+    ],
+    image: "/lovable-uploads/a31b2b3e-b60a-4bcf-8c8e-b4cf5a08065e.png",
+    inStock: true,
+    icon: Hammer
+  },
+  {
+    id: "binding-wire",
+    name: "Binding Wire",
+    description: "Galvanized binding wire for reinforcement bar tying and construction applications.",
+    category: "Building Materials",
+    price: "85,000 TZS",
+    unit: "per coil",
+    specifications: [
+      "Galvanized coating",
+      "1.6mm wire diameter",
+      "25kg coil weight",
+      "High tensile strength"
+    ],
+    image: "/lovable-uploads/fd7160c5-928d-4f98-ac4f-4a12c5ceb8b1.png",
+    inStock: true,
+    icon: Activity
+  },
+  {
+    id: "metal-cutting-disc",
+    name: "Metal Cutting Disc",
+    description: "High-quality abrasive cutting disc for metal cutting applications with angle grinders.",
+    category: "Tools & Equipment",
+    price: "4,500 TZS",
+    unit: "per piece", 
+    specifications: [
+      "230mm diameter",
+      "Metal cutting grade",
+      "Reinforced construction",
+      "High cutting speed"
+    ],
+    image: "/lovable-uploads/d4144f83-30c6-4954-8de8-521de8d27a67.png",
+    inStock: true,
+    icon: Settings
+  },
+  {
+    id: "marine-plywood",
+    name: "Marine Plywood",
+    description: "Waterproof marine grade plywood suitable for construction and marine applications.",
+    category: "Building Materials",
+    price: "45,000 TZS",
+    unit: "per sheet",
+    specifications: [
+      "18mm thickness",
+      "Waterproof adhesive",
+      "1220x2440mm size",
+      "Smooth surface finish"
+    ],
+    image: "/lovable-uploads/3fe13db2-cf16-43ce-a335-d8287c1760ba.png",
+    inStock: true,
+    icon: Package
+  },
+  {
+    id: "construction-timber",
+    name: "Construction Timber",
+    description: "Treated construction timber suitable for framing and structural applications.",
+    category: "Building Materials",
+    price: "850,000 TZS",
+    unit: "per cubic meter",
+    specifications: [
+      "Pressure treated",
+      "Various sizes available", 
+      "Kiln dried",
+      "Structural grade"
+    ],
+    image: "/lovable-uploads/c6e4d049-0860-4ce6-afd4-3d594f6ec007.png",
+    inStock: true,
+    icon: Package
+  },
+  {
+    id: "square-timber",
+    name: "Square Timber Beams",
+    description: "Square section timber beams for construction framing and structural support.",
+    category: "Building Materials", 
+    price: "95,000 TZS",
+    unit: "per cubic meter",
+    specifications: [
+      "100x100mm square section",
+      "Treated hardwood",
+      "4m standard length",
+      "Planed finish"
+    ],
+    image: "/lovable-uploads/f645c6a8-35d5-423c-89a7-ef24348c5a6d.png",
+    inStock: true,
+    icon: Square
+  },
+  {
+    id: "construction-nails",
+    name: "Construction Nails",
+    description: "Galvanized construction nails for general building and carpentry applications.",
+    category: "Building Materials",
+    price: "8,500 TZS",
+    unit: "per kg",
+    specifications: [
+      "Galvanized coating",
+      "75mm length",
+      "Round wire nails",
+      "High carbon steel"
+    ],
+    image: "/lovable-uploads/c68ad5be-5ec0-4c62-9bac-6247f257d9db.png",
+    inStock: true,
+    icon: Hammer
   },
   {
     id: "construction-sand",
