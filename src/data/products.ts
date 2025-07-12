@@ -317,7 +317,41 @@ export const products: Product[] = [
   
   // Building Materials
   {
-    id: "portland-cement-50kg",
+    id: "power-cement-50kg",
+    name: "Power Cement 50kg",
+    description: "Power Cement OPC (Ordinary Portland Cement) with ultimate strength formula for superior construction quality.",
+    category: "Building Materials",
+    price: "18,500 TZS",
+    unit: "per bag",
+    specifications: [
+      "Grade 42.5N strength",
+      "OPC formulation",
+      "Ultimate strength formula",
+      "Premium quality cement"
+    ],
+    image: "/lovable-uploads/b3ff6a14-f80a-4b77-8bf1-a8f84c6f73b2.png",
+    inStock: true,
+    icon: Package
+  },
+  {
+    id: "dangote-cement-50kg",
+    name: "Dangote Portland Cement 50kg",
+    description: "Premium Dangote Portland cement with 3X strength for all construction applications.",
+    category: "Building Materials", 
+    price: "19,500 TZS",
+    unit: "per bag",
+    specifications: [
+      "Grade 42.5R strength",
+      "3X strength formula",
+      "Fast setting time",
+      "Superior quality cement"
+    ],
+    image: "/lovable-uploads/440de601-9f5e-4780-af1e-1800d54a6f1f.png",
+    inStock: true,
+    icon: Package
+  },
+  {
+    id: "raysut-cement-50kg", 
     name: "Raysut Cement 50kg",
     description: "Premium Raysut Portland cement suitable for all construction applications including foundations and structures.",
     category: "Building Materials",
@@ -346,6 +380,7 @@ export const products: Product[] = [
       "6m standard length",
       "Ribbed surface"
     ],
+    image: "/lovable-uploads/fb5d46d7-97fe-4da9-88fd-3717077846f3.png",
     inStock: true,
     icon: Activity
   },
@@ -362,6 +397,7 @@ export const products: Product[] = [
       "Standard size 200x200x400mm",
       "Compressive strength 7 MPa"
     ],
+    image: "/lovable-uploads/693db58b-9801-4231-91aa-3174198e92fc.png",
     inStock: true,
     icon: Square
   },
@@ -806,6 +842,74 @@ export const products: Product[] = [
     image: "/lovable-uploads/2bb08acf-0c87-4f3c-8738-7595a9952545.png",
     inStock: true,
     icon: Bolt
+  },
+  {
+    id: "galvanized-nails",
+    name: "Galvanized Construction Nails",
+    description: "High-quality galvanized steel nails for various construction and carpentry applications.",
+    category: "Building Materials",
+    price: "8,500 TZS",
+    unit: "per kg",
+    specifications: [
+      "Galvanized coating",
+      "Various sizes available",
+      "Corrosion resistant",
+      "Round head design"
+    ],
+    image: "/lovable-uploads/274bb2c8-e22d-4d09-a1aa-b7e16693ec9d.png",
+    inStock: true,
+    icon: Bolt
+  },
+  {
+    id: "concrete-blocks-hollow",
+    name: "Hollow Concrete Blocks",
+    description: "Standard hollow concrete masonry blocks for efficient wall construction with thermal insulation properties.",
+    category: "Building Materials",
+    price: "1,250 TZS",
+    unit: "per block",
+    specifications: [
+      "Hollow core design",
+      "Standard dimensions",
+      "Thermal insulation",
+      "Load bearing capacity"
+    ],
+    image: "/lovable-uploads/651a1f31-cc8c-4836-b991-05485f822891.png",
+    inStock: true,
+    icon: Square
+  },
+  {
+    id: "insulation-panels",
+    name: "Insulation Panels",
+    description: "High-performance thermal insulation panels for building envelope applications.",
+    category: "Building Materials",
+    price: "35,000 TZS",
+    unit: "per m²",
+    specifications: [
+      "Thermal insulation core",
+      "Moisture resistant",
+      "Easy installation",
+      "Fire retardant properties"
+    ],
+    image: "/lovable-uploads/dd4b23c6-8f35-4c8d-9f70-c118254ef022.png",
+    inStock: true,
+    icon: Square
+  },
+  {
+    id: "fiber-cement-boards",
+    name: "Fiber Cement Boards",
+    description: "Durable fiber cement boards for exterior and interior construction applications.",
+    category: "Building Materials",
+    price: "28,500 TZS",
+    unit: "per sheet",
+    specifications: [
+      "Fiber reinforced cement",
+      "Weather resistant",
+      "Fire resistant properties",
+      "Smooth finish surface"
+    ],
+    image: "/lovable-uploads/4e3aea04-5021-4c67-9a8a-ec6d2d15cd3e.png",
+    inStock: true,
+    icon: Square
   }
 ];
 
