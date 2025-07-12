@@ -21,9 +21,9 @@ export interface Product {
 }
 
 export const productCategories = [
-  { id: "all", name: "All Products", count: 46 },
+  { id: "all", name: "All Products", count: 45 },
   { id: "safety", name: "Safety Equipment", count: 5 },
-  { id: "tools", name: "Tools & Equipment", count: 11 },
+  { id: "tools", name: "Tools & Equipment", count: 10 },
   { id: "materials", name: "Building Materials", count: 25 },
   { id: "electrical", name: "Electrical Supplies", count: 5 }
 ];
@@ -137,29 +137,6 @@ export const products: Product[] = [
   },
   
   // Tools & Equipment
-  {
-    id: "pan-mixer-diesel",
-    name: "Pan Mixer with Diesel Engine",
-    description: "Heavy-duty diesel-powered pan mixer for large-scale concrete and mortar mixing operations.",
-    category: "Tools & Equipment",
-    price: "12,500,000 TZS",
-    unit: "per unit",
-    specifications: [
-      "Diesel engine powered",
-      "500L mixing capacity",
-      "Heavy-duty steel construction",
-      "Mobile design with wheels"
-    ],
-    image: "/lovable-uploads/686e6e48-3ea6-4aec-a6fb-cee0cffa7d52.png",
-    inStock: true,
-    icon: Settings,
-    technicalSpecs: {
-      "Engine Type": "Diesel",
-      "Capacity": "500 Liters",
-      "Power": "12 HP",
-      "Weight": "850 kg"
-    }
-  },
   {
     id: "concrete-mixer-portable",
     name: "Portable Concrete Mixer",
