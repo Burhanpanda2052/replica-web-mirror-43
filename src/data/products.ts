@@ -1,3 +1,4 @@
+
 import { 
   HardHat, Shield, Hammer, Wrench, Zap, Truck, Square, 
   Home, Settings, Package, Activity, Car, Cog, Drill, RotateCcw
@@ -19,9 +20,9 @@ export interface Product {
 }
 
 export const productCategories = [
-  { id: "all", name: "All Products", count: 50 },
-  { id: "safety", name: "Safety Equipment", count: 9 },
-  { id: "tools", name: "Tools & Equipment", count: 16 },
+  { id: "all", name: "All Products", count: 52 },
+  { id: "safety", name: "Safety Equipment", count: 11 },
+  { id: "tools", name: "Tools & Equipment", count: 17 },
   { id: "materials", name: "Building Materials", count: 18 },
   { id: "electrical", name: "Electrical Supplies", count: 7 }
 ];
@@ -69,7 +70,7 @@ export const products: Product[] = [
       "Breathable polyester fabric",
       "Multiple pocket design"
     ],
-    image: "/lovable-uploads/e95c9da8-2717-4280-94cb-35790619c883.png",
+    image: "/lovable-uploads/f08c09e8-6c47-4ac4-86b4-6dfad229742a.png",
     inStock: true,
     icon: Shield,
     technicalSpecs: {
@@ -108,7 +109,7 @@ export const products: Product[] = [
       "Waterproof leather upper",
       "Electrical hazard protection"
     ],
-    image: "/lovable-uploads/2382541b-8266-4fa8-8b36-12e90cb9719e.png",
+    image: "/lovable-uploads/ff263936-aadb-4a30-9579-76420606f039.png",
     inStock: true,
     icon: Shield,
     technicalSpecs: {
@@ -116,6 +117,29 @@ export const products: Product[] = [
       "Protection": "Steel Toe Cap",
       "Sizes": "39-47 EU",
       "Standard": "EN ISO 20345"
+    }
+  },
+  {
+    id: "dust-protection-mask",
+    name: "Dust Protection Mask",
+    description: "Professional respiratory protection mask for construction dust and particles with replaceable filter cartridges.",
+    category: "Safety Equipment",
+    price: "18,000 TZS",
+    unit: "per piece",
+    specifications: [
+      "P2 filtration efficiency",
+      "Replaceable filter cartridges",
+      "Adjustable head straps",
+      "Comfortable face seal"
+    ],
+    image: "/lovable-uploads/74c1c890-420f-40b9-bf53-090915c7df8b.png",
+    inStock: true,
+    icon: Shield,
+    technicalSpecs: {
+      "Filter Type": "P2 Particulate",
+      "Protection Level": "95% efficiency",
+      "Weight": "180g",
+      "Standard": "EN 149"
     }
   },
   
@@ -210,7 +234,7 @@ export const products: Product[] = [
       "Wheeled for portability",
       "Tipping mechanism"
     ],
-    image: "/lovable-uploads/f3b89c6a-b3cf-4a59-beb4-c1b53a58be1f.png",
+    image: "/lovable-uploads/9d22ea82-16d6-4c73-8561-a08d18002654.png",
     inStock: true,
     icon: RotateCcw,
     technicalSpecs: {
@@ -233,7 +257,7 @@ export const products: Product[] = [
       "4m flexible shaft",
       "Electric motor driven"
     ],
-    image: "/lovable-uploads/a13fb6f3-6de4-4651-9d40-5a0b24a4c633.png",
+    image: "/lovable-uploads/33082ea0-e775-4cd8-84d9-f3a2d798154c.png",
     inStock: true,
     icon: Activity,
     technicalSpecs: {
@@ -256,7 +280,7 @@ export const products: Product[] = [
       "Lightweight design",
       "Ergonomic handles"
     ],
-    image: "/lovable-uploads/09c7b9e9-8c82-450b-a7f1-20c0ddf35a89.png",
+    image: "/lovable-uploads/00f54661-7cc2-47a9-83e5-72e19924d7db.png",
     inStock: true,
     icon: Hammer,
     technicalSpecs: {
@@ -266,12 +290,35 @@ export const products: Product[] = [
       "Air Consumption": "0.3 m³/min"
     }
   },
+  {
+    id: "plate-compactor",
+    name: "Plate Compactor Altrad PC 20/45",
+    description: "Heavy-duty plate compactor for asphalt and soil compaction with powerful engine and reversible operation.",
+    category: "Tools & Equipment",
+    price: "275,000 TZS",
+    unit: "per unit",
+    specifications: [
+      "20/45 model specification",
+      "Reversible operation",
+      "Powerful gasoline engine",
+      "Heavy-duty steel plate"
+    ],
+    image: "/lovable-uploads/dbc440b4-f0b3-4b67-83b2-cb9a4b8012b4.png",
+    inStock: true,
+    icon: Settings,
+    technicalSpecs: {
+      "Model": "PC 20/45",
+      "Engine": "Gasoline",
+      "Plate Size": "450mm",
+      "Weight": "75 kg"
+    }
+  },
   
   // Building Materials
   {
     id: "portland-cement-50kg",
-    name: "Portland Cement 50kg",
-    description: "High-grade Portland cement suitable for all construction applications including foundations and structures.",
+    name: "Raysut Cement 50kg",
+    description: "Premium Raysut Portland cement suitable for all construction applications including foundations and structures.",
     category: "Building Materials",
     price: "20,000 TZS",
     unit: "per bag",
@@ -281,7 +328,7 @@ export const products: Product[] = [
       "Low alkali content",
       "Fast setting time"
     ],
-    image: "/lovable-uploads/d90a1df3-9de6-4dd4-933f-d16f38e792d4.png",
+    image: "/lovable-uploads/c39f726a-8261-4708-af74-208617c4bba1.png",
     inStock: true,
     icon: Package
   },
@@ -369,7 +416,7 @@ export const products: Product[] = [
       "Low clay content",
       "Suitable for concrete mixing"
     ],
-    image: "/lovable-uploads/c4e5e1a2-9b2f-4d8e-8f7e-1a2b3c4d5e6f.png",
+    image: "/lovable-uploads/f3b46e29-b613-4ca7-8044-6498a3178909.png",
     inStock: true,
     icon: Package,
     technicalSpecs: {
@@ -392,7 +439,7 @@ export const products: Product[] = [
       "Angular shaped particles",
       "High strength properties"
     ],
-    image: "/lovable-uploads/b3a4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d.png",
+    image: "/lovable-uploads/e63a7837-8264-4954-8dfa-0500f1128466.png",
     inStock: true,
     icon: Package,
     technicalSpecs: {
