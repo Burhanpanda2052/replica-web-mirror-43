@@ -2,15 +2,19 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Truck, Clock, MapPin, Phone, Info, X } from "lucide-react";
+import { Truck, Clock, MapPin, Phone, Info, X, Calendar } from "lucide-react";
+import { useState } from "react";
+import ScheduleDeliveryModal from "./ScheduleDeliveryModal";
 
 interface DeliveryInfoModalProps {
   isOpen: boolean;
   onClose: () => void;
   productName?: string;
+  productId?: string;
 }
 
-const DeliveryInfoModal = ({ isOpen, onClose, productName }: DeliveryInfoModalProps) => {
+const DeliveryInfoModal = ({ isOpen, onClose, productName, productId }: DeliveryInfoModalProps) => {
+  const [showScheduleModal, setShowScheduleModal] = useState(false);
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
@@ -132,17 +136,22 @@ const DeliveryInfoModal = ({ isOpen, onClose, productName }: DeliveryInfoModalPr
             </p>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex gap-3">
-            <Button className="flex-1">
-              <Phone className="h-4 w-4 mr-2" />
-              Call for Delivery
-            </Button>
-            <Button variant="outline" className="flex-1">
+          {/* Action Button */}
+          <div className="flex justify-center">
+            <Button className="w-full max-w-md" onClick={() => setShowScheduleModal(true)}>
+              <Calendar className="h-4 w-4 mr-2" />
               Schedule Delivery
             </Button>
           </div>
         </div>
+
+        {/* Schedule Delivery Modal */}
+        <ScheduleDeliveryModal 
+          isOpen={showScheduleModal} 
+          onClose={() => setShowScheduleModal(false)}
+          productName={productName}
+          productId={productId}
+        />
       </DialogContent>
     </Dialog>
   );

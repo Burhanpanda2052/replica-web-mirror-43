@@ -119,6 +119,7 @@ const ProductDetailsModal = ({
           isOpen={showDeliveryInfo} 
           onClose={() => setShowDeliveryInfo(false)}
           productName={product.name}
+          productId={product.id}
         />
       </DialogContent>
     </Dialog>;
