@@ -188,15 +188,17 @@ export const products: Product[] = [
   {
     id: "concrete-vibrator",
     name: "Concrete Vibrator",
-    description: "High-frequency concrete vibrator for removing air bubbles and ensuring proper concrete consolidation.",
+    description: "High-frequency concrete vibrator for hire for removing air bubbles and ensuring proper concrete consolidation. Hired with an experienced operator. Transportation can be arranged.",
     category: "Tools & Equipment",
     price: "50,000 TZS",
-    unit: "per unit",
+    unit: "per day",
     specifications: [
       "High-frequency vibration",
       "35mm vibrator head",
       "4m flexible shaft",
-      "Electric motor driven"
+      "Electric motor driven",
+      "Includes operator service",
+      "Transportation available"
     ],
     image: "/lovable-uploads/0b160646-0527-44a4-9baa-05109e4a451c.png",
     inStock: true,
@@ -211,15 +213,17 @@ export const products: Product[] = [
   {
     id: "pneumatic-rammer",
     name: "Pneumatic Rammer",
-    description: "Air-powered rammer for soil compaction and ground preparation in construction projects.",
+    description: "Air-powered rammer for hire for soil compaction and ground preparation in construction projects. Hired with an experienced operator. Transportation can be arranged.",
     category: "Tools & Equipment",
     price: "80,000 TZS",
-    unit: "per unit",
+    unit: "per day",
     specifications: [
       "Pneumatic operation",
       "125mm compaction foot",
       "Lightweight design",
-      "Ergonomic handles"
+      "Ergonomic handles",
+      "Includes operator service",
+      "Transportation available"
     ],
     image: "/lovable-uploads/befd5ec3-16ef-4c81-8fde-480dee6f7658.png",
     inStock: true,
@@ -234,15 +238,17 @@ export const products: Product[] = [
   {
     id: "plate-compactor",
     name: "Plate Compactor Altrad PC 20/45",
-    description: "Heavy-duty plate compactor for asphalt and soil compaction with powerful engine and reversible operation.",
+    description: "Heavy-duty plate compactor for hire for asphalt and soil compaction with powerful engine and reversible operation. Hired with an experienced operator. Transportation can be arranged.",
     category: "Tools & Equipment",
     price: "150,000 TZS",
-    unit: "per unit",
+    unit: "per day",
     specifications: [
       "20/45 model specification",
       "Reversible operation",
       "Powerful gasoline engine",
-      "Heavy-duty steel plate"
+      "Heavy-duty steel plate",
+      "Includes operator service",
+      "Transportation available"
     ],
     image: "/lovable-uploads/e8918445-dc15-4113-8c08-add18239f10b.png",
     inStock: true,
