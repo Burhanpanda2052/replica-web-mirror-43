@@ -20,11 +20,11 @@ export interface Product {
 }
 
 export const productCategories = [
-  { id: "all", name: "All Products", count: 52 },
-  { id: "safety", name: "Safety Equipment", count: 11 },
-  { id: "tools", name: "Tools & Equipment", count: 17 },
+  { id: "all", name: "All Products", count: 54 },
+  { id: "safety", name: "Safety Equipment", count: 13 },
+  { id: "tools", name: "Tools & Equipment", count: 19 },
   { id: "materials", name: "Building Materials", count: 18 },
-  { id: "electrical", name: "Electrical Supplies", count: 7 }
+  { id: "electrical", name: "Electrical Supplies", count: 4 }
 ];
 
 export const products: Product[] = [
@@ -393,7 +393,6 @@ export const products: Product[] = [
       "Corrosion resistant",
       "Easy installation system"
     ],
-    image: "/lovable-uploads/e7e0e7c0-8a56-49b8-9c68-5e4b8e20a7e3.png",
     inStock: true,
     icon: Square,
     technicalSpecs: {
