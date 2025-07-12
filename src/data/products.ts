@@ -163,15 +163,17 @@ export const products: Product[] = [
   {
     id: "concrete-mixer-portable",
     name: "Portable Concrete Mixer",
-    description: "Electric portable concrete mixer with wheeled design for easy site mobility and concrete preparation.",
+    description: "Electric portable concrete mixer for hire with wheeled design for easy site mobility and concrete preparation. Hired with an experienced operator. Transportation of the mixer can be arranged.",
     category: "Tools & Equipment",
     price: "90,000 TZS",
-    unit: "per unit",
+    unit: "per day",
     specifications: [
       "Electric motor operation",
       "120L mixing drum capacity",
       "Wheeled for portability",
-      "Tipping mechanism"
+      "Tipping mechanism",
+      "Includes operator service",
+      "Transportation available"
     ],
     image: "/lovable-uploads/686e6e48-3ea6-4aec-a6fb-cee0cffa7d52.png",
     inStock: true,
