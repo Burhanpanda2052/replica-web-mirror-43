@@ -1,7 +1,8 @@
 
 import { 
   HardHat, Shield, Hammer, Wrench, Zap, Truck, Square, 
-  Home, Settings, Package, Activity, Car, Cog, Drill, RotateCcw
+  Home, Settings, Package, Activity, Car, Cog, Drill, RotateCcw,
+  FileText, Grid3X3, Box, Cylinder, Bolt
 } from "lucide-react";
 
 export interface Product {
@@ -635,6 +636,176 @@ export const products: Product[] = [
     ],
     inStock: true,
     icon: Cog
+  },
+  {
+    id: "sandpaper-sheets",
+    name: "Sandpaper Assorted Grits",
+    description: "Professional grade sandpaper sheets for surface preparation and finishing",
+    category: "Tools & Equipment",
+    price: "8,000 - 25,000 TZS",
+    unit: "per pack",
+    specifications: [
+      "Multiple grit sizes (60, 120, 240, 400)",
+      "High-quality abrasive material",
+      "Suitable for wood, metal, and plastic",
+      "Tear-resistant backing"
+    ],
+    image: "/lovable-uploads/53ac14b9-35b0-423c-a843-e328388937c3.png",
+    inStock: true,
+    icon: FileText
+  },
+  {
+    id: "wire-mesh",
+    name: "Welded Wire Mesh",
+    description: "Heavy-duty welded wire mesh for concrete reinforcement and construction",
+    category: "Building Materials",
+    price: "45,000 - 120,000 TZS",
+    unit: "per sheet",
+    specifications: [
+      "Galvanized steel construction",
+      "Standard sizes: 2x1m, 3x2m",
+      "6mm wire thickness",
+      "200mm x 200mm apertures"
+    ],
+    image: "/lovable-uploads/7f751d59-9b5a-4007-91f2-b3e86fb1a8cf.png",
+    inStock: true,
+    icon: Grid3X3
+  },
+  {
+    id: "diesel-concrete-mixer",
+    name: "Diesel Concrete Mixer",
+    description: "Heavy-duty diesel-powered concrete mixer for large construction projects",
+    category: "Tools & Equipment",
+    price: "2,800,000 - 4,500,000 TZS",
+    unit: "per unit",
+    specifications: [
+      "500L mixing capacity",
+      "Diesel engine powered",
+      "Hydraulic tipping mechanism",
+      "Suitable for continuous operation"
+    ],
+    image: "/lovable-uploads/79910aee-f660-4536-a684-e8530cd56da1.png",
+    inStock: true,
+    icon: Truck
+  },
+  {
+    id: "plastic-sheeting",
+    name: "Heavy Duty Plastic Sheeting",
+    description: "Waterproof plastic membrane for construction and protection applications",
+    category: "Building Materials",
+    price: "35,000 - 85,000 TZS",
+    unit: "per 25m roll",
+    specifications: [
+      "200 micron thickness",
+      "UV resistant material",
+      "4m width standard",
+      "Waterproof and tear-resistant"
+    ],
+    image: "/lovable-uploads/12d6aafb-da39-4a6d-9bee-243ba1eed7ba.png",
+    inStock: true,
+    icon: Shield
+  },
+  {
+    id: "electrical-socket",
+    name: "Double Socket Outlet",
+    description: "British standard double socket outlet for residential and commercial use",
+    category: "Electrical Supplies",
+    price: "12,000 - 18,000 TZS",
+    unit: "per unit",
+    specifications: [
+      "13A rated capacity",
+      "With earth connection",
+      "White finish",
+      "BS 1363 compliant"
+    ],
+    image: "/lovable-uploads/b7a00b2d-8885-465c-895d-96f2a2fcef57.png",
+    inStock: true,
+    icon: Zap
+  },
+  {
+    id: "junction-box",
+    name: "Electrical Junction Box",
+    description: "4-way electrical junction box for cable connections and distribution",
+    category: "Electrical Supplies",
+    price: "8,000 - 15,000 TZS",
+    unit: "per unit",
+    specifications: [
+      "4-way connection points",
+      "IP65 weatherproof rating",
+      "Screw terminal connections",
+      "Impact resistant housing"
+    ],
+    image: "/lovable-uploads/49dfd48f-d334-4b8e-88f8-6943f3860f5e.png",
+    inStock: true,
+    icon: Box
+  },
+  {
+    id: "pvc-conduit",
+    name: "PVC Electrical Conduit",
+    description: "White PVC conduit pipes for electrical cable protection and routing",
+    category: "Electrical Supplies",
+    price: "15,000 - 45,000 TZS",
+    unit: "per 3m length",
+    specifications: [
+      "20mm and 25mm diameters",
+      "UV resistant PVC material",
+      "3 meter standard lengths",
+      "Easy to cut and install"
+    ],
+    image: "/lovable-uploads/845cc3f4-9f86-47da-9d5a-dbe2f35fe20e.png",
+    inStock: true,
+    icon: Cylinder
+  },
+  {
+    id: "house-wiring-cable",
+    name: "House Wiring Cable",
+    description: "Twin and earth electrical cable for domestic house wiring applications",
+    category: "Electrical Supplies",
+    price: "35,000 - 125,000 TZS",
+    unit: "per 100m roll",
+    specifications: [
+      "2.5mm² and 4mm² available",
+      "Live, neutral and earth conductors",
+      "PVC insulation and sheath",
+      "BS 6004 standard compliant"
+    ],
+    image: "/lovable-uploads/85aba7b4-9e8d-495d-8586-902446318105.png",
+    inStock: true,
+    icon: Zap
+  },
+  {
+    id: "electrical-cable-3core",
+    name: "3-Core Electrical Cable",
+    description: "Flexible 3-core electrical cable for appliance and equipment connections",
+    category: "Electrical Supplies",
+    price: "28,000 - 95,000 TZS",
+    unit: "per 100m roll",
+    specifications: [
+      "3-core conductor design",
+      "Flexible PVC construction",
+      "Color coded wires",
+      "Suitable for appliances"
+    ],
+    image: "/lovable-uploads/cb5f22bc-a159-4a86-b167-611de46a8faf.png",
+    inStock: true,
+    icon: Zap
+  },
+  {
+    id: "drywall-screws",
+    name: "Drywall Screws",
+    description: "Professional grade drywall screws for plasterboard installation",
+    category: "Hardware",
+    price: "12,000 - 35,000 TZS",
+    unit: "per box (500-1000pcs)",
+    specifications: [
+      "25mm, 32mm, 38mm lengths",
+      "Phillips head drive",
+      "Black phosphate coating",
+      "Sharp point for easy penetration"
+    ],
+    image: "/lovable-uploads/2bb08acf-0c87-4f3c-8738-7595a9952545.png",
+    inStock: true,
+    icon: Bolt
   }
 ];
 
