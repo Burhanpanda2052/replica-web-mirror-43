@@ -35,7 +35,7 @@ export const products: Product[] = [
     name: "Reflective Safety Vest",
     description: "High-visibility safety vest with reflective strips for enhanced worker visibility on construction sites.",
     category: "Safety Equipment",
-    price: "8,500 TZS",
+    price: "17,000 TZS",
     unit: "per piece",
     specifications: [
       "Class 2 high-visibility",
@@ -58,7 +58,7 @@ export const products: Product[] = [
     name: "Steel Toe Safety Boots",
     description: "Heavy-duty safety boots with steel toe caps and slip-resistant soles for construction site protection.",
     category: "Safety Equipment",
-    price: "45,000 TZS",
+    price: "40,000 TZS",
     unit: "per pair",
     specifications: [
       "Steel toe cap protection",
@@ -81,7 +81,7 @@ export const products: Product[] = [
     name: "Dust Protection Mask",
     description: "Professional respiratory protection mask for construction dust and particles with replaceable filter cartridges.",
     category: "Safety Equipment",
-    price: "18,000 TZS",
+    price: "2,900 TZS",
     unit: "per piece",
     specifications: [
       "P2 filtration efficiency",
@@ -104,7 +104,7 @@ export const products: Product[] = [
     name: "Work Coveralls Navy Blue",
     description: "Durable navy blue work coveralls for construction and industrial use",
     category: "Safety Equipment",
-    price: "35,000 TZS",
+    price: "40,000 TZS",
     unit: "per piece",
     specifications: [
       "100% cotton fabric",
@@ -122,7 +122,7 @@ export const products: Product[] = [
     name: "Yellow Safety Helmet",
     description: "Professional yellow safety helmet with adjustable suspension system",
     category: "Safety Equipment", 
-    price: "15,000 TZS",
+    price: "12,000 TZS",
     unit: "per piece",
     specifications: [
       "Impact resistant ABS shell",
@@ -142,7 +142,7 @@ export const products: Product[] = [
     name: "Pan Mixer with Diesel Engine",
     description: "Heavy-duty diesel-powered pan mixer for large-scale concrete and mortar mixing operations.",
     category: "Tools & Equipment",
-    price: "2,850,000 TZS",
+    price: "12,500,000 TZS",
     unit: "per unit",
     specifications: [
       "Diesel engine powered",
@@ -165,7 +165,7 @@ export const products: Product[] = [
     name: "Portable Concrete Mixer",
     description: "Electric portable concrete mixer with wheeled design for easy site mobility and concrete preparation.",
     category: "Tools & Equipment",
-    price: "385,000 TZS",
+    price: "90,000 TZS",
     unit: "per unit",
     specifications: [
       "Electric motor operation",
@@ -188,7 +188,7 @@ export const products: Product[] = [
     name: "Concrete Vibrator",
     description: "High-frequency concrete vibrator for removing air bubbles and ensuring proper concrete consolidation.",
     category: "Tools & Equipment",
-    price: "125,000 TZS",
+    price: "50,000 TZS",
     unit: "per unit",
     specifications: [
       "High-frequency vibration",
@@ -211,7 +211,7 @@ export const products: Product[] = [
     name: "Pneumatic Rammer",
     description: "Air-powered rammer for soil compaction and ground preparation in construction projects.",
     category: "Tools & Equipment",
-    price: "95,000 TZS",
+    price: "80,000 TZS",
     unit: "per unit",
     specifications: [
       "Pneumatic operation",
@@ -234,7 +234,7 @@ export const products: Product[] = [
     name: "Plate Compactor Altrad PC 20/45",
     description: "Heavy-duty plate compactor for asphalt and soil compaction with powerful engine and reversible operation.",
     category: "Tools & Equipment",
-    price: "275,000 TZS",
+    price: "150,000 TZS",
     unit: "per unit",
     specifications: [
       "20/45 model specification",
@@ -257,7 +257,7 @@ export const products: Product[] = [
     name: "Construction Wheelbarrow",
     description: "Heavy-duty wheelbarrow for transporting materials around construction sites.",
     category: "Tools & Equipment", 
-    price: "85,000 TZS",
+    price: "110,000 TZS",
     unit: "per piece",
     specifications: [
       "100L capacity tray",
@@ -274,7 +274,7 @@ export const products: Product[] = [
     name: "Construction Shovel",
     description: "Heavy-duty construction shovel with steel blade for digging and material handling.",
     category: "Tools & Equipment",
-    price: "18,500 TZS", 
+    price: "10,500 TZS",
     unit: "per piece",
     specifications: [
       "Steel blade construction",
@@ -291,7 +291,7 @@ export const products: Product[] = [
     name: "Dump Truck - Blue",
     description: "Heavy-duty dump truck for construction material transportation and site logistics",
     category: "Tools & Equipment",
-    price: "48,500,000 TZS",
+    price: "600,000 TZS",
     unit: "per unit",
     specifications: [
       "6x4 drive configuration",
@@ -311,7 +311,7 @@ export const products: Product[] = [
     name: "Power Cement 50kg",
     description: "Power Cement OPC (Ordinary Portland Cement) with ultimate strength formula for superior construction quality.",
     category: "Building Materials",
-    price: "18,500 TZS",
+    price: "17,500 TZS",
     unit: "per bag",
     specifications: [
       "Grade 42.5N strength",
@@ -328,7 +328,7 @@ export const products: Product[] = [
     name: "Dangote Portland Cement 50kg",
     description: "Premium Dangote Portland cement with 3X strength for all construction applications.",
     category: "Building Materials", 
-    price: "19,500 TZS",
+    price: "17,000 TZS",
     unit: "per bag",
     specifications: [
       "Grade 42.5R strength",
@@ -345,7 +345,7 @@ export const products: Product[] = [
     name: "Raysut Cement 50kg",
     description: "Premium Raysut Portland cement suitable for all construction applications including foundations and structures.",
     category: "Building Materials",
-    price: "20,000 TZS",
+    price: "18,500 TZS",
     unit: "per bag",
     specifications: [
       "Grade 42.5N strength",
@@ -362,7 +362,7 @@ export const products: Product[] = [
     name: "Steel Rebar 12mm",
     description: "High tensile strength steel reinforcement bars for concrete reinforcement in construction projects.",
     category: "Building Materials",
-    price: "1,495,000 TZS",
+    price: "2,500,000 TZS",
     unit: "per ton",
     specifications: [
       "Grade 60 steel",
@@ -379,7 +379,7 @@ export const products: Product[] = [
     name: "Concrete Blocks 6\"",
     description: "Standard concrete masonry blocks for wall construction with excellent thermal properties.",
     category: "Building Materials",
-    price: "1,150 TZS",
+    price: "2,100 TZS",
     unit: "per block",
     specifications: [
       "6-inch thickness",
@@ -396,7 +396,7 @@ export const products: Product[] = [
     name: "Steel Drywall Profiles",
     description: "Galvanized steel profiles for drywall framing systems, ideal for interior wall construction.",
     category: "Building Materials",
-    price: "8,500 TZS",
+    price: "13,000 TZS",
     unit: "per meter",
     specifications: [
       "Galvanized steel construction",
@@ -419,7 +419,7 @@ export const products: Product[] = [
     name: "Gypsum Drywall Boards",
     description: "Standard gypsum plasterboard sheets for interior wall and ceiling construction.",
     category: "Building Materials",
-    price: "12,500 TZS",
+    price: "20,000 TZS",
     unit: "per sheet",
     specifications: [
       "12.5mm thickness",
@@ -436,7 +436,7 @@ export const products: Product[] = [
     name: "Binding Wire",
     description: "Galvanized binding wire for reinforcement bar tying and construction applications.",
     category: "Building Materials",
-    price: "85,000 TZS",
+    price: "82,000 TZS",
     unit: "per coil",
     specifications: [
       "1.6mm wire diameter",
@@ -453,7 +453,7 @@ export const products: Product[] = [
     name: "Metal Cutting Disc",
     description: "Professional metal cutting disc for angle grinders, suitable for steel and metal cutting applications.",
     category: "Tools & Equipment",
-    price: "3,500 TZS",
+    price: "10,000 TZS",
     unit: "per piece",
     specifications: [
       "115mm diameter",
@@ -470,7 +470,7 @@ export const products: Product[] = [
     name: "Marine Plywood",
     description: "High-quality marine-grade plywood suitable for construction and marine applications.",
     category: "Building Materials",
-    price: "45,000 TZS",
+    price: "47,500 TZS",
     unit: "per sheet",
     specifications: [
       "18mm thickness",
@@ -487,7 +487,7 @@ export const products: Product[] = [
     name: "Construction Timber",
     description: "Premium construction timber for structural framing and general building applications.",
     category: "Building Materials",
-    price: "25,000 TZS",
+    price: "14,500 TZS",
     unit: "per piece",
     specifications: [
       "50x100mm section",
@@ -504,7 +504,7 @@ export const products: Product[] = [
     name: "Square Timber Beams",
     description: "Square section timber beams for structural construction and framing applications.",
     category: "Building Materials", 
-    price: "35,000 TZS",
+    price: "21,000 TZS",
     unit: "per piece",
     specifications: [
       "100x100mm square section",
@@ -521,7 +521,7 @@ export const products: Product[] = [
     name: "Construction Nails",
     description: "Galvanized construction nails for general building and carpentry applications.",
     category: "Building Materials",
-    price: "12,500 TZS",
+    price: "82,000 TZS",
     unit: "per kg",
     specifications: [
       "4-inch length",
@@ -540,7 +540,7 @@ export const products: Product[] = [
     name: "Double Socket Outlet",
     description: "Professional double socket outlet for electrical installations.",
     category: "Electrical Supplies",
-    price: "8,500 TZS",
+    price: "12,000 TZS",
     unit: "per piece",
     specifications: [
       "13A rating",
@@ -557,7 +557,7 @@ export const products: Product[] = [
     name: "Electrical Junction Box",
     description: "Weather-resistant electrical junction box for outdoor and indoor wiring applications.",
     category: "Electrical Supplies",
-    price: "15,000 TZS",
+    price: "2,000 TZS",
     unit: "per piece",
     specifications: [
       "IP65 weather rating",
@@ -574,7 +574,7 @@ export const products: Product[] = [
     name: "PVC Electrical Conduit",
     description: "PVC electrical conduit pipe for cable protection and routing in building installations.",
     category: "Electrical Supplies",
-    price: "4,500 TZS",
+    price: "60,000 TZS",
     unit: "per meter",
     specifications: [
       "20mm diameter",
@@ -591,7 +591,7 @@ export const products: Product[] = [
     name: "House Wiring Cable",
     description: "Standard house wiring cable for domestic electrical installations.",
     category: "Electrical Supplies",
-    price: "8,500 TZS",
+    price: "490,000 TZS",
     unit: "per meter",
     specifications: [
       "2.5mm² conductor",
@@ -625,7 +625,7 @@ export const products: Product[] = [
     name: "Drywall Screws",
     description: "Professional drywall screws for plasterboard and drywall installation.",
     category: "Building Materials",
-    price: "5,500 TZS",
+    price: "9,000 TZS",
     unit: "per box",
     specifications: [
       "25mm length",
@@ -642,7 +642,7 @@ export const products: Product[] = [
     name: "Sandpaper Assorted Grits",
     description: "Assorted grit sandpaper pack for surface preparation and finishing work.",
     category: "Tools & Equipment",
-    price: "8,500 TZS",
+    price: "30,000 TZS",
     unit: "per pack",
     specifications: [
       "Assorted grit sizes",
@@ -693,7 +693,7 @@ export const products: Product[] = [
     name: "Heavy Duty Plastic Sheeting",
     description: "Heavy-duty plastic sheeting for moisture barriers and construction protection.",
     category: "Building Materials",
-    price: "15,000 TZS",
+    price: "390,000 TZS",
     unit: "per roll",
     specifications: [
       "1000 gauge thickness",
@@ -727,7 +727,7 @@ export const products: Product[] = [
     name: "Hollow Concrete Blocks",
     description: "Standard hollow concrete blocks for construction and masonry work.",
     category: "Building Materials",
-    price: "1,200 TZS",
+    price: "1,100 TZS",
     unit: "per block",
     specifications: [
       "8-inch thickness",
@@ -761,7 +761,7 @@ export const products: Product[] = [
     name: "Fiber Cement Boards",
     description: "Durable fiber cement boards for exterior and interior construction applications.",
     category: "Building Materials",
-    price: "28,500 TZS",
+    price: "155,000 TZS",
     unit: "per sheet",
     specifications: [
       "Fiber reinforced cement",
