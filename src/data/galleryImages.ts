@@ -134,69 +134,6 @@ export const galleryImages: GalleryImage[] = [
     title: "Heavy Equipment Material Handling",
     category: "Heavy Equipment",
     description: "Wheel loader and dump truck operations for efficient material transport and site management"
-  },
-  {
-    id: "21",
-    src: "/lovable-uploads/8d2522bb-acd3-41ca-a0e4-6dfb83d0e13b.png",
-    title: "Safety Equipment Catalog - High Quality Overalls",
-    category: "Tools & Machinery",
-    description: "Professional safety equipment including high-quality work overalls for construction sites"
-  },
-  {
-    id: "22",
-    src: "/lovable-uploads/15c3f008-047f-4005-a11d-8f194db66dd8.png",
-    title: "Heavy Construction Equipment - Compactors & Mixers",
-    category: "Heavy Equipment",
-    description: "FUSI rubble handling, plate compactors, trench hammers and concrete mixers for construction projects"
-  },
-  {
-    id: "23",
-    src: "/lovable-uploads/0eb9f44d-9d4c-404e-8419-58f2b233f99e.png",
-    title: "Building Materials - Solid Bricks & Iron Rods",
-    category: "Construction Materials",
-    description: "High-quality solid bricks and iron rods from Turkey for construction and infrastructure projects"
-  },
-  {
-    id: "24",
-    src: "/lovable-uploads/453707ca-24de-4f44-a596-17fcb63b38c0.png",
-    title: "Construction Materials - Cement & Aggregates",
-    category: "Construction Materials",
-    description: "Premium cement from Iran and Oman, aggregates, sand, and wire mesh for construction applications"
-  },
-  {
-    id: "25",
-    src: "/lovable-uploads/0e304325-f9f3-4d30-a763-126666017f29.png",
-    title: "Building Supplies - Sand Paper & Construction Props",
-    category: "Construction Materials",
-    description: "Sand paper rolls, construction nails, timber props and lumber for various building projects"
-  },
-  {
-    id: "26",
-    src: "/lovable-uploads/cce695f5-5076-41c9-9898-de24b0d0e071.png",
-    title: "Professional Tools - Marine Board & Hand Tools",
-    category: "Tools & Machinery",
-    description: "Marine board panels, metal cutting discs, binding wire, wheelbarrows and shovels for construction work"
-  },
-  {
-    id: "27",
-    src: "/lovable-uploads/24b70384-e2e2-43f1-b82a-659532003e83.png",
-    title: "Construction Equipment - Dump Truck & Building Boards",
-    category: "Heavy Equipment",
-    description: "HOWO dump truck for hire and cement/gypsum boards for construction and finishing work"
-  },
-  {
-    id: "28",
-    src: "/lovable-uploads/f3fe01a7-7a32-4147-8517-2747054b616a.png",
-    title: "Electrical Supplies - Cables & Installation Materials",
-    category: "Tools & Machinery",
-    description: "Flexible electric cables, conduit pipes, junction boxes and electrical switches for wiring installations"
-  },
-  {
-    id: "29",
-    src: "/lovable-uploads/344e2c12-93d2-4b71-ad94-f60bb368152f.png",
-    title: "Concrete Equipment - Pan Mixers & Waterproofing",
-    category: "Heavy Equipment",
-    description: "Pan concrete mixers for hire and sale, plus waterproof cement mixers for construction projects"
   }
 ];
 
