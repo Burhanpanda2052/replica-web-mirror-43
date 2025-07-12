@@ -296,16 +296,18 @@ export const products: Product[] = [
   },
   {
     id: "dump-truck-blue",
-    name: "Dump Truck - Blue",
-    description: "Heavy-duty dump truck for construction material transportation and site logistics",
+    name: "Howo Dump Truck",
+    description: "Heavy-duty 20 cubic meter Howo dump truck for hire for construction material transportation and site logistics. Hired with an experienced driver. Transportation and delivery services available.",
     category: "Tools & Equipment",
     price: "600,000 TZS",
-    unit: "per unit",
+    unit: "per day",
     specifications: [
       "6x4 drive configuration",
-      "15 cubic meter capacity",
+      "20 cubic meter capacity",
       "Hydraulic lifting system",
       "Heavy-duty chassis",
+      "Includes driver service",
+      "Transportation available",
       "Professional driver cab"
     ],
     image: "/lovable-uploads/d38e0e00-0889-4b6e-8659-72dca5e1eb54.png",
