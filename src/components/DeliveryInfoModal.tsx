@@ -48,7 +48,7 @@ const DeliveryInfoModal = ({ isOpen, onClose, productName, productId }: Delivery
               <Badge variant="secondary">Paje</Badge>
             </div>
             <p className="text-sm text-muted-foreground mt-2">
-              We deliver across all major areas in Zanzibar. Contact us for areas not listed above.
+              We deliver across all major areas in Zanzibar, simply let us know where you want us to deliver and we will make the delivery for you.
             </p>
           </div>
 
