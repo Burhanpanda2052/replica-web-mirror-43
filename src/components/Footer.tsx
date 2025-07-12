@@ -1,10 +1,7 @@
-
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  return <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company info */}
@@ -83,9 +80,7 @@ const Footer = () => {
         
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm opacity-90">
-              © 2024 TOTAL BUILDERS. All rights reserved.
-            </p>
+            <p className="text-sm opacity-90">© 2025 TOTAL BUILDERS. All rights reserved.</p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Privacy Policy</a>
               <a href="#" className="opacity-90 hover:opacity-100 hover:text-yellow">Terms of Service</a>
@@ -94,8 +89,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
