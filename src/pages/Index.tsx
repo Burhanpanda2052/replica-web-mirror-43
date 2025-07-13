@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CalculatorSection from "@/components/CalculatorSection";
 import QuoteConfigurator from "@/components/QuoteConfigurator";
-import DeliveryTracker from "@/components/DeliveryTracker";
 import DeliverySection from "@/components/DeliverySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import StatsSection from "@/components/StatsSection";
@@ -19,7 +18,6 @@ const Index = () => {
       <Hero />
       <CalculatorSection />
       <QuoteConfigurator />
-      <DeliveryTracker />
       <DeliverySection />
       <TestimonialsSection />
       <StatsSection />

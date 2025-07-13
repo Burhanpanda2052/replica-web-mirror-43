@@ -1,9 +1,13 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, ShoppingCart, Calculator, Truck, Shield, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import RequestExpressModal from "./RequestExpressModal";
+import { useGSAPAnimations } from "@/hooks/useGSAPAnimations";
 
 const Hero = () => {
   const navigate = useNavigate();
+  useGSAPAnimations();
 
   const handleQuoteClick = () => {
     const quoteSection = document.getElementById('quote');
@@ -22,7 +26,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-4 hero-animation">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 Zanzibar's Premier
                 <span className="block text-yellow">Construction Materials</span>
@@ -33,14 +37,15 @@ const Hero = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 hero-animation">
+              <RequestExpressModal />
               <Button 
                 size="lg" 
                 className="bg-yellow text-yellow-foreground hover:bg-yellow/90"
                 onClick={handleQuoteClick}
               >
                 <ShoppingCart className="mr-2 h-5 w-5" />
-                Get your Quote today
+                Get Quote Today
               </Button>
               <Button 
                 size="lg" 
@@ -49,20 +54,20 @@ const Hero = () => {
                 onClick={handleProductsClick}
               >
                 <Calculator className="mr-2 h-5 w-5" />
-                View our Products
+                View Products
               </Button>
             </div>
             
-            <div className="flex items-center space-x-8">
-              <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-8 hero-animation">
+              <div className="flex items-center space-x-2 truck-animation">
                 <Truck className="h-5 w-5 text-yellow" />
                 <span>Same Day Delivery</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 truck-animation">
                 <Shield className="h-5 w-5 text-yellow" />
                 <span>Quality Guaranteed</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 truck-animation">
                 <Phone className="h-5 w-5 text-yellow" />
                 <span>24/7 Support</span>
               </div>
@@ -70,34 +75,34 @@ const Hero = () => {
           </div>
           
           {/* Right content - Quick Product Access */}
-          <div className="relative">
+          <div className="relative hero-animation">
             <div className="bg-white/95 rounded-lg p-8 shadow-lg">
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-gray-800">Quick Product Access</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div 
-                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-yellow-100 to-orange-200 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-yellow-100 to-orange-200 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform card-animation"
                     onClick={handleProductsClick}
                   >
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Sand & Gravel</div>
                   </div>
                   <div 
-                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-gray-300 to-gray-500 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-gray-300 to-gray-500 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform card-animation"
                     onClick={handleProductsClick}
                   >
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Cement</div>
                   </div>
                   <div 
-                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-blue-600 to-gray-700 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-blue-600 to-gray-700 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform card-animation"
                     onClick={handleProductsClick}
                   >
                     <div className="absolute inset-0 bg-black/20"></div>
                     <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Iron Rods</div>
                   </div>
                   <div 
-                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-red-400 to-gray-600 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-red-400 to-gray-600 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform card-animation"
                     onClick={handleProductsClick}
                   >
                     <div className="absolute inset-0 bg-black/20"></div>

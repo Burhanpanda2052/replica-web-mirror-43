@@ -1,8 +1,14 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Building, Users, Award, Calendar } from "lucide-react";
+import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 const StatsSection = () => {
+  const projectsCounter = useCounterAnimation({ start: 0, end: 500, suffix: "+" });
+  const customersCounter = useCounterAnimation({ start: 0, end: 1000, suffix: "+" });
+  const productsCounter = useCounterAnimation({ start: 0, end: 50, suffix: "+" });
+  const experienceCounter = useCounterAnimation({ start: 0, end: 9 });
+
   return (
     <section className="py-16 bg-primary text-white">
       <div className="container mx-auto px-4">
@@ -14,41 +20,49 @@ const StatsSection = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="bg-white/10 border-white/20 text-center">
+          <Card className="bg-white/10 border-white/20 text-center stats-card-animation">
             <CardContent className="p-6 space-y-4">
               <Building className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-white">500+</div>
+                <div className="text-4xl font-bold text-white">
+                  <span ref={projectsCounter}>500+</span>
+                </div>
                 <div className="text-sm text-white/90">Projects Completed</div>
               </div>
             </CardContent>
           </Card>
           
-          <Card className="bg-white/10 border-white/20 text-center">
+          <Card className="bg-white/10 border-white/20 text-center stats-card-animation">
             <CardContent className="p-6 space-y-4">
               <Users className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-white">1000+</div>
+                <div className="text-4xl font-bold text-white">
+                  <span ref={customersCounter}>1000+</span>
+                </div>
                 <div className="text-sm text-white/90">Satisfied Customers</div>
               </div>
             </CardContent>
           </Card>
           
-          <Card className="bg-white/10 border-white/20 text-center">
+          <Card className="bg-white/10 border-white/20 text-center stats-card-animation">
             <CardContent className="p-6 space-y-4">
               <Award className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-white">50+</div>
+                <div className="text-4xl font-bold text-white">
+                  <span ref={productsCounter}>50+</span>
+                </div>
                 <div className="text-sm text-white/90">Product Lines</div>
               </div>
             </CardContent>
           </Card>
           
-          <Card className="bg-white/10 border-white/20 text-center">
+          <Card className="bg-white/10 border-white/20 text-center stats-card-animation">
             <CardContent className="p-6 space-y-4">
               <Calendar className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-white">9</div>
+                <div className="text-4xl font-bold text-white">
+                  <span ref={experienceCounter}>9</span>
+                </div>
                 <div className="text-sm text-white/90">Years Experience</div>
               </div>
             </CardContent>
