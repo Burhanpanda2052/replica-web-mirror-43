@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductsSection from "@/components/ProductsSection";
 import ServicesSection from "@/components/ServicesSection";
+import QuoteSection from "@/components/QuoteSection";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 
 const ProductsAndServices = () => {
@@ -39,6 +40,9 @@ const ProductsAndServices = () => {
         
         {/* Services Section */}
         <ServicesSection />
+        
+        {/* Quote Section */}
+        <QuoteSection />
         
         <Footer />
       </div>
