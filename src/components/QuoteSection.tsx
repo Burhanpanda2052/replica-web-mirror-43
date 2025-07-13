@@ -31,18 +31,22 @@ const QuoteSection = () => {
     try {
       const { data, error } = await supabase
         .from('quotes')
-        .insert([
-          {
-            full_name: formData.fullName,
-            phone_number: formData.phoneNumber,
-            email: formData.email,
-            project_type: formData.projectType,
-            project_location: formData.projectLocation,
-            project_details: formData.projectDetails
-          }
-        ]);
+        .insert({
+          full_name: formData.fullName,
+          phone_number: formData.phoneNumber,
+          email: formData.email || null,
+          project_type: formData.projectType,
+          project_location: formData.projectLocation,
+          project_details: formData.projectDetails
+        })
+        .select();
 
-      if (error) throw error;
+      if (error) {
+        console.error('Supabase error:', error);
+        throw error;
+      }
+
+      console.log('Quote submitted successfully:', data);
 
       toast({
         title: "Success!",
