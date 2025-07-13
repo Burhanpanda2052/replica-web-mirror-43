@@ -1,5 +1,4 @@
 
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
@@ -34,7 +33,7 @@ const FAQSection = () => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-12">
+        <div className="text-center space-y-4 mb-12 faq-title-animation">
           <h2 className="text-4xl font-bold text-foreground">Frequently Asked Questions</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Find answers to common questions about our products, services, and processes.
@@ -44,8 +43,8 @@ const FAQSection = () => {
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg border-0 shadow-sm">
-                <AccordionTrigger className="px-6 py-4 text-left font-semibold hover:no-underline">
+              <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg border-0 shadow-sm faq-item-animation">
+                <AccordionTrigger className="px-6 py-4 text-left font-semibold hover:no-underline hover:bg-gray-50 rounded-lg transition-colors">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-4 text-muted-foreground leading-relaxed">
@@ -56,7 +55,7 @@ const FAQSection = () => {
           </Accordion>
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 faq-item-animation">
           <p className="text-muted-foreground mb-4">Still have questions?</p>
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
             Contact Our Support Team
@@ -68,4 +67,3 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
-

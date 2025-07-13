@@ -34,10 +34,25 @@ const RequestExpressModal = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate required fields
+    if (!formData.customerName || !formData.customerPhone || !formData.deliveryAddress || 
+        !formData.deliveryArea || !formData.productName || !formData.preferredDate || 
+        !formData.preferredTimeSlot) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setLoading(true);
 
     try {
-      const { error } = await supabase
+      console.log("Submitting express request:", formData);
+      
+      const { data, error } = await supabase
         .from('delivery_requests')
         .insert([{
           customer_name: formData.customerName,
@@ -51,9 +66,15 @@ const RequestExpressModal = () => {
           preferred_time_slot: formData.preferredTimeSlot,
           special_instructions: formData.specialInstructions || null,
           status: 'pending'
-        }]);
+        }])
+        .select();
 
-      if (error) throw error;
+      if (error) {
+        console.error("Supabase error:", error);
+        throw error;
+      }
+
+      console.log("Express request submitted successfully:", data);
 
       toast({
         title: "Express Request Submitted!",
@@ -74,6 +95,7 @@ const RequestExpressModal = () => {
         specialInstructions: ""
       });
     } catch (error) {
+      console.error("Error submitting express request:", error);
       toast({
         title: "Error",
         description: "Failed to submit request. Please try again.",

@@ -20,7 +20,7 @@ const StatsSection = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="bg-white/10 border-white/20 text-center stats-card-animation">
+          <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center stats-card-animation hover:bg-white/20 transition-colors">
             <CardContent className="p-6 space-y-4">
               <Building className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
@@ -32,7 +32,7 @@ const StatsSection = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-white/10 border-white/20 text-center stats-card-animation">
+          <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center stats-card-animation hover:bg-white/20 transition-colors">
             <CardContent className="p-6 space-y-4">
               <Users className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
@@ -44,7 +44,7 @@ const StatsSection = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-white/10 border-white/20 text-center stats-card-animation">
+          <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center stats-card-animation hover:bg-white/20 transition-colors">
             <CardContent className="p-6 space-y-4">
               <Award className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
@@ -56,7 +56,7 @@ const StatsSection = () => {
             </CardContent>
           </Card>
           
-          <Card className="bg-white/10 border-white/20 text-center stats-card-animation">
+          <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-center stats-card-animation hover:bg-white/20 transition-colors">
             <CardContent className="p-6 space-y-4">
               <Calendar className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
@@ -70,7 +70,7 @@ const StatsSection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-4xl mx-auto border border-white/20">
             <h3 className="text-2xl font-semibold mb-4 text-white">Our Commitment to Excellence</h3>
             <p className="text-lg text-white/90 leading-relaxed">
               From humble beginnings in 2015, Total Builders has grown to become Zanzibar's most trusted construction materials supplier. 

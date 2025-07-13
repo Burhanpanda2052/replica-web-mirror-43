@@ -99,6 +99,51 @@ export const useGSAPAnimations = () => {
       );
     });
 
+    // FAQ animation
+    const faqItems = document.querySelectorAll('.faq-item-animation');
+    faqItems.forEach((item, index) => {
+      gsap.fromTo(item,
+        {
+          y: 30,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          delay: index * 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: item,
+            start: "top 85%",
+            once: true
+          }
+        }
+      );
+    });
+
+    // FAQ section title animation
+    const faqTitle = document.querySelector('.faq-title-animation');
+    if (faqTitle) {
+      gsap.fromTo(faqTitle,
+        {
+          y: 20,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: faqTitle,
+            start: "top 85%",
+            once: true
+          }
+        }
+      );
+    }
+
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
