@@ -1,3 +1,4 @@
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,41 +34,101 @@ const ScheduleDeliveryModal = ({ isOpen, onClose, productName, productId }: Sche
     "4:00 PM - 5:00 PM"
   ];
 
+  const sendEmailNotification = async (deliveryData: any) => {
+    try {
+      const emailData = {
+        type: "delivery",
+        customerName: deliveryData.customer_name,
+        customerPhone: deliveryData.customer_phone,
+        customerEmail: deliveryData.customer_email,
+        deliveryAddress: deliveryData.delivery_address,
+        deliveryArea: deliveryData.delivery_area,
+        productName: deliveryData.product_name,
+        quantity: deliveryData.quantity,
+        preferredDate: deliveryData.preferred_date,
+        preferredTimeSlot: deliveryData.preferred_time_slot,
+        specialInstructions: deliveryData.special_instructions,
+        timestamp: new Date().toLocaleString('en-US', {
+          timeZone: 'Africa/Dar_es_Salaam',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      };
+
+      const { data, error } = await supabase.functions.invoke('send-notification-email', {
+        body: emailData
+      });
+
+      if (error) {
+        console.error('Email sending error:', error);
+        throw error;
+      }
+
+      console.log('Email sent successfully:', data);
+      return data;
+    } catch (error) {
+      console.error('Failed to send email notification:', error);
+      throw error;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     const formData = new FormData(e.currentTarget);
     
+    const deliveryData = {
+      customer_name: formData.get('customer_name') as string,
+      customer_phone: formData.get('customer_phone') as string,
+      customer_email: formData.get('customer_email') as string,
+      delivery_address: formData.get('delivery_address') as string,
+      delivery_area: formData.get('delivery_area') as string,
+      product_name: productName || formData.get('product_name') as string,
+      product_id: productId,
+      quantity: parseInt(formData.get('quantity') as string) || 1,
+      preferred_date: date?.toISOString().split('T')[0],
+      preferred_time_slot: formData.get('time_slot') as string,
+      special_instructions: formData.get('special_instructions') as string,
+    };
+
     try {
+      // First, save to Supabase database
       const { error } = await supabase
         .from('delivery_requests')
-        .insert({
-          customer_name: formData.get('customer_name') as string,
-          customer_phone: formData.get('customer_phone') as string,
-          customer_email: formData.get('customer_email') as string,
-          delivery_address: formData.get('delivery_address') as string,
-          delivery_area: formData.get('delivery_area') as string,
-          product_name: productName || formData.get('product_name') as string,
-          product_id: productId,
-          quantity: parseInt(formData.get('quantity') as string) || 1,
-          preferred_date: date?.toISOString().split('T')[0],
-          preferred_time_slot: formData.get('time_slot') as string,
-          special_instructions: formData.get('special_instructions') as string,
-        });
+        .insert(deliveryData);
 
       if (error) throw error;
 
-      toast({
-        title: "Delivery Scheduled!",
-        description: "Your delivery request has been submitted successfully. We will contact you to confirm the details.",
-      });
+      console.log('Delivery request saved to database successfully');
+
+      // Then, send email notification
+      try {
+        await sendEmailNotification(deliveryData);
+        
+        toast({
+          title: "Delivery Scheduled!",
+          description: "Your delivery request has been submitted successfully and our sales team has been notified. We will contact you to confirm the details.",
+        });
+      } catch (emailError) {
+        // Database save succeeded, but email failed - still show success but mention email issue
+        console.error('Email notification failed:', emailError);
+        
+        toast({
+          title: "Delivery Scheduled!",
+          description: "Your delivery request has been submitted successfully. We will contact you to confirm the details.",
+        });
+      }
 
       onClose();
       
       // Reset form
       e.currentTarget.reset();
       setDate(undefined);
+      
     } catch (error) {
       console.error('Error submitting delivery request:', error);
       toast({

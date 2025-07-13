@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -24,11 +25,49 @@ const QuoteSection = () => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const sendEmailNotification = async (quoteData: typeof formData) => {
+    try {
+      const emailData = {
+        type: "quote",
+        fullName: quoteData.fullName,
+        phoneNumber: quoteData.phoneNumber,
+        email: quoteData.email,
+        projectType: quoteData.projectType,
+        projectLocation: quoteData.projectLocation,
+        projectDetails: quoteData.projectDetails,
+        timestamp: new Date().toLocaleString('en-US', {
+          timeZone: 'Africa/Dar_es_Salaam',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      };
+
+      const { data, error } = await supabase.functions.invoke('send-notification-email', {
+        body: emailData
+      });
+
+      if (error) {
+        console.error('Email sending error:', error);
+        throw error;
+      }
+
+      console.log('Email sent successfully:', data);
+      return data;
+    } catch (error) {
+      console.error('Failed to send email notification:', error);
+      throw error;
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
+      // First, save to Supabase database
       const { data, error } = await supabase
         .from('quotes')
         .insert({
@@ -46,12 +85,25 @@ const QuoteSection = () => {
         throw error;
       }
 
-      console.log('Quote submitted successfully:', data);
+      console.log('Quote submitted to database successfully:', data);
 
-      toast({
-        title: "Success!",
-        description: "Your quote request has been submitted successfully. We'll contact you within 24 hours.",
-      });
+      // Then, send email notification
+      try {
+        await sendEmailNotification(formData);
+        
+        toast({
+          title: "Success!",
+          description: "Your quote request has been submitted successfully and our sales team has been notified. We'll contact you within 24 hours.",
+        });
+      } catch (emailError) {
+        // Database save succeeded, but email failed - still show success but mention email issue
+        console.error('Email notification failed:', emailError);
+        
+        toast({
+          title: "Quote Submitted",
+          description: "Your quote request has been saved successfully. We'll contact you within 24 hours.",
+        });
+      }
 
       // Reset form
       setFormData({
