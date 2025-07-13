@@ -81,20 +81,12 @@ const Header = () => {
             >
               Request Quote
             </Button>
-            {!loading && (
-              user ? (
-                <Link to="/admin">
-                  <Button variant="outline" size="icon" title={`Signed in as ${user.email}`}>
-                    <User className="h-4 w-4" />
-                  </Button>
-                </Link>
-              ) : (
-                <Link to="/auth">
-                  <Button variant="outline">
-                    Sign In
-                  </Button>
-                </Link>
-              )
+            {!loading && user && (
+              <Link to="/admin">
+                <Button variant="outline" size="icon" title={`Signed in as ${user.email}`}>
+                  <User className="h-4 w-4" />
+                </Button>
+              </Link>
             )}
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />
