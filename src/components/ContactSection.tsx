@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock, Navigation } from "lucide-react";
@@ -23,7 +24,7 @@ const ContactSection = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Office Location</h3>
                     <p className="text-muted-foreground">
-                      Malawi Road, Stone Town<br />
+                      Taveta<br />
                       Zanzibar, Tanzania<br />
                       Near Creek Road Junction
                     </p>
@@ -39,8 +40,7 @@ const ContactSection = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-2">Phone Numbers</h3>
                     <p className="text-muted-foreground">
-                      Main: +255 123 456 789<br />
-                      Sales: +255 987 654 321<br />
+                      Sales: +255 769 391 802<br />
                       Emergency: +255 555 000 111
                     </p>
                   </div>
@@ -95,10 +95,6 @@ const ContactSection = () => {
                     <Navigation className="mr-2 h-4 w-4" />
                     Get Directions
                   </Button>
-                  <Button className="w-full bg-white/10 text-white border border-white/20 hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105">
-                    <Phone className="mr-2 h-4 w-4" />
-                    Call Now
-                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -110,7 +106,7 @@ const ContactSection = () => {
                   <div className="text-center text-gray-500">
                     <MapPin className="h-12 w-12 mx-auto mb-2" />
                     <p className="font-medium">Interactive Map</p>
-                    <p className="text-sm">Malawi Road, Stone Town</p>
+                    <p className="text-sm">Taveta, Zanzibar</p>
                   </div>
                 </div>
               </CardContent>
@@ -119,13 +115,13 @@ const ContactSection = () => {
             <div className="grid grid-cols-2 gap-4">
               <Card className="text-center bg-gradient-to-br from-orange-400 to-orange-600 text-white">
                 <CardContent className="p-4">
-                  <div className="text-2xl font-bold">15min</div>
+                  <div className="text-2xl font-bold">30min</div>
                   <div className="text-sm opacity-90">From Airport</div>
                 </CardContent>
               </Card>
               <Card className="text-center bg-blue text-blue-foreground">
                 <CardContent className="p-4">
-                  <div className="text-2xl font-bold">200m</div>
+                  <div className="text-2xl font-bold">3KM</div>
                   <div className="text-sm opacity-90">From Darajani</div>
                 </CardContent>
               </Card>
