@@ -68,62 +68,6 @@ export type Database = {
         }
         Relationships: []
       }
-      delivery_schedule: {
-        Row: {
-          completed_at: string | null
-          created_at: string
-          delivery_notes: string | null
-          delivery_request_id: string | null
-          delivery_status: string
-          driver_name: string | null
-          driver_phone: string | null
-          id: string
-          scheduled_date: string
-          scheduled_time_end: string
-          scheduled_time_start: string
-          updated_at: string
-          vehicle_info: string | null
-        }
-        Insert: {
-          completed_at?: string | null
-          created_at?: string
-          delivery_notes?: string | null
-          delivery_request_id?: string | null
-          delivery_status?: string
-          driver_name?: string | null
-          driver_phone?: string | null
-          id?: string
-          scheduled_date: string
-          scheduled_time_end: string
-          scheduled_time_start: string
-          updated_at?: string
-          vehicle_info?: string | null
-        }
-        Update: {
-          completed_at?: string | null
-          created_at?: string
-          delivery_notes?: string | null
-          delivery_request_id?: string | null
-          delivery_status?: string
-          driver_name?: string | null
-          driver_phone?: string | null
-          id?: string
-          scheduled_date?: string
-          scheduled_time_end?: string
-          scheduled_time_start?: string
-          updated_at?: string
-          vehicle_info?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "delivery_schedule_delivery_request_id_fkey"
-            columns: ["delivery_request_id"]
-            isOneToOne: false
-            referencedRelation: "delivery_requests"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
       quotes: {
         Row: {
           created_at: string

@@ -1,13 +1,8 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
-import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 const TestimonialsSection = () => {
-  const ratingCounter = useCounterAnimation({ start: 0, end: 4.9, decimal: true, suffix: "/5" });
-  const clientsCounter = useCounterAnimation({ start: 0, end: 500, suffix: "+" });
-  const satisfactionCounter = useCounterAnimation({ start: 0, end: 98, suffix: "%" });
-
   const testimonials = [
     {
       name: "Ahmed Hassan",
@@ -65,7 +60,7 @@ const TestimonialsSection = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-gray-50 border-0 h-full card-animation">
+            <Card key={index} className="bg-gray-50 border-0 h-full">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-1">
@@ -91,23 +86,17 @@ const TestimonialsSection = () => {
         <div className="text-center mt-12">
           <div className="inline-flex items-center space-x-6 bg-gray-50 px-8 py-4 rounded-lg">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">
-                <span ref={ratingCounter}>4.9/5</span>
-              </div>
+              <div className="text-3xl font-bold text-primary">4.9/5</div>
               <div className="text-sm text-muted-foreground">Average Rating</div>
             </div>
             <div className="h-8 w-px bg-border"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">
-                <span ref={clientsCounter}>500+</span>
-              </div>
+              <div className="text-3xl font-bold text-primary">500+</div>
               <div className="text-sm text-muted-foreground">Happy Clients</div>
             </div>
             <div className="h-8 w-px bg-border"></div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">
-                <span ref={satisfactionCounter}>98%</span>
-              </div>
+              <div className="text-3xl font-bold text-primary">98%</div>
               <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
             </div>
           </div>
