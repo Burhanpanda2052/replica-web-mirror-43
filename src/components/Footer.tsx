@@ -1,7 +1,20 @@
+
 import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
+
 const Footer = () => {
-  return <footer className="bg-primary text-primary-foreground">
+  const handleQuoteClick = () => {
+    const quoteSection = document.getElementById('quote');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If no quote section is found on current page, navigate to products page
+      window.location.href = '/products-services#quote';
+    }
+  };
+
+  return (
+    <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company info */}
@@ -26,7 +39,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Quick Links, Products, Contact Info sections */}
+          {/* Quick Links */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2 text-sm">
@@ -34,11 +47,12 @@ const Footer = () => {
               <li><Link to="/products-services" className="opacity-90 hover:opacity-100 hover:text-yellow">Products</Link></li>
               <li><Link to="/products-services" className="opacity-90 hover:opacity-100 hover:text-yellow">Services</Link></li>
               <li><Link to="/about" className="opacity-90 hover:opacity-100 hover:text-yellow">About Us</Link></li>
-              <li><a href="#contact" className="opacity-90 hover:opacity-100 hover:text-yellow">Contact</a></li>
-              <li><a href="#quote" className="opacity-90 hover:opacity-100 hover:text-yellow">Get Quote</a></li>
+              <li><Link to="/contact" className="opacity-90 hover:opacity-100 hover:text-yellow">Contact</Link></li>
+              <li><button onClick={handleQuoteClick} className="opacity-90 hover:opacity-100 hover:text-yellow text-left">Get Quote</button></li>
             </ul>
           </div>
           
+          {/* Our Products */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Our Products</h4>
             <ul className="space-y-2 text-sm">
@@ -51,6 +65,7 @@ const Footer = () => {
             </ul>
           </div>
           
+          {/* Contact Info */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Contact Info</h4>
             <div className="space-y-3 text-sm">
@@ -89,6 +104,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

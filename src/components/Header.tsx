@@ -63,7 +63,7 @@ const Header = () => {
             <Link to="/products-services" className="hover:text-yellow transition-colors">Products & Services</Link>
             <Link to="/gallery" className="hover:text-yellow transition-colors">Gallery</Link>
             <Link to="/about" className="hover:text-yellow transition-colors">About</Link>
-            <a href="#contact" className="hover:text-yellow transition-colors">Contact</a>
+            <Link to="/contact" className="hover:text-yellow transition-colors">Contact</Link>
           </nav>
           
           <div className="flex items-center space-x-4">
