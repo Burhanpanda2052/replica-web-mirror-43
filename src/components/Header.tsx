@@ -8,16 +8,23 @@ import { User as SupabaseUser } from "@supabase/supabase-js";
 
 const Header = () => {
   const [user, setUser] = useState<SupabaseUser | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        console.log('Header: Auth state changed:', event, session?.user?.email);
         setUser(session?.user ?? null);
+        setLoading(false);
       }
     );
 
+    // Check for existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log('Header: Initial session check:', session?.user?.email);
       setUser(session?.user ?? null);
+      setLoading(false);
     });
 
     return () => subscription.unsubscribe();
@@ -68,18 +75,20 @@ const Header = () => {
             >
               Request Quote
             </Button>
-            {user ? (
-              <Link to="/admin">
-                <Button variant="outline" size="icon">
-                  <User className="h-4 w-4" />
-                </Button>
-              </Link>
-            ) : (
-              <Link to="/auth">
-                <Button variant="outline">
-                  Sign In
-                </Button>
-              </Link>
+            {!loading && (
+              user ? (
+                <Link to="/admin">
+                  <Button variant="outline" size="icon" title={`Signed in as ${user.email}`}>
+                    <User className="h-4 w-4" />
+                  </Button>
+                </Link>
+              ) : (
+                <Link to="/auth">
+                  <Button variant="outline">
+                    Sign In
+                  </Button>
+                </Link>
+              )
             )}
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="h-6 w-6" />

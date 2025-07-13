@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -22,22 +23,28 @@ const Auth = () => {
   const { toast } = useToast();
 
   useEffect(() => {
+    // Set up auth state listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        console.log('Auth state changed:', event, session?.user?.email);
         setSession(session);
         setUser(session?.user ?? null);
         
-        if (session?.user) {
+        if (session?.user && event === 'SIGNED_IN') {
+          console.log('User signed in, redirecting to home');
           window.location.href = '/';
         }
       }
     );
 
+    // THEN check for existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log('Initial session check:', session?.user?.email);
       setSession(session);
       setUser(session?.user ?? null);
       
       if (session?.user) {
+        console.log('User already logged in, redirecting to home');
         window.location.href = '/';
       }
     });
@@ -60,7 +67,18 @@ const Auth = () => {
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!email || !password) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setLoading(true);
+    console.log('Starting sign in for:', email);
 
     try {
       cleanupAuthState();
@@ -68,27 +86,42 @@ const Auth = () => {
       try {
         await supabase.auth.signOut({ scope: 'global' });
       } catch (err) {
-        // Continue even if this fails
+        console.log('Sign out error (continuing):', err);
       }
 
       const { data, error } = await supabase.auth.signInWithPassword({
-        email,
+        email: email.trim(),
         password,
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Sign in error:', error);
+        throw error;
+      }
 
       if (data.user) {
+        console.log('Sign in successful:', data.user.email);
         toast({
           title: "Success",
           description: "Signed in successfully!",
         });
-        window.location.href = '/';
+        // Redirect will happen via onAuthStateChange
       }
     } catch (error: any) {
+      console.error('Sign in failed:', error);
+      let errorMessage = "Failed to sign in";
+      
+      if (error.message.includes('Invalid login credentials')) {
+        errorMessage = "Invalid email or password";
+      } else if (error.message.includes('Email not confirmed')) {
+        errorMessage = "Please check your email and confirm your account";
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
       toast({
         title: "Error",
-        description: error.message || "Failed to sign in",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -99,6 +132,15 @@ const Auth = () => {
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    if (!email || !password || !confirmPassword) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+    
     if (password !== confirmPassword) {
       toast({
         title: "Error",
@@ -108,7 +150,17 @@ const Auth = () => {
       return;
     }
 
+    if (password.length < 6) {
+      toast({
+        title: "Error",
+        description: "Password must be at least 6 characters long",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setLoading(true);
+    console.log('Starting sign up for:', email);
 
     try {
       cleanupAuthState();
@@ -116,20 +168,32 @@ const Auth = () => {
       const redirectUrl = `${window.location.origin}/`;
       
       const { data, error } = await supabase.auth.signUp({
-        email,
+        email: email.trim(),
         password,
         options: {
           emailRedirectTo: redirectUrl
         }
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error('Sign up error:', error);
+        throw error;
+      }
 
       if (data.user) {
-        toast({
-          title: "Success",
-          description: "Account created successfully! Please check your email to confirm your account.",
-        });
+        console.log('Sign up successful:', data.user.email);
+        
+        if (data.user.email_confirmed_at) {
+          toast({
+            title: "Success",
+            description: "Account created and confirmed! You can now sign in.",
+          });
+        } else {
+          toast({
+            title: "Success",
+            description: "Account created! Please check your email to confirm your account before signing in.",
+          });
+        }
         
         // Clear form
         setEmail("");
@@ -137,9 +201,18 @@ const Auth = () => {
         setConfirmPassword("");
       }
     } catch (error: any) {
+      console.error('Sign up failed:', error);
+      let errorMessage = "Failed to create account";
+      
+      if (error.message.includes('already registered')) {
+        errorMessage = "An account with this email already exists";
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
       toast({
         title: "Error",
-        description: error.message || "Failed to create account",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -148,15 +221,18 @@ const Auth = () => {
   };
 
   const handleSignOut = async () => {
+    console.log('Starting sign out');
     try {
       cleanupAuthState();
       try {
         await supabase.auth.signOut({ scope: 'global' });
       } catch (err) {
-        // Continue even if this fails
+        console.log('Sign out error (continuing):', err);
       }
+      console.log('Sign out completed, redirecting');
       window.location.href = '/auth';
     } catch (error: any) {
+      console.error('Sign out error:', error);
       toast({
         title: "Error",
         description: error.message || "Failed to sign out",
@@ -175,7 +251,8 @@ const Auth = () => {
               <CardTitle>Welcome back!</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p>You are signed in as: {user.email}</p>
+              <p className="text-sm text-muted-foreground">You are signed in as:</p>
+              <p className="font-medium">{user.email}</p>
               <div className="space-y-2">
                 <Button onClick={() => window.location.href = '/'} className="w-full">
                   Go to Home
@@ -231,6 +308,7 @@ const Auth = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
+                        disabled={loading}
                       />
                     </div>
                     
@@ -244,6 +322,7 @@ const Auth = () => {
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           required
+                          disabled={loading}
                         />
                         <Button
                           type="button"
@@ -251,6 +330,7 @@ const Auth = () => {
                           size="icon"
                           className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8"
                           onClick={() => setShowPassword(!showPassword)}
+                          disabled={loading}
                         >
                           {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                         </Button>
@@ -284,6 +364,7 @@ const Auth = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
+                        disabled={loading}
                       />
                     </div>
                     
@@ -293,11 +374,12 @@ const Auth = () => {
                         <Input
                           id="signup-password"
                           type={showPassword ? "text" : "password"}
-                          placeholder="Choose a password"
+                          placeholder="Choose a password (min 6 characters)"
                           value={password}
                           onChange={(e) => setPassword(e.target.value)}
                           required
                           minLength={6}
+                          disabled={loading}
                         />
                         <Button
                           type="button"
@@ -305,6 +387,7 @@ const Auth = () => {
                           size="icon"
                           className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 w-8"
                           onClick={() => setShowPassword(!showPassword)}
+                          disabled={loading}
                         >
                           {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                         </Button>
@@ -321,6 +404,7 @@ const Auth = () => {
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required
                         minLength={6}
+                        disabled={loading}
                       />
                     </div>
                     
