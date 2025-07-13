@@ -11,23 +11,26 @@ import QuoteSection from "@/components/QuoteSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { QuoteProvider } from "@/contexts/QuoteContext";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <Hero />
-      <CalculatorSection />
-      <QuoteConfigurator />
-      <DeliveryTracker />
-      <DeliverySection />
-      <TestimonialsSection />
-      <StatsSection />
-      <QuoteSection />
-      <FAQSection />
-      <ContactSection />
-      <Footer />
-    </div>
+    <QuoteProvider>
+      <div className="min-h-screen pt-20">
+        <Header />
+        <Hero />
+        <CalculatorSection />
+        <QuoteConfigurator />
+        <DeliveryTracker />
+        <DeliverySection />
+        <TestimonialsSection />
+        <StatsSection />
+        <QuoteSection />
+        <FAQSection />
+        <ContactSection />
+        <Footer />
+      </div>
+    </QuoteProvider>
   );
 };
 

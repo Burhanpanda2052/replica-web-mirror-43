@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { User as SupabaseUser } from "@supabase/supabase-js";
+import { useStickyHeader } from "@/hooks/useStickyHeader";
 
 const Header = () => {
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [loading, setLoading] = useState(true);
+  const { isVisible, isScrolled } = useStickyHeader();
 
   useEffect(() => {
     // Set up auth state listener
@@ -38,7 +40,11 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-secondary text-secondary-foreground">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-sm text-secondary-foreground transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${isScrolled ? 'shadow-lg' : ''}`}
+    >
       {/* Main header */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">

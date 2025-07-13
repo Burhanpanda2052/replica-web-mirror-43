@@ -1,8 +1,14 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Building, Users, Award, Calendar } from "lucide-react";
+import { useCounterAnimation } from "@/hooks/useCounterAnimation";
 
 const StatsSection = () => {
+  const projectsCounter = useCounterAnimation({ end: 500, suffix: "+" });
+  const customersCounter = useCounterAnimation({ end: 1000, suffix: "+" });
+  const productsCounter = useCounterAnimation({ end: 50, suffix: "+" });
+  const experienceCounter = useCounterAnimation({ end: 9 });
+
   return (
     <section className="py-16 bg-primary text-white">
       <div className="container mx-auto px-4">
@@ -18,7 +24,9 @@ const StatsSection = () => {
             <CardContent className="p-6 space-y-4">
               <Building className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-white">500+</div>
+                <div ref={projectsCounter.elementRef} className="text-4xl font-bold text-white">
+                  {projectsCounter.displayValue}
+                </div>
                 <div className="text-sm text-white/90">Projects Completed</div>
               </div>
             </CardContent>
@@ -28,7 +36,9 @@ const StatsSection = () => {
             <CardContent className="p-6 space-y-4">
               <Users className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-white">1000+</div>
+                <div ref={customersCounter.elementRef} className="text-4xl font-bold text-white">
+                  {customersCounter.displayValue}
+                </div>
                 <div className="text-sm text-white/90">Satisfied Customers</div>
               </div>
             </CardContent>
@@ -38,7 +48,9 @@ const StatsSection = () => {
             <CardContent className="p-6 space-y-4">
               <Award className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-white">50+</div>
+                <div ref={productsCounter.elementRef} className="text-4xl font-bold text-white">
+                  {productsCounter.displayValue}
+                </div>
                 <div className="text-sm text-white/90">Product Lines</div>
               </div>
             </CardContent>
@@ -48,7 +60,9 @@ const StatsSection = () => {
             <CardContent className="p-6 space-y-4">
               <Calendar className="h-12 w-12 mx-auto text-yellow" />
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-white">9</div>
+                <div ref={experienceCounter.elementRef} className="text-4xl font-bold text-white">
+                  {experienceCounter.displayValue}
+                </div>
                 <div className="text-sm text-white/90">Years Experience</div>
               </div>
             </CardContent>

@@ -1,13 +1,14 @@
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calculator, FileText, Clock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Calculator, FileText, Clock, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { useQuote } from "@/contexts/QuoteContext";
 
 const QuoteSection = () => {
   const [loading, setLoading] = useState(false);
@@ -20,9 +21,26 @@ const QuoteSection = () => {
     projectDetails: ""
   });
   const { toast } = useToast();
+  const { selectedProduct, setSelectedProduct } = useQuote();
+
+  // Auto-populate project details when a product is selected
+  useEffect(() => {
+    if (selectedProduct) {
+      const productInfo = `Product: ${selectedProduct.productName}\nCategory: ${selectedProduct.category}\nSpecifications: ${selectedProduct.specifications.join(', ')}\n\nAdditional Details: `;
+      setFormData(prev => ({
+        ...prev,
+        projectDetails: productInfo
+      }));
+    }
+  }, [selectedProduct]);
 
   const handleInputChange = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const clearSelectedProduct = () => {
+    setSelectedProduct(null);
+    setFormData(prev => ({ ...prev, projectDetails: "" }));
   };
 
   const sendEmailNotification = async (quoteData: typeof formData) => {
@@ -35,6 +53,12 @@ const QuoteSection = () => {
         projectType: quoteData.projectType,
         projectLocation: quoteData.projectLocation,
         projectDetails: quoteData.projectDetails,
+        selectedProduct: selectedProduct ? {
+          productId: selectedProduct.productId,
+          productName: selectedProduct.productName,
+          category: selectedProduct.category,
+          specifications: selectedProduct.specifications
+        } : null,
         timestamp: new Date().toLocaleString('en-US', {
           timeZone: 'Africa/Dar_es_Salaam',
           year: 'numeric',
@@ -105,7 +129,7 @@ const QuoteSection = () => {
         });
       }
 
-      // Reset form
+      // Reset form and clear selected product
       setFormData({
         fullName: "",
         phoneNumber: "",
@@ -114,6 +138,7 @@ const QuoteSection = () => {
         projectLocation: "",
         projectDetails: ""
       });
+      setSelectedProduct(null);
 
     } catch (error: any) {
       console.error('Error submitting quote:', error);
@@ -157,6 +182,32 @@ const QuoteSection = () => {
           {/* Quote form */}
           <Card className="bg-white shadow-lg">
             <CardContent className="p-6">
+              {/* Selected Product Display */}
+              {selectedProduct && (
+                <div className="mb-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Badge variant="outline">{selectedProduct.category}</Badge>
+                        <span className="text-sm text-muted-foreground">Selected Product</span>
+                      </div>
+                      <h4 className="font-semibold text-foreground">{selectedProduct.productName}</h4>
+                      <div className="text-xs text-muted-foreground mt-1">
+                        {selectedProduct.specifications.slice(0, 2).join(', ')}
+                      </div>
+                    </div>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={clearSelectedProduct}
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
