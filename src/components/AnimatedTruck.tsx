@@ -8,7 +8,7 @@ const AnimatedTruck = () => {
   return (
     <div 
       ref={truckRef}
-      className="absolute top-4 right-4 opacity-0"
+      className="absolute top-4 left-0 opacity-0 z-10"
     >
       <Truck className="h-12 w-12 text-yellow drop-shadow-lg" />
     </div>

@@ -90,15 +90,15 @@ export const useTruckAnimation = () => {
     if (truckRef.current) {
       gsap.fromTo(truckRef.current,
         {
-          x: '100vw',
+          x: '-100vw',
           opacity: 0
         },
         {
-          x: 0,
+          x: '100vw',
           opacity: 1,
-          duration: 2,
-          ease: "power2.out",
-          delay: 0.5
+          duration: 8,
+          ease: "none",
+          delay: 1
         }
       );
     }
