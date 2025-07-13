@@ -2,8 +2,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
+import { useScrollToTop } from "@/hooks/useGSAPAnimations";
 
 const Contact = () => {
+  useScrollToTop();
+
   return (
     <div className="min-h-screen pt-20">
       <Header />

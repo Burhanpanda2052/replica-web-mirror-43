@@ -6,11 +6,14 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { User as SupabaseUser } from "@supabase/supabase-js";
 import { useStickyHeader } from "@/hooks/useStickyHeader";
+import { useSearch } from "@/contexts/SearchContext";
 
 const Header = () => {
   const [user, setUser] = useState<SupabaseUser | null>(null);
   const [loading, setLoading] = useState(true);
+  const [searchInput, setSearchInput] = useState('');
   const { isVisible, isScrolled } = useStickyHeader();
+  const { performSearch } = useSearch();
 
   useEffect(() => {
     // Set up auth state listener
@@ -36,6 +39,13 @@ const Header = () => {
     const quoteSection = document.getElementById('quote');
     if (quoteSection) {
       quoteSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchInput.trim()) {
+      performSearch(searchInput);
     }
   };
 
@@ -67,14 +77,18 @@ const Header = () => {
           </nav>
           
           <div className="flex items-center space-x-4">
-            <div className="relative hidden md:flex">
+            <form onSubmit={handleSearchSubmit} className="relative hidden md:flex">
               <input 
                 type="text" 
                 placeholder="Search products..." 
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
                 className="bg-white/10 border border-white/20 rounded-lg px-4 py-2 pr-10 text-secondary-foreground placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-yellow"
               />
-              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/60" />
-            </div>
+              <button type="submit" className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                <Search className="h-4 w-4 text-white/60" />
+              </button>
+            </form>
             <Button 
               className="bg-yellow text-yellow-foreground hover:bg-yellow/90 font-semibold"
               onClick={handleQuoteClick}

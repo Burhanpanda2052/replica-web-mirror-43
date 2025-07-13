@@ -2,11 +2,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
 import { useCounterAnimation } from "@/hooks/useCounterAnimation";
+import { useTestimonialsAnimation } from "@/hooks/useGSAPAnimations";
 
 const TestimonialsSection = () => {
   const ratingCounter = useCounterAnimation({ end: 4.9, decimals: 1, suffix: "/5" });
   const clientsCounter = useCounterAnimation({ end: 500, suffix: "+" });
   const satisfactionCounter = useCounterAnimation({ end: 98, suffix: "%" });
+  const containerRef = useTestimonialsAnimation();
 
   const testimonials = [
     {
@@ -63,9 +65,9 @@ const TestimonialsSection = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-gray-50 border-0 h-full">
+            <Card key={index} className="bg-gray-50 border-0 h-full" data-testimonial-card>
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-1">

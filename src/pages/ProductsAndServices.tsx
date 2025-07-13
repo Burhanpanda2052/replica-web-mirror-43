@@ -5,8 +5,32 @@ import ProductsSection from "@/components/ProductsSection";
 import ServicesSection from "@/components/ServicesSection";
 import QuoteSection from "@/components/QuoteSection";
 import { QuoteProvider } from "@/contexts/QuoteContext";
+import { useScrollToTop } from "@/hooks/useGSAPAnimations";
+import { useSearch } from "@/contexts/SearchContext";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const ProductsAndServices = () => {
+  useScrollToTop();
+  const { setSearchQuery } = useSearch();
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle search query from URL parameters
+    const searchParams = new URLSearchParams(location.search);
+    const searchQuery = searchParams.get('search');
+    if (searchQuery) {
+      setSearchQuery(searchQuery);
+      // Scroll to products section after a brief delay
+      setTimeout(() => {
+        const productsSection = document.getElementById('products-section');
+        if (productsSection) {
+          productsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location.search, setSearchQuery]);
+
   return (
     <QuoteProvider>
       <div className="min-h-screen pt-20">
@@ -36,7 +60,9 @@ const ProductsAndServices = () => {
         </section>
 
         {/* Products Section */}
-        <ProductsSection />
+        <div id="products-section">
+          <ProductsSection />
+        </div>
         
         {/* Services Section */}
         <ServicesSection />

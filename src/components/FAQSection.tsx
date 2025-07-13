@@ -1,9 +1,13 @@
 
-
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { useFAQRevealAnimation } from "@/hooks/useGSAPAnimations";
+import { useNavigate } from "react-router-dom";
 
 const FAQSection = () => {
+  const containerRef = useFAQRevealAnimation();
+  const navigate = useNavigate();
+
   const faqs = [
     {
       question: "What types of construction materials do you supply?",
@@ -31,6 +35,10 @@ const FAQSection = () => {
     }
   ];
 
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -41,10 +49,15 @@ const FAQSection = () => {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto">
+        <div ref={containerRef} className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-lg border-0 shadow-sm">
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`} 
+                className="bg-white rounded-lg border-0 shadow-sm"
+                data-faq-item
+              >
                 <AccordionTrigger className="px-6 py-4 text-left font-semibold hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
@@ -58,7 +71,10 @@ const FAQSection = () => {
         
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Still have questions?</p>
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Button 
+            className="bg-primary text-primary-foreground hover:bg-primary/90"
+            onClick={handleContactClick}
+          >
             Contact Our Support Team
           </Button>
         </div>
@@ -68,4 +84,3 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
-

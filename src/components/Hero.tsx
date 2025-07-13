@@ -1,6 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, ShoppingCart, Calculator, Truck, Shield, Phone } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import AnimatedTruck from "@/components/AnimatedTruck";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -17,7 +19,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="bg-secondary text-secondary-foreground py-20">
+    <section className="bg-secondary text-secondary-foreground py-20 relative overflow-hidden">
+      <AnimatedTruck />
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}

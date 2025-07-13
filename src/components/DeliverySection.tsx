@@ -1,8 +1,11 @@
 
 import { MapPin, Clock, Truck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 const DeliverySection = () => {
+  const navigate = useNavigate();
+
   const deliveryAreas = [
     { area: "Stone Town", time: "Same Day", available: true },
     { area: "Nungwi", time: "Next Day", available: true },
@@ -11,6 +14,10 @@ const DeliverySection = () => {
     { area: "Paje", time: "Next Day", available: true },
     { area: "Jambiani", time: "Next Day", available: true },
   ];
+
+  const handleRequestExpress = () => {
+    navigate('/contact');
+  };
 
   return (
     <section className="py-16 bg-gray-100">
@@ -82,7 +89,10 @@ const DeliverySection = () => {
                 <p className="mb-4 opacity-90">
                   Contact us for same-day delivery options available in Stone Town and surrounding areas.
                 </p>
-                <button className="bg-yellow text-yellow-foreground px-6 py-2 rounded-lg font-medium hover:bg-yellow/90 transition-colors">
+                <button 
+                  onClick={handleRequestExpress}
+                  className="bg-yellow text-yellow-foreground px-6 py-2 rounded-lg font-medium hover:bg-yellow/90 transition-colors"
+                >
                   Request Express
                 </button>
               </CardContent>
