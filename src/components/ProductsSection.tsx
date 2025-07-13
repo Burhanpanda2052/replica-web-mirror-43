@@ -7,6 +7,7 @@ import ProductCard from "./ProductCard";
 import ProductDetailsModal from "./ProductDetailsModal";
 import { products, productCategories, getProductsByCategory, searchProducts, Product } from "@/data/products";
 import { Search, Filter, Grid, List } from "lucide-react";
+import { useQuote } from "@/contexts/QuoteContext";
 
 const ProductsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -14,6 +15,7 @@ const ProductsSection = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
+  const { setSelectedProduct: setQuoteProduct, scrollToQuote } = useQuote();
 
   // Filter and search products
   const filteredProducts = useMemo(() => {
@@ -37,9 +39,21 @@ const ProductsSection = () => {
   };
 
   const handleQuickQuote = (productId: string) => {
-    // Integration with Quote Configurator would go here
-    console.log(`Quick quote requested for product: ${productId}`);
-    // You could dispatch an action or navigate to quote section
+    const product = products.find(p => p.id === productId);
+    if (product) {
+      // Set the selected product data for the quote context
+      setQuoteProduct({
+        productId: product.id,
+        productName: product.name,
+        category: product.category,
+        specifications: product.specifications
+      });
+      
+      // Scroll to quote section
+      scrollToQuote();
+      
+      console.log(`Quote request initiated for product: ${product.name}`);
+    }
   };
 
   return (

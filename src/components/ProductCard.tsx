@@ -2,9 +2,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { LucideIcon, Eye, ShoppingCart, Calculator } from "lucide-react";
+import { LucideIcon, Eye, ShoppingCart } from "lucide-react";
 import { useState } from "react";
-import { useQuote } from "@/contexts/QuoteContext";
 
 interface ProductCardProps {
   id: string;
@@ -37,22 +36,13 @@ const ProductCard = ({
 }: ProductCardProps) => {
   const [imageLoading, setImageLoading] = useState(true);
   const [imageError, setImageError] = useState(false);
-  const { setSelectedProduct, scrollToQuote } = useQuote();
 
   const handleQuoteClick = () => {
-    // Set the selected product data
-    setSelectedProduct({
-      productId: id,
-      productName: name,
-      category,
-      specifications
-    });
-    
-    // Scroll to quote section
-    scrollToQuote();
-    
-    // Call the original callback if provided
     onQuickQuote?.(id);
+  };
+
+  const handleDetailsClick = () => {
+    onViewDetails?.(id);
   };
 
   return (
@@ -128,7 +118,7 @@ const ProductCard = ({
             variant="outline" 
             size="sm" 
             className="flex-1"
-            onClick={() => onViewDetails?.(id)}
+            onClick={handleDetailsClick}
           >
             <Eye className="h-4 w-4 mr-1" />
             Details
