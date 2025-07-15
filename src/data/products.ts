@@ -619,8 +619,8 @@ export const products: Product[] = [
     name: "3-Core Electrical Cable",
     description: "3-core electrical cable for power distribution and electrical installations.",
     category: "Electrical Supplies",
-    price: "12,500 TZS",
-    unit: "per meter",
+    price: "490,000 TZS",
+    unit: "per 3 core 2.5 roll",
     specifications: [
       "4.0mm² conductor",
       "3-core configuration",
