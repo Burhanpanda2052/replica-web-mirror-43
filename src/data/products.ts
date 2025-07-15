@@ -603,7 +603,7 @@ export const products: Product[] = [
     description: "Standard house wiring cable for domestic electrical installations.",
     category: "Electrical Supplies",
     price: "490,000 TZS",
-    unit: "per meter",
+    unit: "per roll",
     specifications: [
       "2.5mm² conductor",
       "PVC insulation",
