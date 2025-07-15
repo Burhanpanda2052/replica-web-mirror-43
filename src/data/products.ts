@@ -491,8 +491,8 @@ export const products: Product[] = [
     name: "Construction Rubble & Aggregate",
     description: "Mixed construction rubble and aggregate materials perfect for foundation work, road base, and general construction fill applications.",
     category: "Building Materials",
-    price: "45,000 TZS",
-    unit: "per cubic meter",
+    price: "600,000 TZS",
+    unit: "per 20 ton truck",
     specifications: [
       "Mixed aggregate sizes",
       "Suitable for foundation work",
