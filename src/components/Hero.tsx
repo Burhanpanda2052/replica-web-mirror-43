@@ -97,7 +97,7 @@ const Hero = () => {
                     onClick={handleProductsClick}
                   >
                     <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Iron Rods</div>
+                    <div className="relative z-10 text-lg font-semibold text-white drop-shadow-lg">Steel Rebars</div>
                   </div>
                   <div 
                     className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-red-400 to-gray-600 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
