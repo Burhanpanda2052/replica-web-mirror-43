@@ -21,10 +21,10 @@ export interface Product {
 }
 
 export const productCategories = [
-  { id: "all", name: "All Products", count: 45 },
+  { id: "all", name: "All Products", count: 46 },
   { id: "safety", name: "Safety Equipment", count: 5 },
   { id: "tools", name: "Tools & Equipment", count: 10 },
-  { id: "materials", name: "Building Materials", count: 25 },
+  { id: "materials", name: "Building Materials", count: 26 },
   { id: "electrical", name: "Electrical Supplies", count: 5 }
 ];
 
@@ -485,6 +485,30 @@ export const products: Product[] = [
     image: "/lovable-uploads/c6e4d049-0860-4ce6-afd4-3d594f6ec007.png",
     inStock: true,
     icon: Square
+  },
+  {
+    id: "construction-rubble-aggregate",
+    name: "Construction Rubble & Aggregate",
+    description: "Mixed construction rubble and aggregate materials perfect for foundation work, road base, and general construction fill applications.",
+    category: "Building Materials",
+    price: "45,000 TZS",
+    unit: "per cubic meter",
+    specifications: [
+      "Mixed aggregate sizes",
+      "Suitable for foundation work",
+      "Road base applications",
+      "Construction fill material",
+      "Delivered by dump truck"
+    ],
+    image: "/lovable-uploads/8d289b88-d40b-49ed-b96d-2d22c5ea5ff6.png",
+    inStock: true,
+    icon: Box,
+    technicalSpecs: {
+      "Material Type": "Mixed Aggregate",
+      "Size Range": "10-50mm",
+      "Delivery": "Dump truck load",
+      "Application": "Foundation, road base, fill"
+    }
   },
   {
     id: "square-timber-beams",
