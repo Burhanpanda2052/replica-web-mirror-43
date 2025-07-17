@@ -5,13 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, FileText, Clock, X } from "lucide-react";
+import { Calculator, FileText, Clock, X, Shield } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useQuote } from "@/contexts/QuoteContext";
+import { sanitizeInput, quoteFormSchema, checkRateLimit, type QuoteFormData } from "@/utils/security";
 
 const QuoteSection = () => {
   const [loading, setLoading] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -35,7 +37,14 @@ const QuoteSection = () => {
   }, [selectedProduct]);
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    // Sanitize input to prevent XSS
+    const sanitizedValue = sanitizeInput(value);
+    setFormData(prev => ({ ...prev, [field]: sanitizedValue }));
+    
+    // Clear validation error for this field
+    if (validationErrors[field]) {
+      setValidationErrors(prev => ({ ...prev, [field]: '' }));
+    }
   };
 
   const clearSelectedProduct = () => {
@@ -89,18 +98,52 @@ const QuoteSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setValidationErrors({});
 
     try {
-      // First, save to Supabase database
+      // Rate limiting check
+      const userIP = 'user'; // In production, get actual IP
+      if (!checkRateLimit(userIP, 3, 300000)) { // 3 requests per 5 minutes
+        throw new Error('Too many quote requests. Please wait before submitting again.');
+      }
+
+      // Validate form data
+      const validationData: QuoteFormData = {
+        full_name: formData.fullName,
+        phone_number: formData.phoneNumber,
+        email: formData.email,
+        project_type: formData.projectType,
+        project_location: formData.projectLocation,
+        project_details: formData.projectDetails
+      };
+
+      const validationResult = quoteFormSchema.safeParse(validationData);
+      
+      if (!validationResult.success) {
+        const errors: Record<string, string> = {};
+        validationResult.error.errors.forEach(error => {
+          errors[error.path[0] as string] = error.message;
+        });
+        setValidationErrors(errors);
+        
+        toast({
+          title: "Validation Error",
+          description: "Please fix the errors in the form and try again.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Save to Supabase database with sanitized data
       const { data, error } = await supabase
         .from('quotes')
         .insert({
-          full_name: formData.fullName,
-          phone_number: formData.phoneNumber,
-          email: formData.email || null,
-          project_type: formData.projectType,
-          project_location: formData.projectLocation,
-          project_details: formData.projectDetails
+          full_name: sanitizeInput(formData.fullName),
+          phone_number: sanitizeInput(formData.phoneNumber),
+          email: formData.email ? sanitizeInput(formData.email) : null,
+          project_type: sanitizeInput(formData.projectType),
+          project_location: sanitizeInput(formData.projectLocation),
+          project_details: sanitizeInput(formData.projectDetails)
         })
         .select();
 
@@ -217,7 +260,11 @@ const QuoteSection = () => {
                       value={formData.fullName}
                       onChange={(e) => handleInputChange('fullName', e.target.value)}
                       required
+                      className={validationErrors.full_name ? 'border-red-500' : ''}
                     />
+                    {validationErrors.full_name && (
+                      <p className="text-xs text-red-500">{validationErrors.full_name}</p>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-foreground">Phone Number</label>
@@ -226,7 +273,11 @@ const QuoteSection = () => {
                       value={formData.phoneNumber}
                       onChange={(e) => handleInputChange('phoneNumber', e.target.value)}
                       required
+                      className={validationErrors.phone_number ? 'border-red-500' : ''}
                     />
+                    {validationErrors.phone_number && (
+                      <p className="text-xs text-red-500">{validationErrors.phone_number}</p>
+                    )}
                   </div>
                 </div>
                 
@@ -237,13 +288,17 @@ const QuoteSection = () => {
                     placeholder="your.email@example.com" 
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
+                    className={validationErrors.email ? 'border-red-500' : ''}
                   />
+                  {validationErrors.email && (
+                    <p className="text-xs text-red-500">{validationErrors.email}</p>
+                  )}
                 </div>
                 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Project Type</label>
                   <Select value={formData.projectType} onValueChange={(value) => handleInputChange('projectType', value)}>
-                    <SelectTrigger>
+                    <SelectTrigger className={validationErrors.project_type ? 'border-red-500' : ''}>
                       <SelectValue placeholder="Select project type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -254,6 +309,9 @@ const QuoteSection = () => {
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
+                  {validationErrors.project_type && (
+                    <p className="text-xs text-red-500">{validationErrors.project_type}</p>
+                  )}
                 </div>
                 
                 <div className="space-y-2">
@@ -263,7 +321,11 @@ const QuoteSection = () => {
                     value={formData.projectLocation}
                     onChange={(e) => handleInputChange('projectLocation', e.target.value)}
                     required
+                    className={validationErrors.project_location ? 'border-red-500' : ''}
                   />
+                  {validationErrors.project_location && (
+                    <p className="text-xs text-red-500">{validationErrors.project_location}</p>
+                  )}
                 </div>
                 
                 <div className="space-y-2">
@@ -274,7 +336,11 @@ const QuoteSection = () => {
                     value={formData.projectDetails}
                     onChange={(e) => handleInputChange('projectDetails', e.target.value)}
                     required
+                    className={validationErrors.project_details ? 'border-red-500' : ''}
                   />
+                  {validationErrors.project_details && (
+                    <p className="text-xs text-red-500">{validationErrors.project_details}</p>
+                  )}
                 </div>
                 
                 <Button 
@@ -285,6 +351,10 @@ const QuoteSection = () => {
                   {loading ? "Submitting..." : "Request Quote"}
                 </Button>
                 
+                <div className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+                  <Shield className="h-3 w-3 text-green-600" />
+                  <span>Secure & Encrypted Submission</span>
+                </div>
                 <p className="text-xs text-muted-foreground text-center">
                   By submitting this form, you agree to our terms and privacy policy. We'll contact you within 24 hours.
                 </p>
