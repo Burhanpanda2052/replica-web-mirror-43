@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone, MapPin, Search, User, X } from "lucide-react";
@@ -76,13 +75,11 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-3">
-            <div className="bg-yellow rounded-lg p-2">
-              <div className="text-yellow-foreground font-bold text-xl">🔨</div>
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold">TOTAL BUILDERS</h1>
-              <p className="text-sm opacity-80">Construction & Material Supply</p>
-            </div>
+            <img 
+              src="/lovable-uploads/5a223750-1ff5-4108-9cf1-250ae46e42e7.png" 
+              alt="TOTAL BUILDERS Logo" 
+              className="h-12 w-auto"
+            />
           </div>
           
           <nav className="hidden lg:flex items-center space-x-8">
