@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ProductsSection from "@/components/ProductsSection";
 import ServicesSection from "@/components/ServicesSection";
-import QuoteSection from "@/components/QuoteSection";
+import EnhancedQuoteSection from "@/components/EnhancedQuoteSection";
 import { QuoteProvider } from "@/contexts/QuoteContext";
 import { useScrollToTop } from "@/hooks/useGSAPAnimations";
 import { useSearch } from "@/contexts/SearchContext";
@@ -68,7 +68,7 @@ const ProductsAndServices = () => {
         <ServicesSection />
         
         {/* Quote Section */}
-        <QuoteSection />
+        <EnhancedQuoteSection />
         
         <Footer />
       </div>

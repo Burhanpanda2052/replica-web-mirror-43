@@ -76,7 +76,7 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center space-x-3">
             <img 
-              src="/lovable-uploads/5a223750-1ff5-4108-9cf1-250ae46e42e7.png" 
+              src="/lovable-uploads/df90b0c6-eeb9-4b4f-a5c4-9ea80b8f9adb.png" 
               alt="TOTAL BUILDERS Logo" 
               className="h-12 w-auto"
             />

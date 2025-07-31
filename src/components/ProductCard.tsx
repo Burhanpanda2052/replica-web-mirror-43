@@ -10,7 +10,6 @@ interface ProductCardProps {
   name: string;
   description: string;
   category: string;
-  price: string;
   unit?: string;
   specifications: string[];
   image?: string;
@@ -25,7 +24,6 @@ const ProductCard = ({
   name, 
   description, 
   category, 
-  price, 
   unit = "per unit",
   specifications, 
   image, 
@@ -92,10 +90,6 @@ const ProductCard = ({
                 {category}
               </Badge>
               <h3 className="font-semibold text-lg leading-tight">{name}</h3>
-            </div>
-            <div className="text-right ml-4">
-              <div className="text-xl font-bold text-primary">{price}</div>
-              <div className="text-xs text-muted-foreground">{unit}</div>
             </div>
           </div>
           

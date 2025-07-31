@@ -6,7 +6,7 @@ import QuoteConfigurator from "@/components/QuoteConfigurator";
 import DeliverySection from "@/components/DeliverySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import StatsSection from "@/components/StatsSection";
-import QuoteSection from "@/components/QuoteSection";
+import EnhancedQuoteSection from "@/components/EnhancedQuoteSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -23,7 +23,7 @@ const Index = () => {
         <DeliverySection />
         <TestimonialsSection />
         <StatsSection />
-        <QuoteSection />
+        <EnhancedQuoteSection />
         <FAQSection />
         <ContactSection />
         <Footer />
