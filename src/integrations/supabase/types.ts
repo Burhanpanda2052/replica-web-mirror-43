@@ -10,236 +10,20 @@ export type Database = {
   // Allows to automatically instanciate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-    PostgrestVersion: "12.2.3 (519615d)"
+    PostgrestVersion: "13.0.4"
   }
   public: {
     Tables: {
-      audit_log: {
-        Row: {
-          id: string
-          new_data: Json | null
-          old_data: Json | null
-          operation: string
-          table_name: string
-          timestamp: string | null
-          user_id: string | null
-        }
-        Insert: {
-          id?: string
-          new_data?: Json | null
-          old_data?: Json | null
-          operation: string
-          table_name: string
-          timestamp?: string | null
-          user_id?: string | null
-        }
-        Update: {
-          id?: string
-          new_data?: Json | null
-          old_data?: Json | null
-          operation?: string
-          table_name?: string
-          timestamp?: string | null
-          user_id?: string | null
-        }
-        Relationships: []
-      }
-      delivery_requests: {
-        Row: {
-          created_at: string
-          customer_email: string | null
-          customer_name: string
-          customer_phone: string
-          delivery_address: string
-          delivery_area: string
-          id: string
-          preferred_date: string
-          preferred_time_slot: string
-          product_id: string | null
-          product_name: string
-          quantity: number | null
-          special_instructions: string | null
-          status: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          customer_email?: string | null
-          customer_name: string
-          customer_phone: string
-          delivery_address: string
-          delivery_area: string
-          id?: string
-          preferred_date: string
-          preferred_time_slot: string
-          product_id?: string | null
-          product_name: string
-          quantity?: number | null
-          special_instructions?: string | null
-          status?: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          customer_email?: string | null
-          customer_name?: string
-          customer_phone?: string
-          delivery_address?: string
-          delivery_area?: string
-          id?: string
-          preferred_date?: string
-          preferred_time_slot?: string
-          product_id?: string | null
-          product_name?: string
-          quantity?: number | null
-          special_instructions?: string | null
-          status?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      delivery_schedule: {
-        Row: {
-          completed_at: string | null
-          created_at: string
-          delivery_notes: string | null
-          delivery_request_id: string | null
-          delivery_status: string
-          driver_name: string | null
-          driver_phone: string | null
-          id: string
-          scheduled_date: string
-          scheduled_time_end: string
-          scheduled_time_start: string
-          updated_at: string
-          vehicle_info: string | null
-        }
-        Insert: {
-          completed_at?: string | null
-          created_at?: string
-          delivery_notes?: string | null
-          delivery_request_id?: string | null
-          delivery_status?: string
-          driver_name?: string | null
-          driver_phone?: string | null
-          id?: string
-          scheduled_date: string
-          scheduled_time_end: string
-          scheduled_time_start: string
-          updated_at?: string
-          vehicle_info?: string | null
-        }
-        Update: {
-          completed_at?: string | null
-          created_at?: string
-          delivery_notes?: string | null
-          delivery_request_id?: string | null
-          delivery_status?: string
-          driver_name?: string | null
-          driver_phone?: string | null
-          id?: string
-          scheduled_date?: string
-          scheduled_time_end?: string
-          scheduled_time_start?: string
-          updated_at?: string
-          vehicle_info?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "delivery_schedule_delivery_request_id_fkey"
-            columns: ["delivery_request_id"]
-            isOneToOne: false
-            referencedRelation: "delivery_requests"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      quotes: {
-        Row: {
-          created_at: string
-          email: string | null
-          full_name: string
-          id: string
-          phone_number: string
-          project_details: string
-          project_location: string
-          project_type: string
-          status: string
-          updated_at: string
-        }
-        Insert: {
-          created_at?: string
-          email?: string | null
-          full_name: string
-          id?: string
-          phone_number: string
-          project_details: string
-          project_location: string
-          project_type: string
-          status?: string
-          updated_at?: string
-        }
-        Update: {
-          created_at?: string
-          email?: string | null
-          full_name?: string
-          id?: string
-          phone_number?: string
-          project_details?: string
-          project_location?: string
-          project_type?: string
-          status?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      user_roles: {
-        Row: {
-          created_at: string
-          id: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          role: Database["public"]["Enums"]["app_role"]
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          role?: Database["public"]["Enums"]["app_role"]
-          user_id?: string
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      assign_admin_role: {
-        Args: { _target_user_id: string }
-        Returns: boolean
-      }
-      has_role: {
-        Args: {
-          _user_id: string
-          _role: Database["public"]["Enums"]["app_role"]
-        }
-        Returns: boolean
-      }
-      remove_user_role: {
-        Args: {
-          _target_user_id: string
-          _role: Database["public"]["Enums"]["app_role"]
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
-      app_role: "admin" | "user"
+      [_ in never]: never
     }
     CompositeTypes: {
       [_ in never]: never
@@ -366,8 +150,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {
-      app_role: ["admin", "user"],
-    },
+    Enums: {},
   },
 } as const
