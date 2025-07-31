@@ -98,7 +98,7 @@ const ScheduleDeliveryModal = ({ isOpen, onClose, productName, productId }: Sche
     try {
       // First, save to Supabase database
       const { error } = await supabase
-        .from('delivery_requests')
+        .from('deliveries')
         .insert(deliveryData);
 
       if (error) throw error;
