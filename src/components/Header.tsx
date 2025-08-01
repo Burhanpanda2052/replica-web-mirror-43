@@ -82,7 +82,7 @@ const Header = () => {
             />
             <div className="hidden md:block">
               <p className="text-sm font-medium text-secondary-foreground">
-                Zanzibar's Premium Construction and Material Supply
+                Zanzibar's Premium Constructions and Materials Supply
               </p>
             </div>
           </div>
