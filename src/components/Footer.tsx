@@ -20,7 +20,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/src/assets/total-builders-logo.png" 
+                src="/lovable-uploads/e58f3aa8-99ea-4cf2-8ad9-a8bd4f6607d2.png" 
                 alt="TOTAL BUILDERS Logo" 
                 className="h-16 w-auto"
               />
