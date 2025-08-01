@@ -74,12 +74,17 @@ const Header = () => {
       {/* Main header */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
             <img 
               src="/lovable-uploads/e58f3aa8-99ea-4cf2-8ad9-a8bd4f6607d2.png" 
               alt="TOTAL BUILDERS Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
+            <div className="hidden md:block">
+              <p className="text-sm font-medium text-secondary-foreground">
+                Zanzibar's Premium Constructions and Materials Supply
+              </p>
+            </div>
           </div>
           
           <nav className="hidden lg:flex items-center space-x-8">

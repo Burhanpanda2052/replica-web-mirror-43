@@ -99,16 +99,19 @@ const ContactSection = () => {
               </CardContent>
             </Card>
             
-            {/* Mock map */}
+            {/* Google Maps Embed */}
             <Card className="overflow-hidden">
               <CardContent className="p-0">
-                <div className="bg-gray-200 h-64 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <MapPin className="h-12 w-12 mx-auto mb-2" />
-                    <p className="font-medium">Interactive Map</p>
-                    <p className="text-sm">Taveta, Zanzibar</p>
-                  </div>
-                </div>
+                <iframe
+                  src="https://maps.google.com/maps?q=-6.294675,39.281281&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="256"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="TOTAL BUILDERS Location - Taveta, Zanzibar"
+                ></iframe>
               </CardContent>
             </Card>
             
