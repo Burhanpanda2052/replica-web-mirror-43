@@ -31,7 +31,7 @@ const ProductsSection = () => {
   }, [selectedCategory, searchQuery]);
 
   const handleViewDetails = (productId: string) => {
-    const product = products.find(p => p.id === productId);
+    const product = Object.values(products).flat().find(p => p.id === productId);
     if (product) {
       setSelectedProduct(product);
       setIsModalOpen(true);
@@ -39,7 +39,7 @@ const ProductsSection = () => {
   };
 
   const handleQuickQuote = (productId: string) => {
-    const product = products.find(p => p.id === productId);
+    const product = Object.values(products).flat().find(p => p.id === productId);
     if (product) {
       // Set the selected product data for the quote context
       setQuoteProduct({

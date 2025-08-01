@@ -59,10 +59,10 @@ const ProductDetailsModal = ({
               <p className="text-muted-foreground">{product.description}</p>
             </div>
 
-            {/* Pricing */}
+            {/* Unit Display */}
             <div className="bg-muted/30 rounded-lg p-4">
-              <div className="text-3xl font-bold text-primary mb-1">{product.price}</div>
-              <div className="text-sm text-muted-foreground">{product.unit || "per unit"}</div>
+              <div className="text-lg font-medium text-primary mb-1">Unit: {product.unit || "per unit"}</div>
+              <div className="text-sm text-muted-foreground">Request quote for pricing</div>
             </div>
 
             {/* Key Specifications */}
