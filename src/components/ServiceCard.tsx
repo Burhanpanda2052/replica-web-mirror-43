@@ -24,7 +24,7 @@ const ServiceCard = ({ title, description, color, icon: Icon, features, price }:
     // New material-appropriate colors
     gray: "bg-gradient-to-br from-gray-400 to-gray-600 text-white",
     slate: "bg-gradient-to-br from-slate-500 to-slate-700 text-white",
-    amber: "bg-gradient-to-br from-amber-200 to-orange text-white",
+    amber: "bg-gradient-to-br from-amber-200 to-orange-300 text-gray-800",
     brick: "bg-gradient-to-br from-red-400 to-red-600 text-white",
     zinc: "bg-gradient-to-br from-zinc-400 to-zinc-600 text-white",
     steel: "bg-gradient-to-br from-gray-600 to-gray-800 text-white"

@@ -79,7 +79,7 @@ const Hero = () => {
                 <h3 className="text-2xl font-semibold text-gray-800">Quick Product Access</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div 
-                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-yellow to-orange min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
+                    className="relative p-6 rounded-lg text-center hover:opacity-90 transition-opacity cursor-pointer overflow-hidden bg-gradient-to-br from-yellow-100 to-orange-200 min-h-[120px] flex items-center justify-center hover:scale-105 transition-transform"
                     onClick={handleProductsClick}
                   >
                     <div className="absolute inset-0 bg-black/20"></div>
