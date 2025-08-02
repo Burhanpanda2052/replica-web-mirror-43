@@ -43,7 +43,7 @@ const CalculatorModal = ({ isOpen, onClose, productName }: CalculatorModalProps)
       title: "Volume Calculator",
       description: "Calculate cubic meters of materials",
       icon: Box,
-      color: "text-orange-600",
+      color: "text-orange",
     },
   ];
 

@@ -38,7 +38,7 @@ const CalculatorSection = () => {
       title: "Aggregates Calculator",
       description: "Calculate cubic meters of sand, gravel, and aggregates",
       icon: Box,
-      color: "text-orange-600",
+      color: "text-orange",
     },
   ];
 
