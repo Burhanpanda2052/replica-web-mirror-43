@@ -109,7 +109,7 @@ const Header = () => {
               </button>
             </form>
             <Button 
-              className="bg-yellow text-yellow-foreground hover:bg-yellow/90 font-semibold"
+              className="bg-orange text-orange-foreground hover:bg-orange/90 font-semibold"
               onClick={handleQuoteClick}
             >
               Request Quote
@@ -201,7 +201,7 @@ const Header = () => {
                   {/* Request Quote Button */}
                   <div className="mt-6 pt-4 border-t border-white/20">
                     <Button 
-                      className="w-full bg-yellow text-yellow-foreground hover:bg-yellow/90 font-semibold"
+                      className="w-full bg-orange text-orange-foreground hover:bg-orange/90 font-semibold"
                       onClick={() => {
                         handleQuoteClick();
                         setMobileMenuOpen(false);

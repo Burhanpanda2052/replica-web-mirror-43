@@ -28,7 +28,7 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                 Zanzibar's Premier
-                <span className="block text-yellow">Construction Materials</span>
+                <span className="block text-orange">Construction Materials</span>
                 Supplier
               </h1>
               <p className="text-xl opacity-90 max-w-lg">
@@ -39,7 +39,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 size="lg" 
-                className="bg-yellow text-yellow-foreground hover:bg-yellow/90"
+                className="bg-orange text-orange-foreground hover:bg-orange/90"
                 onClick={handleQuoteClick}
               >
                 <ShoppingCart className="mr-2 h-5 w-5" />
@@ -58,15 +58,15 @@ const Hero = () => {
             
             <div className="flex items-center space-x-8">
               <div className="flex items-center space-x-2">
-                <Truck className="h-5 w-5 text-yellow" />
+                <Truck className="h-5 w-5 text-orange" />
                 <span>Same Day Delivery</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Shield className="h-5 w-5 text-yellow" />
+                <Shield className="h-5 w-5 text-orange" />
                 <span>Quality Guaranteed</span>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-5 w-5 text-yellow" />
+                <Phone className="h-5 w-5 text-orange" />
                 <span>24/7 Support</span>
               </div>
             </div>
