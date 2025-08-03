@@ -91,7 +91,7 @@ const DeliverySection = () => {
                 </p>
                 <button 
                   onClick={handleRequestExpress}
-                  className="bg-yellow text-yellow-foreground px-6 py-2 rounded-lg font-medium hover:bg-yellow/90 transition-colors"
+                  className="bg-orange text-orange-foreground px-6 py-2 rounded-lg font-medium hover:bg-orange/90 transition-colors"
                 >
                   Request Express
                 </button>

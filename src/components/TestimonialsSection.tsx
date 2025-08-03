@@ -72,7 +72,7 @@ const TestimonialsSection = () => {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow text-yellow" />
+                      <Star key={i} className="h-4 w-4 fill-orange text-orange" />
                     ))}
                   </div>
                   <Quote className="h-6 w-6 text-primary/20" />

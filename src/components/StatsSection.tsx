@@ -22,7 +22,7 @@ const StatsSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Card className="bg-white/10 border-white/20 text-center">
             <CardContent className="p-6 space-y-4">
-              <Building className="h-12 w-12 mx-auto text-yellow" />
+              <Building className="h-12 w-12 mx-auto text-orange" />
               <div className="space-y-2">
                 <div ref={projectsCounter.elementRef} className="text-4xl font-bold text-white">
                   {projectsCounter.displayValue}
@@ -34,7 +34,7 @@ const StatsSection = () => {
           
           <Card className="bg-white/10 border-white/20 text-center">
             <CardContent className="p-6 space-y-4">
-              <Users className="h-12 w-12 mx-auto text-yellow" />
+              <Users className="h-12 w-12 mx-auto text-orange" />
               <div className="space-y-2">
                 <div ref={customersCounter.elementRef} className="text-4xl font-bold text-white">
                   {customersCounter.displayValue}
@@ -46,7 +46,7 @@ const StatsSection = () => {
           
           <Card className="bg-white/10 border-white/20 text-center">
             <CardContent className="p-6 space-y-4">
-              <Award className="h-12 w-12 mx-auto text-yellow" />
+              <Award className="h-12 w-12 mx-auto text-orange" />
               <div className="space-y-2">
                 <div ref={productsCounter.elementRef} className="text-4xl font-bold text-white">
                   {productsCounter.displayValue}
@@ -58,7 +58,7 @@ const StatsSection = () => {
           
           <Card className="bg-white/10 border-white/20 text-center">
             <CardContent className="p-6 space-y-4">
-              <Calendar className="h-12 w-12 mx-auto text-yellow" />
+              <Calendar className="h-12 w-12 mx-auto text-orange" />
               <div className="space-y-2">
                 <div ref={experienceCounter.elementRef} className="text-4xl font-bold text-white">
                   {experienceCounter.displayValue}

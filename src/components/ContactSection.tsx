@@ -91,7 +91,7 @@ const ContactSection = () => {
                   Visit our showroom to see our materials firsthand or contact us for immediate assistance.
                 </p>
                 <div className="space-y-3">
-                  <Button className="w-full bg-yellow text-yellow-foreground hover:bg-yellow/90">
+                  <Button className="w-full bg-orange text-orange-foreground hover:bg-orange/90">
                     <Navigation className="mr-2 h-4 w-4" />
                     Get Directions
                   </Button>
@@ -124,7 +124,7 @@ const ContactSection = () => {
               </Card>
               <Card className="text-center bg-blue text-blue-foreground">
                 <CardContent className="p-4">
-                  <div className="text-2xl font-bold">3KM</div>
+                  <div className="text-2xl font-bold">20KM</div>
                   <div className="text-sm opacity-90">From Darajani</div>
                 </CardContent>
               </Card>
